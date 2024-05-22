@@ -1,0 +1,15 @@
+name: 'Setup Tools'
+description: 'Setup tools needed in repo'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+
+    - name: Install dependencies
+      shell: bash
+      run: npm install
