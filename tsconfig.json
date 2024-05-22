@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
     "allowUnreachableCode": false,
-    "esModuleInterop": true,
-    "lib": ["dom", "es2020"],
-    "module": "esnext",
-    "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "pretty": true,
     "strict": true,
+    "esModuleInterop": true,
+    "lib": ["dom", "es2020"],
+    "module": "esnext",
+    "moduleResolution": "node",
     "target": "es2017"
   },
   "include": [

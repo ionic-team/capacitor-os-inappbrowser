@@ -10,8 +10,7 @@ export default defineConfig({
       entry: './src/index.ts',
       name: 'capacitorInAppBrowser',
       fileName: (format) => `plugin.${format === 'es' ? 'mjs' : format === 'cjs' ? 'cjs' : 'js'}`,
-      formats: ['es', 'cjs', 'iife'],
-      
+      formats: ['es', 'cjs', 'umd'],
     },
     rollupOptions: {
       external: ['@capacitor/core'],
