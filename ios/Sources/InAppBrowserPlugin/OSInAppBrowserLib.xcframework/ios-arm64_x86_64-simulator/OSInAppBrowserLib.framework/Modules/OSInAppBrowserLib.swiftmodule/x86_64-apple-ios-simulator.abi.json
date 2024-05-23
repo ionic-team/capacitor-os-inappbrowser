@@ -1,0 +1,128 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABEngine",
+        "printedName": "OSIABEngine",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(router:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABEngine",
+                "printedName": "OSInAppBrowserLib.OSIABEngine",
+                "usr": "s:17OSInAppBrowserLib11OSIABEngineV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABRouter",
+                "printedName": "OSInAppBrowserLib.OSIABRouter",
+                "usr": "s:17OSInAppBrowserLib11OSIABRouterP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib11OSIABEngineV6routerAcA11OSIABRouter_p_tcfc",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV6routerAcA11OSIABRouter_p_tcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "openExternalBrowser",
+            "printedName": "openExternalBrowser(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib11OSIABEngineV012openExternalC0ySbSSF",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV012openExternalC0ySbSSF",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:17OSInAppBrowserLib11OSIABEngineV",
+        "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABRouter",
+        "printedName": "OSIABRouter",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "openInSafari",
+            "printedName": "openInSafari(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib11OSIABRouterP12openInSafariySbSSF",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP12openInSafariySbSSF",
+            "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : OSInAppBrowserLib.OSIABRouter>",
+            "sugared_genericSig": "<Self where Self : OSInAppBrowserLib.OSIABRouter>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:17OSInAppBrowserLib11OSIABRouterP",
+        "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}
