@@ -1,9 +1,11 @@
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { InAppBrowser } from '@capacitor/os-inappbrowser';
 import './Home.css';
 
 const Home: React.FC = () => {
 
   const test = () => {
+    // InAppBrowser.openInExternalBrowser('https://www.google.com');
     console.log('test')
   }
 

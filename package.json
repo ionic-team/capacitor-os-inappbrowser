@@ -4,11 +4,11 @@
   "description": "in app browser",
   "main": "./dist/plugin.cjs",
   "module": "./dist/plugin.mjs",
-  "types": "./dist/plugin.d.ts",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/plugin.d.ts",
+      "types": "./dist/index.d.ts",
       "import": "./dist/plugin.mjs",
       "require": "./dist/plugin.cjs"
     }
