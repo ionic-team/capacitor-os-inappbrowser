@@ -25,30 +25,20 @@ export enum iOSAnimation {
 export enum AndroidAnimation {
   FADE_IN,
   FADE_OUT,
-  LINEAR_INTERPOLATION,
-  ACCELERATE_DECELERATE_INTERPOLATOR,
-  ACCELERATE_INTERPOLATOR,
-  ANTICIPATE_INTERPOLATOR,
-  ANTICIPATE_OVERSHOOT_INTERPOLATOR,
-  BOUNCE_INTERPOLATOR,
-  DECELERATE_INTERPOLATOR,
-  OVERSHOOT_INTERPOLATOR,
   SLIDE_IN_LEFT,
   SLIDE_OUT_RIGHT  
 }
 
 
-export interface CommonOptions {
+export interface WebViewOptions {
+  showURL: boolean;
+  showToolBar: boolean;
   clearCache: boolean;
   clearSessionCache: boolean;
   mediaPlaybackRequiresUserAction: boolean;
-}
-
-export interface WebViewOptions extends CommonOptions {
-  showURL: boolean;
-  showToolBar: boolean;
   closeButtonText: string;
   toolbarPosition: ToolbarPosition;
+  showNavigationButtons: boolean;
   leftToRight: boolean;
   android: AndroidWebViewOptions,
   iOS: iOSWebViewOptions
@@ -59,9 +49,9 @@ export interface iOSWebViewOptions {
   enableViewportScale: boolean;
   allowInLineMediaPlayback: boolean;
   keyboardDisplayRequiresUserAction: boolean;
-  surpressedIncrementalRendering: boolean;
+  surpressIncrementalRendering: boolean;
   viewStyle: iOSViewStyle;
-  animationEffect: iOSAnimation;
+  animation: iOSAnimation;
 }
 
 export interface AndroidWebViewOptions {
@@ -81,8 +71,7 @@ export enum CloseButtonIcon {
   CLOSE,
 }
 
-export interface SystemBrowserOptions extends CommonOptions {
-  showURLBar: boolean;
+export interface SystemBrowserOptions {
   android: AndroidSystemBrowserOptions,
   iOS: iOSSystemBrowserOptions
 }
@@ -97,7 +86,7 @@ export interface iOSSystemBrowserOptions {
 
 export interface AndroidBottomSheet {
   height: number;
-  isFixed: number;
+  isFixed: boolean;
 }
 
 export interface AndroidSystemBrowserOptions {
