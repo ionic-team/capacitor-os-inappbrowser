@@ -1,0 +1,15 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
+// swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OSInAppBrowserLib
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public struct OSIABEngine {
+  public init(router: any OSInAppBrowserLib.OSIABRouter)
+  public func openExternalBrowser(_ url: Swift.String) -> Swift.Bool
+}
+public protocol OSIABRouter {
+  func openInSafari(_ url: Swift.String) -> Swift.Bool
+}

@@ -20,6 +20,7 @@ npx cap sync
 * [`removeAllListeners()`](#removealllisteners)
 * [`addListener('browserClosed' | 'browserPageLoaded', ...)`](#addlistenerbrowserclosed--browserpageloaded-)
 * [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 * [Enums](#enums)
 
 </docgen-index>
@@ -58,12 +59,12 @@ openInSystemBrowser(url: string, options: SystemBrowserOptions) => void
 ### openInExternalBrowser(...)
 
 ```typescript
-openInExternalBrowser(url: string) => void
+openInExternalBrowser(model: OpenInExternalBrowserParameterModel) => void
 ```
 
-| Param     | Type                |
-| --------- | ------------------- |
-| **`url`** | <code>string</code> |
+| Param       | Type                                                                                                |
+| ----------- | --------------------------------------------------------------------------------------------------- |
+| **`model`** | <code><a href="#openinexternalbrowserparametermodel">OpenInExternalBrowserParameterModel</a></code> |
 
 --------------------
 
@@ -185,6 +186,16 @@ addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () =
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
 | **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
+
+
+### Type Aliases
+
+
+#### OpenInExternalBrowserParameterModel
+
+Defines the options for opening a URL in the external browser.
+
+<code>{ url: string; }</code>
 
 
 ### Enums

@@ -1,0 +1,23 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/rcj/Library/Developer/Xcode/DerivedData/OSInAppBrowserLib-exxamiccymxcjdabdfefbzmbgbsk/Build/Intermediates.noindex/ArchiveIntermediates/OSInAppBrowserLib/InstallationBuildProductsLocation/Library/Frameworks/OSInAppBrowserLib.framework/OSInAppBrowserLib'
+relocations:
+  - { offsetInCU: 0x33, offset: 0x9D, size: 0x8, addend: 0x0, symName: _OSInAppBrowserLibVersionString, symObjAddr: 0x0, symBinAddr: 0x5240, symSize: 0x0 }
+  - { offsetInCU: 0x67, offset: 0xD1, size: 0x8, addend: 0x0, symName: _OSInAppBrowserLibVersionNumber, symObjAddr: 0x40, symBinAddr: 0x5280, symSize: 0x0 }
+  - { offsetInCU: 0x2B, offset: 0x111, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineV6routerAcA11OSIABRouter_p_tcfC', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x8 }
+  - { offsetInCU: 0x4C, offset: 0x132, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineV6routerAcA11OSIABRouter_p_tcfC', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x8 }
+  - { offsetInCU: 0x78, offset: 0x15E, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineV012openExternalC0ySbSSF', symObjAddr: 0x20, symBinAddr: 0x4020, symSize: 0x60 }
+  - { offsetInCU: 0xB5, offset: 0x19B, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABRouter_pWOb', symObjAddr: 0x8, symBinAddr: 0x4008, symSize: 0x18 }
+  - { offsetInCU: 0xC8, offset: 0x1AE, size: 0x8, addend: 0x0, symName: ___swift_project_boxed_opaque_existential_1, symObjAddr: 0x80, symBinAddr: 0x4080, symSize: 0x24 }
+  - { offsetInCU: 0xDB, offset: 0x1C1, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineVwCP', symObjAddr: 0xA4, symBinAddr: 0x40A4, symSize: 0x30 }
+  - { offsetInCU: 0xEE, offset: 0x1D4, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineVwxx', symObjAddr: 0xD4, symBinAddr: 0x40D4, symSize: 0x4 }
+  - { offsetInCU: 0x101, offset: 0x1E7, size: 0x8, addend: 0x0, symName: ___swift_destroy_boxed_opaque_existential_1, symObjAddr: 0xD8, symBinAddr: 0x40D8, symSize: 0x20 }
+  - { offsetInCU: 0x114, offset: 0x1FA, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineVwcp', symObjAddr: 0xF8, symBinAddr: 0x40F8, symSize: 0x34 }
+  - { offsetInCU: 0x127, offset: 0x20D, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineVwca', symObjAddr: 0x12C, symBinAddr: 0x412C, symSize: 0x24 }
+  - { offsetInCU: 0x13A, offset: 0x220, size: 0x8, addend: 0x0, symName: ___swift_assign_boxed_opaque_existential_1, symObjAddr: 0x150, symBinAddr: 0x4150, symSize: 0x168 }
+  - { offsetInCU: 0x14D, offset: 0x233, size: 0x8, addend: 0x0, symName: ___swift_memcpy40_8, symObjAddr: 0x2B8, symBinAddr: 0x42B8, symSize: 0x14 }
+  - { offsetInCU: 0x160, offset: 0x246, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineVwta', symObjAddr: 0x2CC, symBinAddr: 0x42CC, symSize: 0x38 }
+  - { offsetInCU: 0x173, offset: 0x259, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineVwet', symObjAddr: 0x304, symBinAddr: 0x4304, symSize: 0x48 }
+  - { offsetInCU: 0x186, offset: 0x26C, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineVwst', symObjAddr: 0x34C, symBinAddr: 0x434C, symSize: 0x48 }
+  - { offsetInCU: 0x199, offset: 0x27F, size: 0x8, addend: 0x0, symName: '_$s17OSInAppBrowserLib11OSIABEngineVMa', symObjAddr: 0x394, symBinAddr: 0x4394, symSize: 0x10 }
+...

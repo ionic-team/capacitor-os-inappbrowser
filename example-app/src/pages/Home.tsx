@@ -5,8 +5,9 @@ import './Home.css';
 const Home: React.FC = () => {
 
   const test = () => {
-    // InAppBrowser.openInExternalBrowser('https://www.google.com');
-    console.log('test')
+    InAppBrowser.openInExternalBrowser({
+      url: "https://www.google.com"
+    });
   }
 
   return (

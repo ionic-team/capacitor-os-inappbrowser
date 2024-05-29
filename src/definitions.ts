@@ -98,10 +98,17 @@ export interface AndroidSystemBrowserOptions {
   exitAnimation: AndroidAnimation;
 }
 
+/**
+ * Defines the options for opening a URL in the external browser.
+ */
+export type OpenInExternalBrowserParameterModel = {
+  url: string;
+};
+
 export interface InAppBrowserPlugin {
   openInWebView(url: string, options: WebViewOptions): void;
   openInSystemBrowser(url: string, options: SystemBrowserOptions): void;
-  openInExternalBrowser(url: string): void;
+  openInExternalBrowser(model: OpenInExternalBrowserParameterModel): void;
   close(): void;
   removeAllListeners(): void;
   addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void): Promise<PluginListenerHandle>;
