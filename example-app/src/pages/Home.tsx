@@ -1,5 +1,5 @@
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { InAppBrowser } from '@capacitor/os-inappbrowser';
+import { InAppBrowser, SystemBrowserOptions, DefaultSystemBrowserOptions, DefaultAndroidSystemBrowserOptions, DismissStyle, iOSViewStyle, iOSAnimation } from '@capacitor/os-inappbrowser';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -9,6 +9,37 @@ const Home: React.FC = () => {
       url: "https://www.google.com"
     });
   }
+
+  const openInSystemBrowserWithDefaults = () => {
+    InAppBrowser.openInSystemBrowser({
+      url: "https://www.google.com",
+      options: DefaultSystemBrowserOptions
+    });
+  }
+
+  const openInSystemBrowserWithCustomValues = () => {
+    InAppBrowser.openInSystemBrowser({
+      url: "https://www.asymco.com/",
+      options: {
+        android: DefaultAndroidSystemBrowserOptions,
+        iOS: {
+          closeButtonText: DismissStyle.CANCEL,
+          viewStyle: iOSViewStyle.FORM_SHEET,
+          animationEffect: iOSAnimation.FLIP_HORIZONTAL,
+          enableBarsCollapsing: false,
+          enableReadersMode: true
+        }
+      }
+    });
+  }
+
+  InAppBrowser.addListener('browserClosed', () => {
+    console.log("browser was closed.");
+  });
+
+  InAppBrowser.addListener('browserPageLoaded', () => {
+    console.log("browser was loaded.");
+  });
 
   return (
     <IonPage>
@@ -25,6 +56,8 @@ const Home: React.FC = () => {
         </IonHeader>
         <div>
           <IonButton onClick={test}>TEST</IonButton>
+          <IonButton onClick={openInSystemBrowserWithDefaults}>System Browser with Defaults</IonButton>
+          <IonButton onClick={openInSystemBrowserWithCustomValues}>System Browser with Custom Values</IonButton>
         </div>
       </IonContent>
     </IonPage>

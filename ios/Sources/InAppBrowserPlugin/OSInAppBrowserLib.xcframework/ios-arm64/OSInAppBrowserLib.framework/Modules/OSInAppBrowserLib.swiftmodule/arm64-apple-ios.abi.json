@@ -5,6 +5,13 @@
     "printedName": "TopLevel",
     "children": [
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
         "kind": "TypeDecl",
         "name": "OSIABEngine",
         "printedName": "OSIABEngine",
@@ -12,25 +19,33 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(router:)",
+            "printedName": "init()",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "OSIABEngine",
-                "printedName": "OSInAppBrowserLib.OSIABEngine",
+                "printedName": "OSInAppBrowserLib.OSIABEngine<τ_0_0, τ_0_1>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_0"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_1"
+                  }
+                ],
                 "usr": "s:17OSInAppBrowserLib11OSIABEngineV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "OSIABRouter",
-                "printedName": "OSInAppBrowserLib.OSIABRouter",
-                "usr": "s:17OSInAppBrowserLib11OSIABRouterP"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:17OSInAppBrowserLib11OSIABEngineV6routerAcA11OSIABRouter_p_tcfc",
-            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV6routerAcA11OSIABRouter_p_tcfc",
+            "usr": "s:17OSInAppBrowserLib11OSIABEngineVACyxq_Gycfc",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineVACyxq_Gycfc",
             "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController?>",
+            "sugared_genericSig": "<ExternalBrowser, SystemBrowser where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController?>",
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
@@ -40,25 +55,99 @@
           {
             "kind": "Function",
             "name": "openExternalBrowser",
-            "printedName": "openExternalBrowser(_:)",
+            "printedName": "openExternalBrowser(_:routerDelegate:_:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
+                "name": "Void",
+                "printedName": "()"
               },
               {
                 "kind": "TypeNominal",
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(τ_0_0.ReturnType) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.ReturnType"
+                  }
+                ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:17OSInAppBrowserLib11OSIABEngineV012openExternalC0ySbSSF",
-            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV012openExternalC0ySbSSF",
+            "usr": "s:17OSInAppBrowserLib11OSIABEngineV012openExternalC0_14routerDelegate_ySS_xySbctF",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV012openExternalC0_14routerDelegate_ySS_xySbctF",
             "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController?>",
+            "sugared_genericSig": "<ExternalBrowser, SystemBrowser where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController?>",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openSystemBrowser",
+            "printedName": "openSystemBrowser(_:routerDelegate:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_1"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(τ_0_1.ReturnType) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_1.ReturnType"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib11OSIABEngineV010openSystemC0_14routerDelegate_ySS_q_ySo16UIViewControllerCSgctF",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV010openSystemC0_14routerDelegate_ySS_q_ySo16UIViewControllerCSgctF",
+            "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController?>",
+            "sugared_genericSig": "<ExternalBrowser, SystemBrowser where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController?>",
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
@@ -70,20 +159,321 @@
         "usr": "s:17OSInAppBrowserLib11OSIABEngineV",
         "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV",
         "moduleName": "OSInAppBrowserLib",
+        "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController?>",
+        "sugared_genericSig": "<ExternalBrowser, SystemBrowser where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController?>",
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
         ]
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
         "kind": "TypeDecl",
-        "name": "OSIABRouter",
-        "printedName": "OSIABRouter",
+        "name": "OSIABViewStyle",
+        "printedName": "OSIABViewStyle",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "formSheet",
+            "printedName": "formSheet",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABViewStyle.Type) -> OSInAppBrowserLib.OSIABViewStyle",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABViewStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                    "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABViewStyle.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABViewStyle",
+                        "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                        "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO9formSheetyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib14OSIABViewStyleO9formSheetyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "fullScreen",
+            "printedName": "fullScreen",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABViewStyle.Type) -> OSInAppBrowserLib.OSIABViewStyle",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABViewStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                    "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABViewStyle.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABViewStyle",
+                        "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                        "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO10fullScreenyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib14OSIABViewStyleO10fullScreenyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "pageSheet",
+            "printedName": "pageSheet",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABViewStyle.Type) -> OSInAppBrowserLib.OSIABViewStyle",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABViewStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                    "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABViewStyle.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABViewStyle",
+                        "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                        "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO9pageSheetyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib14OSIABViewStyleO9pageSheetyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "defaultValue",
+            "printedName": "defaultValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABViewStyle",
+                "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO12defaultValueACvpZ",
+            "mangledName": "$s17OSInAppBrowserLib14OSIABViewStyleO12defaultValueACvpZ",
+            "moduleName": "OSInAppBrowserLib",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABViewStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                    "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO12defaultValueACvgZ",
+                "mangledName": "$s17OSInAppBrowserLib14OSIABViewStyleO12defaultValueACvgZ",
+                "moduleName": "OSInAppBrowserLib",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "OSInAppBrowserLib.OSIABViewStyle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABViewStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                    "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO8rawValueACSgSS_tcfc",
+            "mangledName": "$s17OSInAppBrowserLib14OSIABViewStyleO8rawValueACSgSS_tcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO8rawValueSSvp",
+            "mangledName": "$s17OSInAppBrowserLib14OSIABViewStyleO8rawValueSSvp",
+            "moduleName": "OSInAppBrowserLib",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO8rawValueSSvg",
+                "mangledName": "$s17OSInAppBrowserLib14OSIABViewStyleO8rawValueSSvg",
+                "moduleName": "OSInAppBrowserLib",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO",
+        "mangledName": "$s17OSInAppBrowserLib14OSIABViewStyleO",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABApplicationDelegate",
+        "printedName": "OSIABApplicationDelegate",
         "children": [
           {
             "kind": "Function",
-            "name": "openInSafari",
-            "printedName": "openInSafari(_:)",
+            "name": "canOpenURL",
+            "printedName": "canOpenURL(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -93,14 +483,1276 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib24OSIABApplicationDelegateP10canOpenURLySb10Foundation0I0VF",
+            "mangledName": "$s17OSInAppBrowserLib24OSIABApplicationDelegateP10canOpenURLySb10Foundation0I0VF",
+            "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : OSInAppBrowserLib.OSIABApplicationDelegate>",
+            "sugared_genericSig": "<Self where Self : OSInAppBrowserLib.OSIABApplicationDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "open",
+            "printedName": "open(_:options:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[UIKit.UIApplication.OpenExternalURLOptionsKey : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpenExternalURLOptionsKey",
+                    "printedName": "UIKit.UIApplication.OpenExternalURLOptionsKey",
+                    "usr": "c:@T@UIApplicationOpenExternalURLOptionsKey"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Swift.Bool) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Bool) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib24OSIABApplicationDelegateP4open_7options17completionHandlery10Foundation3URLV_SDySo38UIApplicationOpenExternalURLOptionsKeyaypGySbcSgtF",
+            "mangledName": "$s17OSInAppBrowserLib24OSIABApplicationDelegateP4open_7options17completionHandlery10Foundation3URLV_SDySo38UIApplicationOpenExternalURLOptionsKeyaypGySbcSgtF",
+            "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : OSInAppBrowserLib.OSIABApplicationDelegate>",
+            "sugared_genericSig": "<Self where Self : OSInAppBrowserLib.OSIABApplicationDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:17OSInAppBrowserLib24OSIABApplicationDelegateP",
+        "mangledName": "$s17OSInAppBrowserLib24OSIABApplicationDelegateP",
+        "moduleName": "OSInAppBrowserLib",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABApplicationRouterAdapter",
+        "printedName": "OSIABApplicationRouterAdapter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABApplicationRouterAdapter",
+                "printedName": "OSInAppBrowserLib.OSIABApplicationRouterAdapter",
+                "usr": "s:17OSInAppBrowserLib29OSIABApplicationRouterAdapterC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABApplicationDelegate",
+                "printedName": "OSInAppBrowserLib.OSIABApplicationDelegate",
+                "usr": "s:17OSInAppBrowserLib24OSIABApplicationDelegateP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib29OSIABApplicationRouterAdapterCyAcA0E8Delegate_pcfc",
+            "mangledName": "$s17OSInAppBrowserLib29OSIABApplicationRouterAdapterCyAcA0E8Delegate_pcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "handleOpen",
+            "printedName": "handleOpen(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib29OSIABApplicationRouterAdapterC10handleOpenyySS_ySbctF",
+            "mangledName": "$s17OSInAppBrowserLib29OSIABApplicationRouterAdapterC10handleOpenyySS_ySbctF",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:17OSInAppBrowserLib29OSIABApplicationRouterAdapterC",
+        "mangledName": "$s17OSInAppBrowserLib29OSIABApplicationRouterAdapterC",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "OSIABRouter",
+            "printedName": "OSIABRouter",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReturnType",
+                "printedName": "ReturnType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:17OSInAppBrowserLib11OSIABRouterP",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SafariServices",
+        "printedName": "SafariServices",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABDismissStyle",
+        "printedName": "OSIABDismissStyle",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "cancel",
+            "printedName": "cancel",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABDismissStyle.Type) -> OSInAppBrowserLib.OSIABDismissStyle",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABDismissStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                    "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABDismissStyle.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABDismissStyle",
+                        "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                        "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO6cancelyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABDismissStyleO6cancelyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "close",
+            "printedName": "close",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABDismissStyle.Type) -> OSInAppBrowserLib.OSIABDismissStyle",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABDismissStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                    "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABDismissStyle.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABDismissStyle",
+                        "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                        "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO5closeyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABDismissStyleO5closeyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "done",
+            "printedName": "done",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABDismissStyle.Type) -> OSInAppBrowserLib.OSIABDismissStyle",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABDismissStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                    "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABDismissStyle.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABDismissStyle",
+                        "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                        "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO4doneyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABDismissStyleO4doneyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "defaultValue",
+            "printedName": "defaultValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABDismissStyle",
+                "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO12defaultValueACvpZ",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABDismissStyleO12defaultValueACvpZ",
+            "moduleName": "OSInAppBrowserLib",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABDismissStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                    "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO12defaultValueACvgZ",
+                "mangledName": "$s17OSInAppBrowserLib17OSIABDismissStyleO12defaultValueACvgZ",
+                "moduleName": "OSInAppBrowserLib",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "OSInAppBrowserLib.OSIABDismissStyle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABDismissStyle",
+                    "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                    "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
               }
             ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO8rawValueACSgSS_tcfc",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABDismissStyleO8rawValueACSgSS_tcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO8rawValueSSvp",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABDismissStyleO8rawValueSSvp",
+            "moduleName": "OSInAppBrowserLib",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO8rawValueSSvg",
+                "mangledName": "$s17OSInAppBrowserLib17OSIABDismissStyleO8rawValueSSvg",
+                "moduleName": "OSInAppBrowserLib",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO",
+        "mangledName": "$s17OSInAppBrowserLib17OSIABDismissStyleO",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABAnimationEffect",
+        "printedName": "OSIABAnimationEffect",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "coverVertical",
+            "printedName": "coverVertical",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABAnimationEffect.Type) -> OSInAppBrowserLib.OSIABAnimationEffect",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABAnimationEffect",
+                    "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                    "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABAnimationEffect.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABAnimationEffect",
+                        "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                        "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO13coverVerticalyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABAnimationEffectO13coverVerticalyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "crossDissolve",
+            "printedName": "crossDissolve",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABAnimationEffect.Type) -> OSInAppBrowserLib.OSIABAnimationEffect",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABAnimationEffect",
+                    "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                    "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABAnimationEffect.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABAnimationEffect",
+                        "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                        "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO13crossDissolveyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABAnimationEffectO13crossDissolveyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "flipHorizontal",
+            "printedName": "flipHorizontal",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABAnimationEffect.Type) -> OSInAppBrowserLib.OSIABAnimationEffect",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABAnimationEffect",
+                    "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                    "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABAnimationEffect.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABAnimationEffect",
+                        "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                        "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO14flipHorizontalyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABAnimationEffectO14flipHorizontalyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "defaultValue",
+            "printedName": "defaultValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABAnimationEffect",
+                "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO12defaultValueACvpZ",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABAnimationEffectO12defaultValueACvpZ",
+            "moduleName": "OSInAppBrowserLib",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABAnimationEffect",
+                    "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                    "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO12defaultValueACvgZ",
+                "mangledName": "$s17OSInAppBrowserLib20OSIABAnimationEffectO12defaultValueACvgZ",
+                "moduleName": "OSInAppBrowserLib",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "OSInAppBrowserLib.OSIABAnimationEffect?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABAnimationEffect",
+                    "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                    "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO8rawValueACSgSS_tcfc",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABAnimationEffectO8rawValueACSgSS_tcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO8rawValueSSvp",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABAnimationEffectO8rawValueSSvp",
+            "moduleName": "OSInAppBrowserLib",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO8rawValueSSvg",
+                "mangledName": "$s17OSInAppBrowserLib20OSIABAnimationEffectO8rawValueSSvg",
+                "moduleName": "OSInAppBrowserLib",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO",
+        "mangledName": "$s17OSInAppBrowserLib20OSIABAnimationEffectO",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SafariServices",
+        "printedName": "SafariServices",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABSystemBrowserOptions",
+        "printedName": "OSIABSystemBrowserOptions",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(dismissStyle:viewStyle:animationEffect:enableBarsCollapsing:enableReadersMode:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABSystemBrowserOptions",
+                "printedName": "OSInAppBrowserLib.OSIABSystemBrowserOptions",
+                "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABDismissStyle",
+                "printedName": "OSInAppBrowserLib.OSIABDismissStyle",
+                "hasDefaultArg": true,
+                "usr": "s:17OSInAppBrowserLib17OSIABDismissStyleO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABViewStyle",
+                "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                "hasDefaultArg": true,
+                "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABAnimationEffect",
+                "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                "hasDefaultArg": true,
+                "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsV12dismissStyle04viewH015animationEffect20enableBarsCollapsing0L11ReadersModeAcA012OSIABDismissH0O_AA09OSIABViewH0OAA014OSIABAnimationK0OS2btcfc",
+            "mangledName": "$s17OSInAppBrowserLib011OSIABSystemC7OptionsV12dismissStyle04viewH015animationEffect20enableBarsCollapsing0L11ReadersModeAcA012OSIABDismissH0O_AA09OSIABViewH0OAA014OSIABAnimationK0OS2btcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsV",
+        "mangledName": "$s17OSInAppBrowserLib011OSIABSystemC7OptionsV",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SafariServices",
+        "printedName": "SafariServices",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABSafariViewControllerRouterAdapter",
+        "printedName": "OSIABSafariViewControllerRouterAdapter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:onBrowserPageLoad:onBrowserClosed:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABSafariViewControllerRouterAdapter",
+                "printedName": "OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter",
+                "usr": "c:@M@OSInAppBrowserLib@objc(cs)OSIABSafariViewControllerRouterAdapter"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABSystemBrowserOptions",
+                "printedName": "OSInAppBrowserLib.OSIABSystemBrowserOptions",
+                "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC_02onC8PageLoad0jC6ClosedAcA011OSIABSystemC7OptionsV_yycyyctcfc",
+            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC_02onC8PageLoad0jC6ClosedAcA011OSIABSystemC7OptionsV_yycyyctcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "handleOpen",
+            "printedName": "handleOpen(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UIKit.UIViewController?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIViewController?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIViewController",
+                        "printedName": "UIKit.UIViewController",
+                        "usr": "c:objc(cs)UIViewController"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
             "declKind": "Func",
-            "usr": "s:17OSInAppBrowserLib11OSIABRouterP12openInSafariySbSSF",
-            "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP12openInSafariySbSSF",
+            "usr": "s:17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC10handleOpenyySS_ySo06UIViewG0CSgctF",
+            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC10handleOpenyySS_ySo06UIViewG0CSgctF",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABSafariViewControllerRouterAdapter",
+                "printedName": "OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter",
+                "usr": "c:@M@OSInAppBrowserLib@objc(cs)OSIABSafariViewControllerRouterAdapter"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@OSInAppBrowserLib@objc(cs)OSIABSafariViewControllerRouterAdapter(im)init",
+            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterCACycfc",
+            "moduleName": "OSInAppBrowserLib",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "safariViewController",
+            "printedName": "safariViewController(_:didCompleteInitialLoad:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSafariViewController",
+                "printedName": "SafariServices.SFSafariViewController",
+                "usr": "c:objc(cs)SFSafariViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@OSInAppBrowserLib@objc(cs)OSIABSafariViewControllerRouterAdapter(im)safariViewController:didCompleteInitialLoad:",
+            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC06safarifG0_22didCompleteInitialLoadySo08SFSafarifG0C_SbtF",
+            "moduleName": "OSInAppBrowserLib",
+            "objc_name": "safariViewController:didCompleteInitialLoad:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "safariViewControllerDidFinish",
+            "printedName": "safariViewControllerDidFinish(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SFSafariViewController",
+                "printedName": "SafariServices.SFSafariViewController",
+                "usr": "c:objc(cs)SFSafariViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@OSInAppBrowserLib@objc(cs)OSIABSafariViewControllerRouterAdapter(im)safariViewControllerDidFinish:",
+            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC06safarifG9DidFinishyySo08SFSafarifG0CF",
+            "moduleName": "OSInAppBrowserLib",
+            "objc_name": "safariViewControllerDidFinish:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "presentationControllerDidDismiss",
+            "printedName": "presentationControllerDidDismiss(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIPresentationController",
+                "printedName": "UIKit.UIPresentationController",
+                "usr": "c:objc(cs)UIPresentationController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@OSInAppBrowserLib@objc(cs)OSIABSafariViewControllerRouterAdapter(im)presentationControllerDidDismiss:",
+            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC012presentationG10DidDismissyySo014UIPresentationG0CF",
+            "moduleName": "OSInAppBrowserLib",
+            "objc_name": "presentationControllerDidDismiss:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@OSInAppBrowserLib@objc(cs)OSIABSafariViewControllerRouterAdapter",
+        "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "OSIABRouter",
+            "printedName": "OSIABRouter",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReturnType",
+                "printedName": "ReturnType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIViewController?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIViewController",
+                        "printedName": "UIKit.UIViewController",
+                        "usr": "c:objc(cs)UIViewController"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:17OSInAppBrowserLib11OSIABRouterP",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABRouter",
+        "printedName": "OSIABRouter",
+        "children": [
+          {
+            "kind": "AssociatedType",
+            "name": "ReturnType",
+            "printedName": "ReturnType",
+            "declKind": "AssociatedType",
+            "usr": "s:17OSInAppBrowserLib11OSIABRouterP10ReturnTypeQa",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP10ReturnTypeQa",
+            "moduleName": "OSInAppBrowserLib",
+            "protocolReq": true
+          },
+          {
+            "kind": "Function",
+            "name": "handleOpen",
+            "printedName": "handleOpen(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(τ_0_0.ReturnType) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_0.ReturnType"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib11OSIABRouterP10handleOpenyySS_y10ReturnTypeQzctF",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP10handleOpenyySS_y10ReturnTypeQzctF",
             "moduleName": "OSInAppBrowserLib",
             "genericSig": "<τ_0_0 where τ_0_0 : OSInAppBrowserLib.OSIABRouter>",
             "sugared_genericSig": "<Self where Self : OSInAppBrowserLib.OSIABRouter>",
@@ -120,9 +1772,254 @@
           "AccessControl",
           "RawDocComment"
         ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UIApplication",
+        "printedName": "UIApplication",
+        "declKind": "Class",
+        "usr": "c:objc(cs)UIApplication",
+        "moduleName": "UIKit",
+        "isOpen": true,
+        "intro_iOS": "2.0",
+        "objc_name": "UIApplication",
+        "declAttributes": [
+          "Available",
+          "ObjC",
+          "NonSendable",
+          "Custom",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)UIResponder",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "OSIABApplicationDelegate",
+            "printedName": "OSIABApplicationDelegate",
+            "usr": "s:17OSInAppBrowserLib24OSIABApplicationDelegateP",
+            "mangledName": "$s17OSInAppBrowserLib24OSIABApplicationDelegateP"
+          }
+        ]
       }
     ],
     "json_format_version": 8
   },
-  "ConstValues": []
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABViewStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 138,
+      "length": 12,
+      "value": "\"FORM_SHEET\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABViewStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 173,
+      "length": 13,
+      "value": "\"FULL_SCREEN\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABViewStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 208,
+      "length": 12,
+      "value": "\"PAGE_SHEET\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABViewStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 138,
+      "length": 12,
+      "value": "\"FORM_SHEET\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABViewStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 173,
+      "length": 13,
+      "value": "\"FULL_SCREEN\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABViewStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 208,
+      "length": 12,
+      "value": "\"PAGE_SHEET\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABApplicationRouterAdapter.swift",
+      "kind": "Dictionary",
+      "offset": 611,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABApplicationRouterAdapter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1669,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABDismissStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 171,
+      "length": 8,
+      "value": "\"CANCEL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABDismissStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 197,
+      "length": 7,
+      "value": "\"CLOSE\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABDismissStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 221,
+      "length": 6,
+      "value": "\"DONE\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABDismissStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 171,
+      "length": 8,
+      "value": "\"CANCEL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABDismissStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 197,
+      "length": 7,
+      "value": "\"CLOSE\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABDismissStyle.swift",
+      "kind": "StringLiteral",
+      "offset": 221,
+      "length": 6,
+      "value": "\"DONE\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 154,
+      "length": 16,
+      "value": "\"COVER_VERTICAL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 196,
+      "length": 16,
+      "value": "\"CROSS_DISSOLVE\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 239,
+      "length": 17,
+      "value": "\"FLIP_HORIZONTAL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 154,
+      "length": 16,
+      "value": "\"COVER_VERTICAL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 196,
+      "length": 16,
+      "value": "\"CROSS_DISSOLVE\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 239,
+      "length": 17,
+      "value": "\"FLIP_HORIZONTAL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABSystemBrowserOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1618,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABSystemBrowserOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1658,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABSafariViewControllerRouterAdapter.swift",
+      "kind": "StringLiteral",
+      "offset": 169,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter\""
+    }
+  ]
 }
