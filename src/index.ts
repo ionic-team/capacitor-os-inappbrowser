@@ -7,4 +7,5 @@ const InAppBrowser = registerPlugin<InAppBrowserPlugin>('InAppBrowser', {
 });
 
 export * from './definitions';
+export * from './defaults';
 export { InAppBrowser };
