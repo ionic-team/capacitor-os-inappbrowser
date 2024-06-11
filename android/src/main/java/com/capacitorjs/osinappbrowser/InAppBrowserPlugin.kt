@@ -4,6 +4,8 @@ import com.getcapacitor.PluginCall
 import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.ApplicationContextAdapter
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABApplicationRouterAdapter
 
 @CapacitorPlugin(name = "InAppBrowser")
 class InAppBrowserPlugin : Plugin() {
@@ -12,7 +14,8 @@ class InAppBrowserPlugin : Plugin() {
 
     override fun load() {
         super.load()
-        val router = OSBrowserRouterAdapter(context)
+        val applicationDelegate = ApplicationContextAdapter(context)
+        val router = OSIABApplicationRouterAdapter(applicationDelegate)
         engine = OSIABEngine(router)
     }
 
@@ -24,11 +27,12 @@ class InAppBrowserPlugin : Plugin() {
             return
         }
 
-        val success = engine?.openExternalBrowser(url) ?: false
-        if (success) {
-            call.resolve()
-        } else {
-            call.reject("Couldn't open '$url' using the external browser.")
+        engine?.openExternalBrowser(url) { success ->
+            if (success) {
+                call.resolve()
+            } else {
+                call.reject("Couldn't open '$url' using the external browser.")
+            }
         }
     }
 }
