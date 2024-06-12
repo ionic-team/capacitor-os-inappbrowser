@@ -2,16 +2,79 @@
 // swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
 // swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OSInAppBrowserLib
 // swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
 import SafariServices
 import Swift
+import SwiftUI
 import UIKit
+import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public struct OSIABEngine<ExternalBrowser, SystemBrowser> where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController? {
+public struct OSIABEngine<ExternalBrowser, SystemBrowser, WebView> where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, WebView : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController, WebView.ReturnType == UIKit.UIViewController {
   public init()
-  public func openExternalBrowser(_ url: Swift.String, routerDelegate: ExternalBrowser, _ completionHandler: @escaping (ExternalBrowser.ReturnType) -> Swift.Void)
-  public func openSystemBrowser(_ url: Swift.String, routerDelegate: SystemBrowser, _ completionHandler: @escaping (SystemBrowser.ReturnType) -> Swift.Void)
+  public func openExternalBrowser(_ url: Foundation.URL, routerDelegate: ExternalBrowser, _ completionHandler: @escaping (ExternalBrowser.ReturnType) -> Swift.Void)
+  public func openSystemBrowser(_ url: Foundation.URL, routerDelegate: SystemBrowser, _ completionHandler: @escaping (SystemBrowser.ReturnType) -> Swift.Void)
+  public func openWebView(_ url: Foundation.URL, routerDelegate: WebView, _ completionHandler: @escaping (WebView.ReturnType) -> Swift.Void)
+}
+public class OSIABWebViewOptions : OSInAppBrowserLib.OSIABOptions {
+  public init(showURL: Swift.Bool = true, showToolbar: Swift.Bool = true, clearCache: Swift.Bool = true, clearSessionCache: Swift.Bool = true, mediaPlaybackRequiresUserAction: Swift.Bool = false, closeButtonText: Swift.String = "Close", toolbarPosition: OSInAppBrowserLib.OSIABToolbarPosition = .defaultValue, showNavigationButtons: Swift.Bool = true, leftToRight: Swift.Bool = false, allowOverScroll: Swift.Bool = true, enableViewportScale: Swift.Bool = false, allowInLineMediaPlayback: Swift.Bool = false, surpressIncrementalRendering: Swift.Bool = false, viewStyle: OSInAppBrowserLib.OSIABViewStyle = .defaultValue, animationEffect: OSInAppBrowserLib.OSIABAnimationEffect = .defaultValue, customUserAgent: Swift.String? = nil)
+  @objc deinit
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public class OSIABOptions {
+  public init(viewStyle: OSInAppBrowserLib.OSIABViewStyle, animationEffect: OSInAppBrowserLib.OSIABAnimationEffect)
+  @objc deinit
+}
+
+
+
+
+
+
+public enum OSIABToolbarPosition : Swift.String {
+  case top
+  case bottom
+  public static let defaultValue: OSInAppBrowserLib.OSIABToolbarPosition
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol OSIABCacheManager {
+  typealias CacheCompletion = () -> Swift.Void
+  func clearCache(_ completionHandler: Self.CacheCompletion?)
+  func clearSessionCache(_ completionHandler: Self.CacheCompletion?)
+}
+extension OSInAppBrowserLib.OSIABCacheManager {
+  public func clearCache(_ completionHandler: Self.CacheCompletion? = nil)
+  public func clearSessionCache(_ completionHandler: Self.CacheCompletion? = nil)
+}
+public struct OSIABBrowserCacheManager {
+  public init(dataStore: WebKit.WKWebsiteDataStore)
+}
+extension OSInAppBrowserLib.OSIABBrowserCacheManager : OSInAppBrowserLib.OSIABCacheManager {
+  public func clearCache(_ completionHandler: OSInAppBrowserLib.OSIABBrowserCacheManager.CacheCompletion?)
+  public func clearSessionCache(_ completionHandler: OSInAppBrowserLib.OSIABBrowserCacheManager.CacheCompletion?)
 }
 public enum OSIABViewStyle : Swift.String {
   case formSheet
@@ -33,7 +96,7 @@ extension UIKit.UIApplication : OSInAppBrowserLib.OSIABApplicationDelegate {
 public class OSIABApplicationRouterAdapter : OSInAppBrowserLib.OSIABRouter {
   public typealias ReturnType = Swift.Bool
   public init(_ application: any OSInAppBrowserLib.OSIABApplicationDelegate)
-  public func handleOpen(_ urlString: Swift.String, _ completionHandler: @escaping (OSInAppBrowserLib.OSIABApplicationRouterAdapter.ReturnType) -> Swift.Void)
+  public func handleOpen(_ url: Foundation.URL, _ completionHandler: @escaping (OSInAppBrowserLib.OSIABApplicationRouterAdapter.ReturnType) -> Swift.Void)
   @objc deinit
 }
 public enum OSIABDismissStyle : Swift.String {
@@ -58,13 +121,29 @@ public enum OSIABAnimationEffect : Swift.String {
     get
   }
 }
-public struct OSIABSystemBrowserOptions {
+public struct OSIABWebViewCallbackHandler {
+  public init(onDelegateURL: @escaping (Foundation.URL) -> Swift.Void, onDelegateAlertController: @escaping (UIKit.UIAlertController) -> Swift.Void, onBrowserPageLoad: @escaping () -> Swift.Void, onBrowserClosed: @escaping (Swift.Bool) -> Swift.Void)
+}
+
+
+
+@objc public class OSIABWebViewRouterAdapter : ObjectiveC.NSObject, OSInAppBrowserLib.OSIABRouter {
+  public typealias ReturnType = UIKit.UIViewController
+  public init(_ options: OSInAppBrowserLib.OSIABWebViewOptions, cacheManager: any OSInAppBrowserLib.OSIABCacheManager, callbackHandler: OSInAppBrowserLib.OSIABWebViewCallbackHandler)
+  public func handleOpen(_ url: Foundation.URL, _ completionHandler: @escaping (OSInAppBrowserLib.OSIABWebViewRouterAdapter.ReturnType) -> Swift.Void)
+  @objc deinit
+}
+extension OSInAppBrowserLib.OSIABWebViewRouterAdapter : UIKit.UIAdaptivePresentationControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationControllerDidDismiss(_ presentationController: UIKit.UIPresentationController)
+}
+public class OSIABSystemBrowserOptions : OSInAppBrowserLib.OSIABOptions {
   public init(dismissStyle: OSInAppBrowserLib.OSIABDismissStyle = .defaultValue, viewStyle: OSInAppBrowserLib.OSIABViewStyle = .defaultValue, animationEffect: OSInAppBrowserLib.OSIABAnimationEffect = .defaultValue, enableBarsCollapsing: Swift.Bool = true, enableReadersMode: Swift.Bool = false)
+  @objc deinit
 }
 @objc public class OSIABSafariViewControllerRouterAdapter : ObjectiveC.NSObject, OSInAppBrowserLib.OSIABRouter {
-  public typealias ReturnType = UIKit.UIViewController?
+  public typealias ReturnType = UIKit.UIViewController
   public init(_ options: OSInAppBrowserLib.OSIABSystemBrowserOptions, onBrowserPageLoad: @escaping () -> Swift.Void, onBrowserClosed: @escaping () -> Swift.Void)
-  public func handleOpen(_ urlString: Swift.String, _ completionHandler: @escaping (OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter.ReturnType) -> Swift.Void)
+  public func handleOpen(_ url: Foundation.URL, _ completionHandler: @escaping (OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter.ReturnType) -> Swift.Void)
   @objc deinit
 }
 extension OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter : SafariServices.SFSafariViewControllerDelegate {
@@ -76,8 +155,11 @@ extension OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter : UIKit.UIAda
 }
 public protocol OSIABRouter {
   associatedtype ReturnType
-  func handleOpen(_ url: Swift.String, _ completionHandler: @escaping (Self.ReturnType) -> Swift.Void)
+  func handleOpen(_ url: Foundation.URL, _ completionHandler: @escaping (Self.ReturnType) -> Swift.Void)
 }
+extension OSInAppBrowserLib.OSIABToolbarPosition : Swift.Equatable {}
+extension OSInAppBrowserLib.OSIABToolbarPosition : Swift.Hashable {}
+extension OSInAppBrowserLib.OSIABToolbarPosition : Swift.RawRepresentable {}
 extension OSInAppBrowserLib.OSIABViewStyle : Swift.Equatable {}
 extension OSInAppBrowserLib.OSIABViewStyle : Swift.Hashable {}
 extension OSInAppBrowserLib.OSIABViewStyle : Swift.RawRepresentable {}

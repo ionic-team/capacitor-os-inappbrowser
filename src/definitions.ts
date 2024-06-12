@@ -53,11 +53,10 @@ export interface iOSWebViewOptions {
 
   enableViewportScale: boolean;
   allowInLineMediaPlayback: boolean;
-  keyboardDisplayRequiresUserAction: boolean;
   surpressIncrementalRendering: boolean;
   
   viewStyle: iOSViewStyle;
-  animation: iOSAnimation;
+  animationEffect: iOSAnimation;
 }
 
 export interface AndroidWebViewOptions {
@@ -110,14 +109,21 @@ export interface OpenInDefaultParameterModel {
 }
 
 /**
- * Defines the options for opening a URL in the syste, browser.
+ * Defines the options for opening a URL in the system browser.
  */
 export interface OpenInSystemBrowserParameterModel extends OpenInDefaultParameterModel {
   options: SystemBrowserOptions;
 }
 
+/**
+ * Defines the options for opening a URL in the web view.
+ */
+export interface OpenInWebViewParameterModel extends OpenInDefaultParameterModel {
+  options: WebViewOptions;
+}
+
 export interface InAppBrowserPlugin {
-  openInWebView(url: string, options: WebViewOptions): void;
+  openInWebView(model: OpenInWebViewParameterModel): void;
   openInSystemBrowser(model: OpenInSystemBrowserParameterModel): void;
   openInExternalBrowser(model: OpenInDefaultParameterModel): void;
   close(): void;

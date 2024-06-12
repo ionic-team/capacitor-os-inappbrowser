@@ -1,5 +1,5 @@
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { InAppBrowser, SystemBrowserOptions, DefaultSystemBrowserOptions, DefaultAndroidSystemBrowserOptions, DismissStyle, iOSViewStyle, iOSAnimation } from '@capacitor/os-inappbrowser';
+import { InAppBrowser, SystemBrowserOptions, DefaultSystemBrowserOptions, DefaultAndroidSystemBrowserOptions, WebViewOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition } from '@capacitor/os-inappbrowser';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -33,6 +33,39 @@ const Home: React.FC = () => {
     });
   }
 
+  const openInWebViewWithDefaults = () => {
+    InAppBrowser.openInWebView({
+      url: "https://www.google.com",
+      options: DefaultWebViewOptions
+    });
+  }
+
+  const openInWebViewWithCustomValues = () => {
+    InAppBrowser.openInWebView({
+      url: "https://www.outsystems.com/",
+      options: {
+        showURL: false,
+        showToolbar: true,
+        clearCache: false,
+        clearSessionCache: false,
+        mediaPlaybackRequiresUserAction: true,
+        closeButtonText: "Done",
+        toolbarPosition: ToolbarPosition.BOTTOM,
+        showNavigationButtons: false,
+        leftToRight: true,
+        android: DefaultAndroidWebViewOptions,
+        iOS: {
+          allowOverScroll: false,
+          enableViewportScale: true,
+          allowInLineMediaPlayback: true,
+          surpressIncrementalRendering: true,
+          viewStyle: iOSViewStyle.PAGE_SHEET,
+          animationEffect: iOSAnimation.CROSS_DISSOLVE
+        }
+      }
+    });
+  }
+
   InAppBrowser.addListener('browserClosed', () => {
     console.log("browser was closed.");
   });
@@ -58,6 +91,8 @@ const Home: React.FC = () => {
           <IonButton onClick={test}>TEST</IonButton>
           <IonButton onClick={openInSystemBrowserWithDefaults}>System Browser with Defaults</IonButton>
           <IonButton onClick={openInSystemBrowserWithCustomValues}>System Browser with Custom Values</IonButton>
+          <IonButton onClick={openInWebViewWithDefaults}>Web View with Defaults</IonButton>
+          <IonButton onClick={openInWebViewWithCustomValues}>Web View with Custom Values</IonButton>
         </div>
       </IonContent>
     </IonPage>

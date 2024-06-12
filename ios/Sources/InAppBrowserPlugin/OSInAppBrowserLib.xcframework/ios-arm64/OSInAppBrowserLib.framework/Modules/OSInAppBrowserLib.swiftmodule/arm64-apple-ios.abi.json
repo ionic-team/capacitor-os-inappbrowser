@@ -24,7 +24,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "OSIABEngine",
-                "printedName": "OSInAppBrowserLib.OSIABEngine<τ_0_0, τ_0_1>",
+                "printedName": "OSInAppBrowserLib.OSIABEngine<τ_0_0, τ_0_1, τ_0_2>",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -35,17 +35,22 @@
                     "kind": "TypeNominal",
                     "name": "GenericTypeParam",
                     "printedName": "τ_0_1"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "GenericTypeParam",
+                    "printedName": "τ_0_2"
                   }
                 ],
                 "usr": "s:17OSInAppBrowserLib11OSIABEngineV"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:17OSInAppBrowserLib11OSIABEngineVACyxq_Gycfc",
-            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineVACyxq_Gycfc",
+            "usr": "s:17OSInAppBrowserLib11OSIABEngineVACyxq_q0_Gycfc",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineVACyxq_q0_Gycfc",
             "moduleName": "OSInAppBrowserLib",
-            "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController?>",
-            "sugared_genericSig": "<ExternalBrowser, SystemBrowser where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController?>",
+            "genericSig": "<τ_0_0, τ_0_1, τ_0_2 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_2 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController, τ_0_2.ReturnType == UIKit.UIViewController>",
+            "sugared_genericSig": "<ExternalBrowser, SystemBrowser, WebView where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, WebView : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController, WebView.ReturnType == UIKit.UIViewController>",
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
@@ -64,9 +69,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
               },
               {
                 "kind": "TypeNominal",
@@ -92,11 +97,11 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17OSInAppBrowserLib11OSIABEngineV012openExternalC0_14routerDelegate_ySS_xySbctF",
-            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV012openExternalC0_14routerDelegate_ySS_xySbctF",
+            "usr": "s:17OSInAppBrowserLib11OSIABEngineV012openExternalC0_14routerDelegate_y10Foundation3URLV_xySbctF",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV012openExternalC0_14routerDelegate_y10Foundation3URLV_xySbctF",
             "moduleName": "OSInAppBrowserLib",
-            "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController?>",
-            "sugared_genericSig": "<ExternalBrowser, SystemBrowser where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController?>",
+            "genericSig": "<τ_0_0, τ_0_1, τ_0_2 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_2 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController, τ_0_2.ReturnType == UIKit.UIViewController>",
+            "sugared_genericSig": "<ExternalBrowser, SystemBrowser, WebView where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, WebView : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController, WebView.ReturnType == UIKit.UIViewController>",
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
@@ -115,9 +120,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
               },
               {
                 "kind": "TypeNominal",
@@ -143,11 +148,62 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17OSInAppBrowserLib11OSIABEngineV010openSystemC0_14routerDelegate_ySS_q_ySo16UIViewControllerCSgctF",
-            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV010openSystemC0_14routerDelegate_ySS_q_ySo16UIViewControllerCSgctF",
+            "usr": "s:17OSInAppBrowserLib11OSIABEngineV010openSystemC0_14routerDelegate_y10Foundation3URLV_q_ySo16UIViewControllerCctF",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV010openSystemC0_14routerDelegate_y10Foundation3URLV_q_ySo16UIViewControllerCctF",
             "moduleName": "OSInAppBrowserLib",
-            "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController?>",
-            "sugared_genericSig": "<ExternalBrowser, SystemBrowser where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController?>",
+            "genericSig": "<τ_0_0, τ_0_1, τ_0_2 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_2 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController, τ_0_2.ReturnType == UIKit.UIViewController>",
+            "sugared_genericSig": "<ExternalBrowser, SystemBrowser, WebView where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, WebView : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController, WebView.ReturnType == UIKit.UIViewController>",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "openWebView",
+            "printedName": "openWebView(_:routerDelegate:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_2"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(τ_0_2.ReturnType) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DependentMember",
+                    "printedName": "τ_0_2.ReturnType"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib11OSIABEngineV11openWebView_14routerDelegate_y10Foundation3URLV_q0_ySo16UIViewControllerCctF",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV11openWebView_14routerDelegate_y10Foundation3URLV_q0_ySo16UIViewControllerCctF",
+            "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0, τ_0_1, τ_0_2 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_2 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController, τ_0_2.ReturnType == UIKit.UIViewController>",
+            "sugared_genericSig": "<ExternalBrowser, SystemBrowser, WebView where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, WebView : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController, WebView.ReturnType == UIKit.UIViewController>",
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
@@ -159,11 +215,888 @@
         "usr": "s:17OSInAppBrowserLib11OSIABEngineV",
         "mangledName": "$s17OSInAppBrowserLib11OSIABEngineV",
         "moduleName": "OSInAppBrowserLib",
-        "genericSig": "<τ_0_0, τ_0_1 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController?>",
-        "sugared_genericSig": "<ExternalBrowser, SystemBrowser where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController?>",
+        "genericSig": "<τ_0_0, τ_0_1, τ_0_2 where τ_0_0 : OSInAppBrowserLib.OSIABRouter, τ_0_1 : OSInAppBrowserLib.OSIABRouter, τ_0_2 : OSInAppBrowserLib.OSIABRouter, τ_0_0.ReturnType == Swift.Bool, τ_0_1.ReturnType == UIKit.UIViewController, τ_0_2.ReturnType == UIKit.UIViewController>",
+        "sugared_genericSig": "<ExternalBrowser, SystemBrowser, WebView where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, WebView : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController, WebView.ReturnType == UIKit.UIViewController>",
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABWebViewOptions",
+        "printedName": "OSIABWebViewOptions",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(showURL:showToolbar:clearCache:clearSessionCache:mediaPlaybackRequiresUserAction:closeButtonText:toolbarPosition:showNavigationButtons:leftToRight:allowOverScroll:enableViewportScale:allowInLineMediaPlayback:surpressIncrementalRendering:viewStyle:animationEffect:customUserAgent:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABWebViewOptions",
+                "printedName": "OSInAppBrowserLib.OSIABWebViewOptions",
+                "usr": "s:17OSInAppBrowserLib19OSIABWebViewOptionsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABToolbarPosition",
+                "printedName": "OSInAppBrowserLib.OSIABToolbarPosition",
+                "hasDefaultArg": true,
+                "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABViewStyle",
+                "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                "hasDefaultArg": true,
+                "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABAnimationEffect",
+                "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                "hasDefaultArg": true,
+                "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib19OSIABWebViewOptionsC7showURL0H7Toolbar10clearCache0k7SessionL031mediaPlaybackRequiresUserAction15closeButtonText15toolbarPosition0H17NavigationButtons11leftToRight15allowOverScroll19enableViewportScale016allowInLineMediaO028surpressIncrementalRendering9viewStyle15animationEffect06customQ5AgentACSb_S4bSSAA012OSIABToolbarW0OS6bAA14OSIABViewStyleOAA20OSIABAnimationEffectOSSSgtcfc",
+            "mangledName": "$s17OSInAppBrowserLib19OSIABWebViewOptionsC7showURL0H7Toolbar10clearCache0k7SessionL031mediaPlaybackRequiresUserAction15closeButtonText15toolbarPosition0H17NavigationButtons11leftToRight15allowOverScroll19enableViewportScale016allowInLineMediaO028surpressIncrementalRendering9viewStyle15animationEffect06customQ5AgentACSb_S4bSSAA012OSIABToolbarW0OS6bAA14OSIABViewStyleOAA20OSIABAnimationEffectOSSSgtcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(viewStyle:animationEffect:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABWebViewOptions",
+                "printedName": "OSInAppBrowserLib.OSIABWebViewOptions",
+                "usr": "s:17OSInAppBrowserLib19OSIABWebViewOptionsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABViewStyle",
+                "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABAnimationEffect",
+                "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib19OSIABWebViewOptionsC9viewStyle15animationEffectAcA09OSIABViewI0O_AA014OSIABAnimationK0Otcfc",
+            "mangledName": "$s17OSInAppBrowserLib19OSIABWebViewOptionsC9viewStyle15animationEffectAcA09OSIABViewI0O_AA014OSIABAnimationK0Otcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "overriding": true,
+            "implicit": true,
+            "declAttributes": [
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:17OSInAppBrowserLib19OSIABWebViewOptionsC",
+        "mangledName": "$s17OSInAppBrowserLib19OSIABWebViewOptionsC",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "superclassUsr": "s:17OSInAppBrowserLib12OSIABOptionsC",
+        "superclassNames": [
+          "OSInAppBrowserLib.OSIABOptions"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABOptions",
+        "printedName": "OSIABOptions",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(viewStyle:animationEffect:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABOptions",
+                "printedName": "OSInAppBrowserLib.OSIABOptions",
+                "usr": "s:17OSInAppBrowserLib12OSIABOptionsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABViewStyle",
+                "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABAnimationEffect",
+                "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib12OSIABOptionsC9viewStyle15animationEffectAcA09OSIABViewG0O_AA014OSIABAnimationI0Otcfc",
+            "mangledName": "$s17OSInAppBrowserLib12OSIABOptionsC9viewStyle15animationEffectAcA09OSIABViewG0O_AA014OSIABAnimationI0Otcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:17OSInAppBrowserLib12OSIABOptionsC",
+        "mangledName": "$s17OSInAppBrowserLib12OSIABOptionsC",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABToolbarPosition",
+        "printedName": "OSIABToolbarPosition",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "top",
+            "printedName": "top",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABToolbarPosition.Type) -> OSInAppBrowserLib.OSIABToolbarPosition",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABToolbarPosition",
+                    "printedName": "OSInAppBrowserLib.OSIABToolbarPosition",
+                    "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABToolbarPosition.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABToolbarPosition",
+                        "printedName": "OSInAppBrowserLib.OSIABToolbarPosition",
+                        "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO3topyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABToolbarPositionO3topyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "bottom",
+            "printedName": "bottom",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OSInAppBrowserLib.OSIABToolbarPosition.Type) -> OSInAppBrowserLib.OSIABToolbarPosition",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABToolbarPosition",
+                    "printedName": "OSInAppBrowserLib.OSIABToolbarPosition",
+                    "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OSInAppBrowserLib.OSIABToolbarPosition.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OSIABToolbarPosition",
+                        "printedName": "OSInAppBrowserLib.OSIABToolbarPosition",
+                        "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO6bottomyA2CmF",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABToolbarPositionO6bottomyA2CmF",
+            "moduleName": "OSInAppBrowserLib"
+          },
+          {
+            "kind": "Var",
+            "name": "defaultValue",
+            "printedName": "defaultValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABToolbarPosition",
+                "printedName": "OSInAppBrowserLib.OSIABToolbarPosition",
+                "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO12defaultValueACvpZ",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABToolbarPositionO12defaultValueACvpZ",
+            "moduleName": "OSInAppBrowserLib",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABToolbarPosition",
+                    "printedName": "OSInAppBrowserLib.OSIABToolbarPosition",
+                    "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO12defaultValueACvgZ",
+                "mangledName": "$s17OSInAppBrowserLib20OSIABToolbarPositionO12defaultValueACvgZ",
+                "moduleName": "OSInAppBrowserLib",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "OSInAppBrowserLib.OSIABToolbarPosition?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OSIABToolbarPosition",
+                    "printedName": "OSInAppBrowserLib.OSIABToolbarPosition",
+                    "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO8rawValueACSgSS_tcfc",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABToolbarPositionO8rawValueACSgSS_tcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO8rawValueSSvp",
+            "mangledName": "$s17OSInAppBrowserLib20OSIABToolbarPositionO8rawValueSSvp",
+            "moduleName": "OSInAppBrowserLib",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO8rawValueSSvg",
+                "mangledName": "$s17OSInAppBrowserLib20OSIABToolbarPositionO8rawValueSSvg",
+                "moduleName": "OSInAppBrowserLib",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:17OSInAppBrowserLib20OSIABToolbarPositionO",
+        "mangledName": "$s17OSInAppBrowserLib20OSIABToolbarPositionO",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABCacheManager",
+        "printedName": "OSIABCacheManager",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "clearCache",
+            "printedName": "clearCache(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib17OSIABCacheManagerP10clearCacheyyyycSgF",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABCacheManagerP10clearCacheyyyycSgF",
+            "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : OSInAppBrowserLib.OSIABCacheManager>",
+            "sugared_genericSig": "<Self where Self : OSInAppBrowserLib.OSIABCacheManager>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearSessionCache",
+            "printedName": "clearSessionCache(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib17OSIABCacheManagerP17clearSessionCacheyyyycSgF",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABCacheManagerP17clearSessionCacheyyyycSgF",
+            "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : OSInAppBrowserLib.OSIABCacheManager>",
+            "sugared_genericSig": "<Self where Self : OSInAppBrowserLib.OSIABCacheManager>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearCache",
+            "printedName": "clearCache(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib17OSIABCacheManagerPAAE10clearCacheyyyycSgF",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABCacheManagerPAAE10clearCacheyyyycSgF",
+            "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : OSInAppBrowserLib.OSIABCacheManager>",
+            "sugared_genericSig": "<Self where Self : OSInAppBrowserLib.OSIABCacheManager>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearSessionCache",
+            "printedName": "clearSessionCache(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib17OSIABCacheManagerPAAE17clearSessionCacheyyyycSgF",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABCacheManagerPAAE17clearSessionCacheyyyycSgF",
+            "moduleName": "OSInAppBrowserLib",
+            "genericSig": "<τ_0_0 where τ_0_0 : OSInAppBrowserLib.OSIABCacheManager>",
+            "sugared_genericSig": "<Self where Self : OSInAppBrowserLib.OSIABCacheManager>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:17OSInAppBrowserLib17OSIABCacheManagerP",
+        "mangledName": "$s17OSInAppBrowserLib17OSIABCacheManagerP",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABBrowserCacheManager",
+        "printedName": "OSIABBrowserCacheManager",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(dataStore:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABBrowserCacheManager",
+                "printedName": "OSInAppBrowserLib.OSIABBrowserCacheManager",
+                "usr": "s:17OSInAppBrowserLib24OSIABBrowserCacheManagerV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKWebsiteDataStore",
+                "printedName": "WebKit.WKWebsiteDataStore",
+                "usr": "c:objc(cs)WKWebsiteDataStore"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib24OSIABBrowserCacheManagerV9dataStoreACSo013WKWebsiteDataI0C_tcfc",
+            "mangledName": "$s17OSInAppBrowserLib24OSIABBrowserCacheManagerV9dataStoreACSo013WKWebsiteDataI0C_tcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "clearCache",
+            "printedName": "clearCache(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib24OSIABBrowserCacheManagerV05clearF0yyyycSgF",
+            "mangledName": "$s17OSInAppBrowserLib24OSIABBrowserCacheManagerV05clearF0yyyycSgF",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearSessionCache",
+            "printedName": "clearSessionCache(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib24OSIABBrowserCacheManagerV012clearSessionF0yyyycSgF",
+            "mangledName": "$s17OSInAppBrowserLib24OSIABBrowserCacheManagerV012clearSessionF0yyyycSgF",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:17OSInAppBrowserLib24OSIABBrowserCacheManagerV",
+        "mangledName": "$s17OSInAppBrowserLib24OSIABBrowserCacheManagerV",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "OSIABCacheManager",
+            "printedName": "OSIABCacheManager",
+            "usr": "s:17OSInAppBrowserLib17OSIABCacheManagerP",
+            "mangledName": "$s17OSInAppBrowserLib17OSIABCacheManagerP"
+          }
         ]
       },
       {
@@ -627,9 +1560,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
               },
               {
                 "kind": "TypeFunc",
@@ -651,8 +1584,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17OSInAppBrowserLib29OSIABApplicationRouterAdapterC10handleOpenyySS_ySbctF",
-            "mangledName": "$s17OSInAppBrowserLib29OSIABApplicationRouterAdapterC10handleOpenyySS_ySbctF",
+            "usr": "s:17OSInAppBrowserLib29OSIABApplicationRouterAdapterC10handleOpenyy10Foundation3URLV_ySbctF",
+            "mangledName": "$s17OSInAppBrowserLib29OSIABApplicationRouterAdapterC10handleOpenyy10Foundation3URLV_ySbctF",
             "moduleName": "OSInAppBrowserLib",
             "declAttributes": [
               "AccessControl"
@@ -692,6 +1625,20 @@
             "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
       },
       {
         "kind": "Import",
@@ -987,6 +1934,13 @@
       },
       {
         "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -1279,6 +2233,376 @@
       },
       {
         "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABWebViewCallbackHandler",
+        "printedName": "OSIABWebViewCallbackHandler",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(onDelegateURL:onDelegateAlertController:onBrowserPageLoad:onBrowserClosed:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABWebViewCallbackHandler",
+                "printedName": "OSInAppBrowserLib.OSIABWebViewCallbackHandler",
+                "usr": "s:17OSInAppBrowserLib27OSIABWebViewCallbackHandlerV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.URL) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UIKit.UIAlertController) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIAlertController",
+                    "printedName": "UIKit.UIAlertController",
+                    "usr": "c:objc(cs)UIAlertController"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib27OSIABWebViewCallbackHandlerV13onDelegateURL0iJ15AlertController0iC8PageLoad0iC6ClosedACy10Foundation0K0Vc_ySo07UIAlertM0CcyycySbctcfc",
+            "mangledName": "$s17OSInAppBrowserLib27OSIABWebViewCallbackHandlerV13onDelegateURL0iJ15AlertController0iC8PageLoad0iC6ClosedACy10Foundation0K0Vc_ySo07UIAlertM0CcyycySbctcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:17OSInAppBrowserLib27OSIABWebViewCallbackHandlerV",
+        "mangledName": "$s17OSInAppBrowserLib27OSIABWebViewCallbackHandlerV",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OSIABWebViewRouterAdapter",
+        "printedName": "OSIABWebViewRouterAdapter",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(_:cacheManager:callbackHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABWebViewRouterAdapter",
+                "printedName": "OSInAppBrowserLib.OSIABWebViewRouterAdapter",
+                "usr": "c:@M@OSInAppBrowserLib@objc(cs)OSIABWebViewRouterAdapter"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABWebViewOptions",
+                "printedName": "OSInAppBrowserLib.OSIABWebViewOptions",
+                "usr": "s:17OSInAppBrowserLib19OSIABWebViewOptionsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABCacheManager",
+                "printedName": "OSInAppBrowserLib.OSIABCacheManager",
+                "usr": "s:17OSInAppBrowserLib17OSIABCacheManagerP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABWebViewCallbackHandler",
+                "printedName": "OSInAppBrowserLib.OSIABWebViewCallbackHandler",
+                "usr": "s:17OSInAppBrowserLib27OSIABWebViewCallbackHandlerV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib25OSIABWebViewRouterAdapterC_12cacheManager15callbackHandlerAcA0eF7OptionsC_AA010OSIABCacheJ0_pAA0ef8CallbackL0Vtcfc",
+            "mangledName": "$s17OSInAppBrowserLib25OSIABWebViewRouterAdapterC_12cacheManager15callbackHandlerAcA0eF7OptionsC_AA010OSIABCacheJ0_pAA0ef8CallbackL0Vtcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "handleOpen",
+            "printedName": "handleOpen(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UIKit.UIViewController) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17OSInAppBrowserLib25OSIABWebViewRouterAdapterC10handleOpenyy10Foundation3URLV_ySo16UIViewControllerCctF",
+            "mangledName": "$s17OSInAppBrowserLib25OSIABWebViewRouterAdapterC10handleOpenyy10Foundation3URLV_ySo16UIViewControllerCctF",
+            "moduleName": "OSInAppBrowserLib",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABWebViewRouterAdapter",
+                "printedName": "OSInAppBrowserLib.OSIABWebViewRouterAdapter",
+                "usr": "c:@M@OSInAppBrowserLib@objc(cs)OSIABWebViewRouterAdapter"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@OSInAppBrowserLib@objc(cs)OSIABWebViewRouterAdapter(im)init",
+            "mangledName": "$s17OSInAppBrowserLib25OSIABWebViewRouterAdapterCACycfc",
+            "moduleName": "OSInAppBrowserLib",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "presentationControllerDidDismiss",
+            "printedName": "presentationControllerDidDismiss(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIPresentationController",
+                "printedName": "UIKit.UIPresentationController",
+                "usr": "c:objc(cs)UIPresentationController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@OSInAppBrowserLib@objc(cs)OSIABWebViewRouterAdapter(im)presentationControllerDidDismiss:",
+            "mangledName": "$s17OSInAppBrowserLib25OSIABWebViewRouterAdapterC32presentationControllerDidDismissyySo014UIPresentationJ0CF",
+            "moduleName": "OSInAppBrowserLib",
+            "objc_name": "presentationControllerDidDismiss:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@OSInAppBrowserLib@objc(cs)OSIABWebViewRouterAdapter",
+        "mangledName": "$s17OSInAppBrowserLib25OSIABWebViewRouterAdapterC",
+        "moduleName": "OSInAppBrowserLib",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "OSIABRouter",
+            "printedName": "OSIABRouter",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReturnType",
+                "printedName": "ReturnType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:17OSInAppBrowserLib11OSIABRouterP",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "SafariServices",
         "printedName": "SafariServices",
         "declKind": "Import",
@@ -1298,7 +2622,7 @@
                 "kind": "TypeNominal",
                 "name": "OSIABSystemBrowserOptions",
                 "printedName": "OSInAppBrowserLib.OSIABSystemBrowserOptions",
-                "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsV"
+                "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsC"
               },
               {
                 "kind": "TypeNominal",
@@ -1337,23 +2661,62 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsV12dismissStyle04viewH015animationEffect20enableBarsCollapsing0L11ReadersModeAcA012OSIABDismissH0O_AA09OSIABViewH0OAA014OSIABAnimationK0OS2btcfc",
-            "mangledName": "$s17OSInAppBrowserLib011OSIABSystemC7OptionsV12dismissStyle04viewH015animationEffect20enableBarsCollapsing0L11ReadersModeAcA012OSIABDismissH0O_AA09OSIABViewH0OAA014OSIABAnimationK0OS2btcfc",
+            "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsC12dismissStyle04viewH015animationEffect20enableBarsCollapsing0L11ReadersModeAcA012OSIABDismissH0O_AA09OSIABViewH0OAA014OSIABAnimationK0OS2btcfc",
+            "mangledName": "$s17OSInAppBrowserLib011OSIABSystemC7OptionsC12dismissStyle04viewH015animationEffect20enableBarsCollapsing0L11ReadersModeAcA012OSIABDismissH0O_AA09OSIABViewH0OAA014OSIABAnimationK0OS2btcfc",
             "moduleName": "OSInAppBrowserLib",
             "declAttributes": [
               "AccessControl",
               "RawDocComment"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(viewStyle:animationEffect:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABSystemBrowserOptions",
+                "printedName": "OSInAppBrowserLib.OSIABSystemBrowserOptions",
+                "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABViewStyle",
+                "printedName": "OSInAppBrowserLib.OSIABViewStyle",
+                "usr": "s:17OSInAppBrowserLib14OSIABViewStyleO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OSIABAnimationEffect",
+                "printedName": "OSInAppBrowserLib.OSIABAnimationEffect",
+                "usr": "s:17OSInAppBrowserLib20OSIABAnimationEffectO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsC9viewStyle15animationEffectAcA09OSIABViewH0O_AA014OSIABAnimationJ0Otcfc",
+            "mangledName": "$s17OSInAppBrowserLib011OSIABSystemC7OptionsC9viewStyle15animationEffectAcA09OSIABViewH0O_AA014OSIABAnimationJ0Otcfc",
+            "moduleName": "OSInAppBrowserLib",
+            "overriding": true,
+            "implicit": true,
+            "declAttributes": [
+              "Override"
+            ],
+            "init_kind": "Designated"
           }
         ],
-        "declKind": "Struct",
-        "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsV",
-        "mangledName": "$s17OSInAppBrowserLib011OSIABSystemC7OptionsV",
+        "declKind": "Class",
+        "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsC",
+        "mangledName": "$s17OSInAppBrowserLib011OSIABSystemC7OptionsC",
         "moduleName": "OSInAppBrowserLib",
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
+        ],
+        "superclassUsr": "s:17OSInAppBrowserLib12OSIABOptionsC",
+        "superclassNames": [
+          "OSInAppBrowserLib.OSIABOptions"
         ]
       },
       {
@@ -1383,7 +2746,7 @@
                 "kind": "TypeNominal",
                 "name": "OSIABSystemBrowserOptions",
                 "printedName": "OSInAppBrowserLib.OSIABSystemBrowserOptions",
-                "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsV"
+                "usr": "s:17OSInAppBrowserLib011OSIABSystemC7OptionsC"
               },
               {
                 "kind": "TypeFunc",
@@ -1421,8 +2784,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC_02onC8PageLoad0jC6ClosedAcA011OSIABSystemC7OptionsV_yycyyctcfc",
-            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC_02onC8PageLoad0jC6ClosedAcA011OSIABSystemC7OptionsV_yycyyctcfc",
+            "usr": "s:17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC_02onC8PageLoad0jC6ClosedAcA011OSIABSystemC7OptionsC_yycyyctcfc",
+            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC_02onC8PageLoad0jC6ClosedAcA011OSIABSystemC7OptionsC_yycyyctcfc",
             "moduleName": "OSInAppBrowserLib",
             "declAttributes": [
               "AccessControl",
@@ -1442,14 +2805,14 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
               },
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(UIKit.UIViewController?) -> ()",
+                "printedName": "(UIKit.UIViewController) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -1458,24 +2821,16 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "UIKit.UIViewController?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UIViewController",
-                        "printedName": "UIKit.UIViewController",
-                        "usr": "c:objc(cs)UIViewController"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
                   }
                 ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC10handleOpenyySS_ySo06UIViewG0CSgctF",
-            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC10handleOpenyySS_ySo06UIViewG0CSgctF",
+            "usr": "s:17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC10handleOpenyy10Foundation3URLV_ySo06UIViewG0CctF",
+            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC10handleOpenyy10Foundation3URLV_ySo06UIViewG0CctF",
             "moduleName": "OSInAppBrowserLib",
             "declAttributes": [
               "AccessControl"
@@ -1632,17 +2987,9 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "UIKit.UIViewController?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "UIViewController",
-                        "printedName": "UIKit.UIViewController",
-                        "usr": "c:objc(cs)UIViewController"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "UIViewController",
+                    "printedName": "UIKit.UIViewController",
+                    "usr": "c:objc(cs)UIViewController"
                   }
                 ]
               }
@@ -1702,6 +3049,13 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "OSInAppBrowserLib"
+      },
+      {
         "kind": "TypeDecl",
         "name": "OSIABRouter",
         "printedName": "OSIABRouter",
@@ -1728,9 +3082,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
               },
               {
                 "kind": "TypeFunc",
@@ -1751,8 +3105,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:17OSInAppBrowserLib11OSIABRouterP10handleOpenyySS_y10ReturnTypeQzctF",
-            "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP10handleOpenyySS_y10ReturnTypeQzctF",
+            "usr": "s:17OSInAppBrowserLib11OSIABRouterP10handleOpenyy10Foundation3URLV_y10ReturnTypeQzctF",
+            "mangledName": "$s17OSInAppBrowserLib11OSIABRouterP10handleOpenyy10Foundation3URLV_y10ReturnTypeQzctF",
             "moduleName": "OSInAppBrowserLib",
             "genericSig": "<τ_0_0 where τ_0_0 : OSInAppBrowserLib.OSIABRouter>",
             "sugared_genericSig": "<Self where Self : OSInAppBrowserLib.OSIABRouter>",
@@ -1861,6 +3215,1651 @@
   },
   "ConstValues": [
     {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3946,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3980,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4013,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4053,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4107,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 4148,
+      "length": 7,
+      "value": "\"Close\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4258,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4292,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4331,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4373,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4421,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4473,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 4936,
+      "length": 7,
+      "value": "\"Close\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 159,
+      "length": 19,
+      "value": "\"OSInAppBrowserLib.OSIABWebViewOptions\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABWebViewOptions.swift",
+      "kind": "Array",
+      "offset": 5750,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3596,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 3883,
+      "length": 7,
+      "value": "\"Close\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3916,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3950,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4057,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4091,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 4495,
+      "length": 24,
+      "value": "\"https:\/\/outsystems.com\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4889,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 4942,
+      "length": 41,
+      "value": "\"Close Button count: \""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 4982,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5039,
+      "length": 22,
+      "value": "\"Default - Light Mode\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf_.swift",
+      "kind": "StringLiteral",
+      "offset": 247,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 313,
+      "length": 3,
+      "value": "139"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 346,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf_.swift",
+      "kind": "StringLiteral",
+      "offset": 459,
+      "length": 22,
+      "value": "\"Default - Light Mode\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5100,
+      "length": 21,
+      "value": "\"Default - Dark Mode\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf2_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf2_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 314,
+      "length": 3,
+      "value": "143"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf2_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 347,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf2_.swift",
+      "kind": "StringLiteral",
+      "offset": 460,
+      "length": 21,
+      "value": "\"Default - Dark Mode\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5234,
+      "length": 26,
+      "value": "\"Custom Close Button Text\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5311,
+      "length": 6,
+      "value": "\"Done\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf4_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf4_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 314,
+      "length": 3,
+      "value": "150"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf4_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 347,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf4_.swift",
+      "kind": "StringLiteral",
+      "offset": 460,
+      "length": 26,
+      "value": "\"Custom Close Button Text\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf4_.swift",
+      "kind": "StringLiteral",
+      "offset": 553,
+      "length": 6,
+      "value": "\"Done\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5364,
+      "length": 12,
+      "value": "\"No Toolbar\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5423,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf6_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf6_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 314,
+      "length": 3,
+      "value": "158"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf6_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 347,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf6_.swift",
+      "kind": "StringLiteral",
+      "offset": 460,
+      "length": 12,
+      "value": "\"No Toolbar\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf6_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 535,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5472,
+      "length": 34,
+      "value": "\"No URL and No Navigation Buttons\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5549,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5588,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf8_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf8_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 314,
+      "length": 3,
+      "value": "166"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf8_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 347,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf8_.swift",
+      "kind": "StringLiteral",
+      "offset": 460,
+      "length": 34,
+      "value": "\"No URL and No Navigation Buttons\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf8_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 553,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf8_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 599,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5612,
+      "length": 49,
+      "value": "\"No URL, No Navigation Buttons and Left-to-Right\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5704,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5743,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5771,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf10_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf10_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "173"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf10_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf10_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 49,
+      "value": "\"No URL, No Navigation Buttons and Left-to-Right\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf10_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 569,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf10_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 615,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf10_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 651,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5794,
+      "length": 8,
+      "value": "\"No URL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5845,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf12_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf12_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "181"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf12_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf12_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 8,
+      "value": "\"No URL\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf12_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 528,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5869,
+      "length": 26,
+      "value": "\"No URL and Left-To-Right\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5938,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5967,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf14_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf14_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "187"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf14_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf14_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 26,
+      "value": "\"No URL and Left-To-Right\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf14_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 546,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf14_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 582,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 5990,
+      "length": 50,
+      "value": "\"No URL, Bottom Toolbar and No Navigation Buttons\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6083,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6156,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf16_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf16_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "194"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf16_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf16_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 50,
+      "value": "\"No URL, Bottom Toolbar and No Navigation Buttons\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf16_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 570,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf16_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 658,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 6180,
+      "length": 65,
+      "value": "\"No URL, Bottom Toolbar, No Navigation Buttons and Left-to-Right\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6288,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6361,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6390,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf18_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf18_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "202"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf18_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf18_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 65,
+      "value": "\"No URL, Bottom Toolbar, No Navigation Buttons and Left-to-Right\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf18_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 585,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf18_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 673,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf18_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 709,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 6413,
+      "length": 27,
+      "value": "\"No URL and Bottom Toolbar\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6483,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf20_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf20_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "211"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf20_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf20_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 27,
+      "value": "\"No URL and Bottom Toolbar\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf20_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 547,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 6541,
+      "length": 42,
+      "value": "\"No URL, Bottom Toolbar and Left-to-Right\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6626,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6688,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf22_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf22_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "218"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf22_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf22_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 42,
+      "value": "\"No URL, Bottom Toolbar and Left-to-Right\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf22_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 562,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf22_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 640,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 6711,
+      "length": 23,
+      "value": "\"No Navigation Buttons\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6791,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf24_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf24_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "226"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf24_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf24_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 23,
+      "value": "\"No Navigation Buttons\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf24_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 557,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 6815,
+      "length": 41,
+      "value": "\"No Navigation Buttons and Left-to-Right\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6913,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6941,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf26_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf26_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "232"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf26_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf26_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 41,
+      "value": "\"No Navigation Buttons and Left-to-Right\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf26_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 575,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf26_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 611,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 6964,
+      "length": 15,
+      "value": "\"Left-to-Right\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7026,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf28_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf28_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "239"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf28_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf28_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 15,
+      "value": "\"Left-to-Right\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf28_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 539,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 7049,
+      "length": 42,
+      "value": "\"Bottom Toolbar and No Navigation Buttons\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7183,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf30_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf30_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "245"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf30_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf30_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 42,
+      "value": "\"Bottom Toolbar and No Navigation Buttons\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf30_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 618,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 7207,
+      "length": 57,
+      "value": "\"Bottom Toolbar, No Navigation Buttons and Left-to-Right\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7355,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7383,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf32_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf32_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "252"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf32_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf32_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 57,
+      "value": "\"Bottom Toolbar, No Navigation Buttons and Left-to-Right\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf32_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 633,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf32_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 669,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 7406,
+      "length": 16,
+      "value": "\"Bottom Toolbar\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf34_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf34_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "260"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf34_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf34_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 16,
+      "value": "\"Bottom Toolbar\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "StringLiteral",
+      "offset": 7499,
+      "length": 34,
+      "value": "\"Bottom Toolbar and Left-to-Right\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7614,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf36_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 38,
+      "value": "\"OSInAppBrowserLib\/OSIABWebView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf36_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 315,
+      "length": 3,
+      "value": "266"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf36_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 348,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf36_.swift",
+      "kind": "StringLiteral",
+      "offset": 461,
+      "length": 34,
+      "value": "\"Bottom Toolbar and Left-to-Right\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_4A4A017F4904D18ED46D60328459EAE3Ll7PreviewfMf36_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 600,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 2558,
+      "length": 18,
+      "value": "\"chevron.backward\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 2780,
+      "length": 17,
+      "value": "\"chevron.forward\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3196,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3237,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 3480,
+      "length": 20,
+      "value": "\"No Button Pressed.\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 3667,
+      "length": 13,
+      "value": "\"URL Address\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3730,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3770,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3814,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 4221,
+      "length": 22,
+      "value": "\"Back Button Pressed.\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 4397,
+      "length": 25,
+      "value": "\"Forward Button Pressed.\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "FloatLiteral",
+      "offset": 4714,
+      "length": 3,
+      "value": "0.3"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 4839,
+      "length": 22,
+      "value": "\"Default - Light Mode\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf0_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 45,
+      "value": "\"OSInAppBrowserLib\/OSIABNavigationView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf0_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 3,
+      "value": "120"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf0_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 354,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf0_.swift",
+      "kind": "StringLiteral",
+      "offset": 467,
+      "length": 22,
+      "value": "\"Default - Light Mode\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 4907,
+      "length": 21,
+      "value": "\"Default - Dark Mode\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf2_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 45,
+      "value": "\"OSInAppBrowserLib\/OSIABNavigationView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf2_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 3,
+      "value": "124"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf2_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 354,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf2_.swift",
+      "kind": "StringLiteral",
+      "offset": 467,
+      "length": 21,
+      "value": "\"Default - Dark Mode\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 5011,
+      "length": 34,
+      "value": "\"Show Navigation Buttons Disabled\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5100,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf4_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 45,
+      "value": "\"OSInAppBrowserLib\/OSIABNavigationView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf4_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 3,
+      "value": "129"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf4_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 354,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf4_.swift",
+      "kind": "StringLiteral",
+      "offset": 467,
+      "length": 34,
+      "value": "\"Show Navigation Buttons Disabled\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf4_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 564,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 5119,
+      "length": 21,
+      "value": "\"Back Button Enabled\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5191,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf6_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 45,
+      "value": "\"OSInAppBrowserLib\/OSIABNavigationView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf6_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 3,
+      "value": "133"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf6_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 354,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf6_.swift",
+      "kind": "StringLiteral",
+      "offset": 467,
+      "length": 21,
+      "value": "\"Back Button Enabled\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf6_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 547,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 5209,
+      "length": 24,
+      "value": "\"Forward Button Enabled\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5287,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf8_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 45,
+      "value": "\"OSInAppBrowserLib\/OSIABNavigationView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf8_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 3,
+      "value": "137"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf8_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 354,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf8_.swift",
+      "kind": "StringLiteral",
+      "offset": 467,
+      "length": 24,
+      "value": "\"Forward Button Enabled\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf8_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 553,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "StringLiteral",
+      "offset": 5305,
+      "length": 22,
+      "value": "\"Both Buttons Enabled\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5378,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABNavigationView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5406,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf10_.swift",
+      "kind": "StringLiteral",
+      "offset": 249,
+      "length": 45,
+      "value": "\"OSInAppBrowserLib\/OSIABNavigationView.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf10_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 322,
+      "length": 3,
+      "value": "141"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf10_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 355,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf10_.swift",
+      "kind": "StringLiteral",
+      "offset": 468,
+      "length": 22,
+      "value": "\"Both Buttons Enabled\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf10_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 549,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_E6EE006C509F907B5BFD0901EE702BEBLl7PreviewfMf10_.swift",
+      "kind": "BooleanLiteral",
+      "offset": 577,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABToolbarPosition.swift",
+      "kind": "StringLiteral",
+      "offset": 140,
+      "length": 5,
+      "value": "\"TOP\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABToolbarPosition.swift",
+      "kind": "StringLiteral",
+      "offset": 164,
+      "length": 8,
+      "value": "\"BOTTOM\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABToolbarPosition.swift",
+      "kind": "StringLiteral",
+      "offset": 140,
+      "length": 5,
+      "value": "\"TOP\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABToolbarPosition.swift",
+      "kind": "StringLiteral",
+      "offset": 164,
+      "length": 8,
+      "value": "\"BOTTOM\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/OSIABCacheManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2468,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/OSIABCacheManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2624,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABWebViewUIModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1448,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABWebViewUIModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1482,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABWebViewUIModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1589,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABWebViewUIModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1623,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABWebViewUIModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1664,
+      "length": 7,
+      "value": "\"Close\""
+    },
+    {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABViewStyle.swift",
       "kind": "StringLiteral",
       "offset": 138,
@@ -1912,7 +4911,7 @@
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABApplicationRouterAdapter.swift",
       "kind": "BooleanLiteral",
-      "offset": 1669,
+      "offset": 1626,
       "length": 5,
       "value": "false"
     },
@@ -1959,60 +4958,452 @@
       "value": "\"DONE\""
     },
     {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
-      "kind": "StringLiteral",
-      "offset": 154,
-      "length": 16,
-      "value": "\"COVER_VERTICAL\""
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABWebViewConfigurationModel.swift",
+      "kind": "Array",
+      "offset": 1362,
+      "length": 2,
+      "value": "[]"
     },
     {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
-      "kind": "StringLiteral",
-      "offset": 196,
-      "length": 16,
-      "value": "\"CROSS_DISSOLVE\""
-    },
-    {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
-      "kind": "StringLiteral",
-      "offset": 239,
-      "length": 17,
-      "value": "\"FLIP_HORIZONTAL\""
-    },
-    {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
-      "kind": "StringLiteral",
-      "offset": 154,
-      "length": 16,
-      "value": "\"COVER_VERTICAL\""
-    },
-    {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
-      "kind": "StringLiteral",
-      "offset": 196,
-      "length": 16,
-      "value": "\"CROSS_DISSOLVE\""
-    },
-    {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
-      "kind": "StringLiteral",
-      "offset": 239,
-      "length": 17,
-      "value": "\"FLIP_HORIZONTAL\""
-    },
-    {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABSystemBrowserOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABWebViewConfigurationModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1618,
+      "offset": 1411,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABWebViewConfigurationModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1462,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABWebViewConfigurationModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1518,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 154,
+      "length": 16,
+      "value": "\"COVER_VERTICAL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 196,
+      "length": 16,
+      "value": "\"CROSS_DISSOLVE\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 239,
+      "length": 17,
+      "value": "\"FLIP_HORIZONTAL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 154,
+      "length": 16,
+      "value": "\"COVER_VERTICAL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 196,
+      "length": 16,
+      "value": "\"CROSS_DISSOLVE\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABAnimationEffect.swift",
+      "kind": "StringLiteral",
+      "offset": 239,
+      "length": 17,
+      "value": "\"FLIP_HORIZONTAL\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1002,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1125,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/OSIABSystemBrowserOptions.swift",
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 1658,
+      "offset": 1362,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1495,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1687,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2372,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5076,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 81,
+      "length": 17,
+      "value": "\"OSInAppBrowserLib.OSIABWebViewModel\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5375,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 5670,
+      "length": 12,
+      "value": "\"itms-appss\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 5684,
+      "length": 11,
+      "value": "\"itms-apps\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 5697,
+      "length": 5,
+      "value": "\"tel\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 5704,
+      "length": 5,
+      "value": "\"sms\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 5711,
+      "length": 8,
+      "value": "\"mailto\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 5721,
+      "length": 5,
+      "value": "\"geo\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5863,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6409,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 6586,
+      "length": 19,
+      "value": "\"didFailNavigation\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 6803,
+      "length": 30,
+      "value": "\"didFailProvisionalNavigation\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 6983,
+      "length": 58,
+      "value": "\"webView: \""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 7008,
+      "length": 1,
+      "value": "\" - \""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 7040,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 7989,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 8139,
+      "length": 4,
+      "value": "\"OK\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "StringLiteral",
+      "offset": 8346,
+      "length": 8,
+      "value": "\"Cancel\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8900,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9329,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9481,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9537,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10038,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10189,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/OSIABWebViewModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10245,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebViewWrapper.swift",
+      "kind": "Array",
+      "offset": 811,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebViewWrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 1233,
+      "length": 24,
+      "value": "\"https:\/\/outsystems.com\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebViewWrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 1633,
+      "length": 22,
+      "value": "\"Default - Light Mode\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf0_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 45,
+      "value": "\"OSInAppBrowserLib\/OSIABWebViewWrapper.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf0_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 2,
+      "value": "48"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf0_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 353,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf0_.swift",
+      "kind": "StringLiteral",
+      "offset": 466,
+      "length": 22,
+      "value": "\"Default - Light Mode\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebViewWrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 1704,
+      "length": 21,
+      "value": "\"Default - Dark Mode\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf2_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 45,
+      "value": "\"OSInAppBrowserLib\/OSIABWebViewWrapper.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf2_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 2,
+      "value": "52"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf2_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 353,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf2_.swift",
+      "kind": "StringLiteral",
+      "offset": 466,
+      "length": 21,
+      "value": "\"Default - Dark Mode\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/WebView\/Views\/OSIABWebViewWrapper.swift",
+      "kind": "StringLiteral",
+      "offset": 1811,
+      "length": 24,
+      "value": "\"Bottom Toolbar Defined\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf4_.swift",
+      "kind": "StringLiteral",
+      "offset": 248,
+      "length": 45,
+      "value": "\"OSInAppBrowserLib\/OSIABWebViewWrapper.swift\""
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf4_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 321,
+      "length": 2,
+      "value": "57"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf4_.swift",
+      "kind": "IntegerLiteral",
+      "offset": 353,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "@__swiftmacro_17OSInAppBrowserLib33_6F3C24D83ED9199BBD066778CCE331F9Ll7PreviewfMf4_.swift",
+      "kind": "StringLiteral",
+      "offset": 466,
+      "length": 24,
+      "value": "\"Bottom Toolbar Defined\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABWebViewRouterAdapter.swift",
+      "kind": "StringLiteral",
+      "offset": 190,
+      "length": 25,
+      "value": "\"OSInAppBrowserLib.OSIABWebViewRouterAdapter\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABWebViewRouterAdapter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3198,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABSystemBrowserOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1398,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABSystemBrowserOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1438,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABSystemBrowserOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 186,
+      "length": 25,
+      "value": "\"OSInAppBrowserLib.OSIABSystemBrowserOptions\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABSafariViewControllerRouterAdapter.swift",
