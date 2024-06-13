@@ -54,6 +54,7 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
     implementation project(':capacitor-android')
+    implementation 'androidx.browser:browser:1.8.0'
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
