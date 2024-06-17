@@ -20,7 +20,6 @@ npx cap sync
 * [`removeAllListeners()`](#removealllisteners)
 * [`addListener('browserClosed' | 'browserPageLoaded', ...)`](#addlistenerbrowserclosed--browserpageloaded-)
 * [Interfaces](#interfaces)
-* [Type Aliases](#type-aliases)
 * [Enums](#enums)
 
 </docgen-index>
@@ -31,13 +30,12 @@ npx cap sync
 ### openInWebView(...)
 
 ```typescript
-openInWebView(url: string, options: WebViewOptions) => void
+openInWebView(model: OpenInWebViewParameterModel) => void
 ```
 
-| Param         | Type                                                      |
-| ------------- | --------------------------------------------------------- |
-| **`url`**     | <code>string</code>                                       |
-| **`options`** | <code><a href="#webviewoptions">WebViewOptions</a></code> |
+| Param       | Type                                                                                |
+| ----------- | ----------------------------------------------------------------------------------- |
+| **`model`** | <code><a href="#openinwebviewparametermodel">OpenInWebViewParameterModel</a></code> |
 
 --------------------
 
@@ -45,13 +43,12 @@ openInWebView(url: string, options: WebViewOptions) => void
 ### openInSystemBrowser(...)
 
 ```typescript
-openInSystemBrowser(url: string, options: SystemBrowserOptions) => void
+openInSystemBrowser(model: OpenInSystemBrowserParameterModel) => void
 ```
 
-| Param         | Type                                                                  |
-| ------------- | --------------------------------------------------------------------- |
-| **`url`**     | <code>string</code>                                                   |
-| **`options`** | <code><a href="#systembrowseroptions">SystemBrowserOptions</a></code> |
+| Param       | Type                                                                                            |
+| ----------- | ----------------------------------------------------------------------------------------------- |
+| **`model`** | <code><a href="#openinsystembrowserparametermodel">OpenInSystemBrowserParameterModel</a></code> |
 
 --------------------
 
@@ -59,12 +56,12 @@ openInSystemBrowser(url: string, options: SystemBrowserOptions) => void
 ### openInExternalBrowser(...)
 
 ```typescript
-openInExternalBrowser(model: OpenInExternalBrowserParameterModel) => void
+openInExternalBrowser(model: OpenInDefaultParameterModel) => void
 ```
 
-| Param       | Type                                                                                                |
-| ----------- | --------------------------------------------------------------------------------------------------- |
-| **`model`** | <code><a href="#openinexternalbrowserparametermodel">OpenInExternalBrowserParameterModel</a></code> |
+| Param       | Type                                                                                |
+| ----------- | ----------------------------------------------------------------------------------- |
+| **`model`** | <code><a href="#openindefaultparametermodel">OpenInDefaultParameterModel</a></code> |
 
 --------------------
 
@@ -106,17 +103,30 @@ addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () =
 ### Interfaces
 
 
+#### OpenInWebViewParameterModel
+
+Defines the options for opening a URL in the web view.
+
+| Prop          | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code><a href="#webviewoptions">WebViewOptions</a></code> |
+
+
 #### WebViewOptions
 
-| Prop                  | Type                                                                    |
-| --------------------- | ----------------------------------------------------------------------- |
-| **`showURL`**         | <code>boolean</code>                                                    |
-| **`showToolBar`**     | <code>boolean</code>                                                    |
-| **`closeButtonText`** | <code>string</code>                                                     |
-| **`toolbarPosition`** | <code><a href="#toolbarposition">ToolbarPosition</a></code>             |
-| **`leftToRight`**     | <code>boolean</code>                                                    |
-| **`android`**         | <code><a href="#androidwebviewoptions">AndroidWebViewOptions</a></code> |
-| **`iOS`**             | <code><a href="#ioswebviewoptions">iOSWebViewOptions</a></code>         |
+| Prop                                  | Type                                                                    |
+| ------------------------------------- | ----------------------------------------------------------------------- |
+| **`showURL`**                         | <code>boolean</code>                                                    |
+| **`showToolbar`**                     | <code>boolean</code>                                                    |
+| **`clearCache`**                      | <code>boolean</code>                                                    |
+| **`clearSessionCache`**               | <code>boolean</code>                                                    |
+| **`mediaPlaybackRequiresUserAction`** | <code>boolean</code>                                                    |
+| **`closeButtonText`**                 | <code>string</code>                                                     |
+| **`toolbarPosition`**                 | <code><a href="#toolbarposition">ToolbarPosition</a></code>             |
+| **`showNavigationButtons`**           | <code>boolean</code>                                                    |
+| **`leftToRight`**                     | <code>boolean</code>                                                    |
+| **`android`**                         | <code><a href="#androidwebviewoptions">AndroidWebViewOptions</a></code> |
+| **`iOS`**                             | <code><a href="#ioswebviewoptions">iOSWebViewOptions</a></code>         |
 
 
 #### AndroidWebViewOptions
@@ -130,24 +140,31 @@ addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () =
 
 #### iOSWebViewOptions
 
-| Prop                                    | Type                                                  |
-| --------------------------------------- | ----------------------------------------------------- |
-| **`allowOverScroll`**                   | <code>boolean</code>                                  |
-| **`enableViewportScale`**               | <code>boolean</code>                                  |
-| **`allowInLineMediaPlayback`**          | <code>boolean</code>                                  |
-| **`keyboardDisplayRequiresUserAction`** | <code>boolean</code>                                  |
-| **`surpressedIncrementalRendering`**    | <code>boolean</code>                                  |
-| **`viewStyle`**                         | <code><a href="#iosviewstyle">iOSViewStyle</a></code> |
-| **`animationEffect`**                   | <code><a href="#iosanimation">iOSAnimation</a></code> |
+| Prop                               | Type                                                  |
+| ---------------------------------- | ----------------------------------------------------- |
+| **`allowOverScroll`**              | <code>boolean</code>                                  |
+| **`enableViewportScale`**          | <code>boolean</code>                                  |
+| **`allowInLineMediaPlayback`**     | <code>boolean</code>                                  |
+| **`surpressIncrementalRendering`** | <code>boolean</code>                                  |
+| **`viewStyle`**                    | <code><a href="#iosviewstyle">iOSViewStyle</a></code> |
+| **`animationEffect`**              | <code><a href="#iosanimation">iOSAnimation</a></code> |
+
+
+#### OpenInSystemBrowserParameterModel
+
+Defines the options for opening a URL in the system browser.
+
+| Prop          | Type                                                                  |
+| ------------- | --------------------------------------------------------------------- |
+| **`options`** | <code><a href="#systembrowseroptions">SystemBrowserOptions</a></code> |
 
 
 #### SystemBrowserOptions
 
-| Prop             | Type                                                                                |
-| ---------------- | ----------------------------------------------------------------------------------- |
-| **`showURLBar`** | <code>boolean</code>                                                                |
-| **`android`**    | <code><a href="#androidsystembrowseroptions">AndroidSystemBrowserOptions</a></code> |
-| **`iOS`**        | <code><a href="#iossystembrowseroptions">iOSSystemBrowserOptions</a></code>         |
+| Prop          | Type                                                                                |
+| ------------- | ----------------------------------------------------------------------------------- |
+| **`android`** | <code><a href="#androidsystembrowseroptions">AndroidSystemBrowserOptions</a></code> |
+| **`iOS`**     | <code><a href="#iossystembrowseroptions">iOSSystemBrowserOptions</a></code>         |
 
 
 #### AndroidSystemBrowserOptions
@@ -164,10 +181,10 @@ addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () =
 
 #### AndroidBottomSheet
 
-| Prop          | Type                |
-| ------------- | ------------------- |
-| **`height`**  | <code>number</code> |
-| **`isFixed`** | <code>number</code> |
+| Prop          | Type                 |
+| ------------- | -------------------- |
+| **`height`**  | <code>number</code>  |
+| **`isFixed`** | <code>boolean</code> |
 
 
 #### iOSSystemBrowserOptions
@@ -181,21 +198,20 @@ addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () =
 | **`enableReadersMode`**    | <code>boolean</code>                                  |
 
 
+#### OpenInDefaultParameterModel
+
+Defines the options for opening a URL in the external browser and used by the others.
+
+| Prop      | Type                |
+| --------- | ------------------- |
+| **`url`** | <code>string</code> |
+
+
 #### PluginListenerHandle
 
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
 | **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
-
-
-### Type Aliases
-
-
-#### OpenInExternalBrowserParameterModel
-
-Defines the options for opening a URL in the external browser.
-
-<code>{ url: string; }</code>
 
 
 ### Enums
@@ -237,20 +253,12 @@ Defines the options for opening a URL in the external browser.
 
 #### AndroidAnimation
 
-| Members                                  |
-| ---------------------------------------- |
-| **`FADE_IN`**                            |
-| **`FADE_OUT`**                           |
-| **`LINEAR_INTERPOLATION`**               |
-| **`ACCELERATE_DECELERATE_INTERPOLATOR`** |
-| **`ACCELERATE_INTERPOLATOR`**            |
-| **`ANTICIPATE_INTERPOLATOR`**            |
-| **`ANTICIPATE_OVERSHOOT_INTERPOLATOR`**  |
-| **`BOUNCE_INTERPOLATOR`**                |
-| **`DECELERATE_INTERPOLATOR`**            |
-| **`OVERSHOOT_INTERPOLATOR`**             |
-| **`SLIDE_IN_LEFT`**                      |
-| **`SLIDE_OUT_RIGHT`**                    |
+| Members               |
+| --------------------- |
+| **`FADE_IN`**         |
+| **`FADE_OUT`**        |
+| **`SLIDE_IN_LEFT`**   |
+| **`SLIDE_OUT_RIGHT`** |
 
 
 #### DismissStyle

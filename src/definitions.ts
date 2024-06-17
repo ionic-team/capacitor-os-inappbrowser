@@ -32,26 +32,31 @@ export enum AndroidAnimation {
 
 export interface WebViewOptions {
   showURL: boolean;
-  showToolBar: boolean;
+  showToolbar: boolean;
+
   clearCache: boolean;
   clearSessionCache: boolean;
   mediaPlaybackRequiresUserAction: boolean;
+  
   closeButtonText: string;
   toolbarPosition: ToolbarPosition;
+  
   showNavigationButtons: boolean;
   leftToRight: boolean;
+  
   android: AndroidWebViewOptions,
   iOS: iOSWebViewOptions
 }
 
 export interface iOSWebViewOptions {
   allowOverScroll: boolean;
+
   enableViewportScale: boolean;
   allowInLineMediaPlayback: boolean;
-  keyboardDisplayRequiresUserAction: boolean;
   surpressIncrementalRendering: boolean;
+  
   viewStyle: iOSViewStyle;
-  animation: iOSAnimation;
+  animationEffect: iOSAnimation;
 }
 
 export interface AndroidWebViewOptions {
@@ -64,11 +69,6 @@ export enum DismissStyle {
   CLOSE,
   CANCEL,
   DONE
-}
-
-export enum CloseButtonIcon {
-  ARROW_BACK,
-  CLOSE,
 }
 
 export interface SystemBrowserOptions {
@@ -91,24 +91,41 @@ export interface AndroidBottomSheet {
 
 export interface AndroidSystemBrowserOptions {
   showTitle: boolean;
+
   hideToolbarOnScroll: boolean;
   viewStyle: AndroidViewStyle;
-  bottomSheetOptions: AndroidBottomSheet;
+  
+  bottomSheetOptions?: AndroidBottomSheet;
+  
   startAnimation: AndroidAnimation;
   exitAnimation: AndroidAnimation;
 }
 
 /**
- * Defines the options for opening a URL in the external browser.
+ * Defines the options for opening a URL in the external browser and used by the others.
  */
-export type OpenInExternalBrowserParameterModel = {
+export interface OpenInDefaultParameterModel {
   url: string;
-};
+}
+
+/**
+ * Defines the options for opening a URL in the system browser.
+ */
+export interface OpenInSystemBrowserParameterModel extends OpenInDefaultParameterModel {
+  options: SystemBrowserOptions;
+}
+
+/**
+ * Defines the options for opening a URL in the web view.
+ */
+export interface OpenInWebViewParameterModel extends OpenInDefaultParameterModel {
+  options: WebViewOptions;
+}
 
 export interface InAppBrowserPlugin {
-  openInWebView(url: string, options: WebViewOptions): void;
-  openInSystemBrowser(url: string, options: SystemBrowserOptions): void;
-  openInExternalBrowser(model: OpenInExternalBrowserParameterModel): void;
+  openInWebView(model: OpenInWebViewParameterModel): void;
+  openInSystemBrowser(model: OpenInSystemBrowserParameterModel): void;
+  openInExternalBrowser(model: OpenInDefaultParameterModel): void;
   close(): void;
   removeAllListeners(): void;
   addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void): Promise<PluginListenerHandle>;
