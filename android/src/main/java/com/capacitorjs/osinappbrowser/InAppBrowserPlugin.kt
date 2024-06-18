@@ -6,9 +6,9 @@ import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.ApplicationContextAdapter
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABApplicationRouterAdapter
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABWebViewOptions
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABExternalBrowserRouterAdapter
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABWebViewRouterAdapter
 
 @CapacitorPlugin(name = "InAppBrowser")
 class InAppBrowserPlugin : Plugin() {
@@ -17,9 +17,9 @@ class InAppBrowserPlugin : Plugin() {
 
     override fun load() {
         super.load()
-        val applicationDelegate = ApplicationContextAdapter(context)
-        val router = OSIABApplicationRouterAdapter(applicationDelegate)
-        engine = OSIABEngine(router)
+        val externalBrowserRouter = OSIABExternalBrowserRouterAdapter(context)
+        val webViewRouter = OSIABWebViewRouterAdapter(context)
+        this.engine = OSIABEngine(externalBrowserRouter, webViewRouter)
     }
 
     @PluginMethod
@@ -53,7 +53,7 @@ class InAppBrowserPlugin : Plugin() {
             return
         }
 
-        engine?.openWebView(activity, url, options) { success ->
+        engine?.openWebView(url, options) { success ->
             if (success) {
                 call.resolve()
             } else {
