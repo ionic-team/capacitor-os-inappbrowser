@@ -117,6 +117,7 @@ export interface OpenInSystemBrowserParameterModel extends OpenInDefaultParamete
   options: SystemBrowserOptions;
 }
 
+
 /**
  * Defines the options for opening a URL in the web view.
  */
@@ -125,7 +126,7 @@ export interface OpenInWebViewParameterModel extends OpenInDefaultParameterModel
 }
 
 export interface InAppBrowserPlugin {
-  openInWebView(url: string, options: WebViewOptions): void;
+  openInWebView(model: OpenInWebViewParameterModel): void;
   openInSystemBrowser(model: OpenInSystemBrowserParameterModel): void;
   openInExternalBrowser(model: OpenInDefaultParameterModel): void;
   close(): void;
