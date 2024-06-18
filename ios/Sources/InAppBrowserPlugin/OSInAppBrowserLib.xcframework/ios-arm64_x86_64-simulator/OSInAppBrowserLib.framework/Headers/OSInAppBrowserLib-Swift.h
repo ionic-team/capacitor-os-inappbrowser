@@ -277,6 +277,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
+@import SafariServices;
+@import UIKit;
 #endif
 
 #endif
@@ -297,6 +300,28 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+
+/// Adapter that makes the required calls so that an <code>SFSafariVieWController</code> implementation can perform the System Browser routing.
+SWIFT_CLASS("_TtC17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapter")
+@interface OSIABSafariViewControllerRouterAdapter : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIPresentationController;
+
+@interface OSIABSafariViewControllerRouterAdapter (SWIFT_EXTENSION(OSInAppBrowserLib)) <UIAdaptivePresentationControllerDelegate>
+- (void)presentationControllerDidDismiss:(UIPresentationController * _Nonnull)presentationController;
+@end
+
+@class SFSafariViewController;
+
+@interface OSIABSafariViewControllerRouterAdapter (SWIFT_EXTENSION(OSInAppBrowserLib)) <SFSafariViewControllerDelegate>
+- (void)safariViewController:(SFSafariViewController * _Nonnull)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully;
+- (void)safariViewControllerDidFinish:(SFSafariViewController * _Nonnull)controller;
+@end
+
+
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -584,6 +609,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import ObjectiveC;
+@import SafariServices;
+@import UIKit;
 #endif
 
 #endif
@@ -604,6 +632,28 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+
+/// Adapter that makes the required calls so that an <code>SFSafariVieWController</code> implementation can perform the System Browser routing.
+SWIFT_CLASS("_TtC17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapter")
+@interface OSIABSafariViewControllerRouterAdapter : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class UIPresentationController;
+
+@interface OSIABSafariViewControllerRouterAdapter (SWIFT_EXTENSION(OSInAppBrowserLib)) <UIAdaptivePresentationControllerDelegate>
+- (void)presentationControllerDidDismiss:(UIPresentationController * _Nonnull)presentationController;
+@end
+
+@class SFSafariViewController;
+
+@interface OSIABSafariViewControllerRouterAdapter (SWIFT_EXTENSION(OSInAppBrowserLib)) <SFSafariViewControllerDelegate>
+- (void)safariViewController:(SFSafariViewController * _Nonnull)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully;
+- (void)safariViewControllerDidFinish:(SFSafariViewController * _Nonnull)controller;
+@end
+
+
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop

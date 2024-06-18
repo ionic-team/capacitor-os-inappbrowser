@@ -140,14 +140,15 @@ Defines the options for opening a URL in the web view.
 
 #### iOSWebViewOptions
 
-| Prop                               | Type                                                  |
-| ---------------------------------- | ----------------------------------------------------- |
-| **`allowOverScroll`**              | <code>boolean</code>                                  |
-| **`enableViewportScale`**          | <code>boolean</code>                                  |
-| **`allowInLineMediaPlayback`**     | <code>boolean</code>                                  |
-| **`surpressIncrementalRendering`** | <code>boolean</code>                                  |
-| **`viewStyle`**                    | <code><a href="#iosviewstyle">iOSViewStyle</a></code> |
-| **`animationEffect`**              | <code><a href="#iosanimation">iOSAnimation</a></code> |
+| Prop                                    | Type                                                  |
+| --------------------------------------- | ----------------------------------------------------- |
+| **`allowOverScroll`**                   | <code>boolean</code>                                  |
+| **`enableViewportScale`**               | <code>boolean</code>                                  |
+| **`allowInLineMediaPlayback`**          | <code>boolean</code>                                  |
+| **`keyboardDisplayRequiresUserAction`** | <code>boolean</code>                                  |
+| **`surpressIncrementalRendering`**      | <code>boolean</code>                                  |
+| **`viewStyle`**                         | <code><a href="#iosviewstyle">iOSViewStyle</a></code> |
+| **`animation`**                         | <code><a href="#iosanimation">iOSAnimation</a></code> |
 
 
 #### OpenInSystemBrowserParameterModel

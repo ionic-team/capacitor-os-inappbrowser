@@ -2,14 +2,88 @@
 // swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
 // swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OSInAppBrowserLib
 // swift-module-flags-ignorable: -enable-bare-slash-regex
+import SafariServices
 import Swift
+import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public struct OSIABEngine {
-  public init(router: any OSInAppBrowserLib.OSIABRouter)
-  public func openExternalBrowser(_ url: Swift.String) -> Swift.Bool
+public struct OSIABEngine<ExternalBrowser, SystemBrowser> where ExternalBrowser : OSInAppBrowserLib.OSIABRouter, SystemBrowser : OSInAppBrowserLib.OSIABRouter, ExternalBrowser.ReturnType == Swift.Bool, SystemBrowser.ReturnType == UIKit.UIViewController? {
+  public init()
+  public func openExternalBrowser(_ url: Swift.String, routerDelegate: ExternalBrowser, _ completionHandler: @escaping (ExternalBrowser.ReturnType) -> Swift.Void)
+  public func openSystemBrowser(_ url: Swift.String, routerDelegate: SystemBrowser, _ completionHandler: @escaping (SystemBrowser.ReturnType) -> Swift.Void)
+}
+public enum OSIABViewStyle : Swift.String {
+  case formSheet
+  case fullScreen
+  case pageSheet
+  public static let defaultValue: OSInAppBrowserLib.OSIABViewStyle
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol OSIABApplicationDelegate : AnyObject {
+  func canOpenURL(_ url: Foundation.URL) -> Swift.Bool
+  func open(_ url: Foundation.URL, options: [UIKit.UIApplication.OpenExternalURLOptionsKey : Any], completionHandler completion: ((Swift.Bool) -> Swift.Void)?)
+}
+extension UIKit.UIApplication : OSInAppBrowserLib.OSIABApplicationDelegate {
+}
+public class OSIABApplicationRouterAdapter : OSInAppBrowserLib.OSIABRouter {
+  public typealias ReturnType = Swift.Bool
+  public init(_ application: any OSInAppBrowserLib.OSIABApplicationDelegate)
+  public func handleOpen(_ urlString: Swift.String, _ completionHandler: @escaping (OSInAppBrowserLib.OSIABApplicationRouterAdapter.ReturnType) -> Swift.Void)
+  @objc deinit
+}
+public enum OSIABDismissStyle : Swift.String {
+  case cancel
+  case close
+  case done
+  public static let defaultValue: OSInAppBrowserLib.OSIABDismissStyle
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum OSIABAnimationEffect : Swift.String {
+  case coverVertical
+  case crossDissolve
+  case flipHorizontal
+  public static let defaultValue: OSInAppBrowserLib.OSIABAnimationEffect
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct OSIABSystemBrowserOptions {
+  public init(dismissStyle: OSInAppBrowserLib.OSIABDismissStyle = .defaultValue, viewStyle: OSInAppBrowserLib.OSIABViewStyle = .defaultValue, animationEffect: OSInAppBrowserLib.OSIABAnimationEffect = .defaultValue, enableBarsCollapsing: Swift.Bool = true, enableReadersMode: Swift.Bool = false)
+}
+@objc public class OSIABSafariViewControllerRouterAdapter : ObjectiveC.NSObject, OSInAppBrowserLib.OSIABRouter {
+  public typealias ReturnType = UIKit.UIViewController?
+  public init(_ options: OSInAppBrowserLib.OSIABSystemBrowserOptions, onBrowserPageLoad: @escaping () -> Swift.Void, onBrowserClosed: @escaping () -> Swift.Void)
+  public func handleOpen(_ urlString: Swift.String, _ completionHandler: @escaping (OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter.ReturnType) -> Swift.Void)
+  @objc deinit
+}
+extension OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter : SafariServices.SFSafariViewControllerDelegate {
+  @objc dynamic public func safariViewController(_ controller: SafariServices.SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Swift.Bool)
+  @objc dynamic public func safariViewControllerDidFinish(_ controller: SafariServices.SFSafariViewController)
+}
+extension OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter : UIKit.UIAdaptivePresentationControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationControllerDidDismiss(_ presentationController: UIKit.UIPresentationController)
 }
 public protocol OSIABRouter {
-  func openInSafari(_ url: Swift.String) -> Swift.Bool
+  associatedtype ReturnType
+  func handleOpen(_ url: Swift.String, _ completionHandler: @escaping (Self.ReturnType) -> Swift.Void)
 }
+extension OSInAppBrowserLib.OSIABViewStyle : Swift.Equatable {}
+extension OSInAppBrowserLib.OSIABViewStyle : Swift.Hashable {}
+extension OSInAppBrowserLib.OSIABViewStyle : Swift.RawRepresentable {}
+extension OSInAppBrowserLib.OSIABDismissStyle : Swift.Equatable {}
+extension OSInAppBrowserLib.OSIABDismissStyle : Swift.Hashable {}
+extension OSInAppBrowserLib.OSIABDismissStyle : Swift.RawRepresentable {}
+extension OSInAppBrowserLib.OSIABAnimationEffect : Swift.Equatable {}
+extension OSInAppBrowserLib.OSIABAnimationEffect : Swift.Hashable {}
+extension OSInAppBrowserLib.OSIABAnimationEffect : Swift.RawRepresentable {}
