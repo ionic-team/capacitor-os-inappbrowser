@@ -2901,36 +2901,6 @@
           },
           {
             "kind": "Function",
-            "name": "safariViewControllerDidFinish",
-            "printedName": "safariViewControllerDidFinish(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "SFSafariViewController",
-                "printedName": "SafariServices.SFSafariViewController",
-                "usr": "c:objc(cs)SFSafariViewController"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@OSInAppBrowserLib@objc(cs)OSIABSafariViewControllerRouterAdapter(im)safariViewControllerDidFinish:",
-            "mangledName": "$s17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapterC06safarifG9DidFinishyySo08SFSafarifG0CF",
-            "moduleName": "OSInAppBrowserLib",
-            "objc_name": "safariViewControllerDidFinish:",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "presentationControllerDidDismiss",
             "printedName": "presentationControllerDidDismiss(_:)",
             "children": [
@@ -5372,6 +5342,13 @@
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABWebViewRouterAdapter.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2005,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABWebViewRouterAdapter.swift",
       "kind": "StringLiteral",
       "offset": 190,
       "length": 25,
@@ -5380,9 +5357,23 @@
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABWebViewRouterAdapter.swift",
       "kind": "BooleanLiteral",
-      "offset": 3198,
+      "offset": 3627,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABWebViewRouterAdapter.swift",
+      "kind": "StringLiteral",
+      "offset": 3764,
+      "length": 22,
+      "value": "\"OSInAppBrowserLib.OSIABWebViewController\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABWebViewRouterAdapter.swift",
+      "kind": "StringLiteral",
+      "offset": 3764,
+      "length": 22,
+      "value": "\"OSInAppBrowserLib.OSIABWebViewController\""
     },
     {
       "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/Models\/Options\/OSIABSystemBrowserOptions.swift",
@@ -5411,6 +5402,20 @@
       "offset": 169,
       "length": 38,
       "value": "\"OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABSafariViewControllerRouterAdapter.swift",
+      "kind": "StringLiteral",
+      "offset": 2943,
+      "length": 25,
+      "value": "\"OSInAppBrowserLib.OSIABSafariViewController\""
+    },
+    {
+      "filePath": "\/Users\/rcj\/Documents\/Projects\/OSInAppBrowserLib-iOS\/OSInAppBrowserLib\/RouterAdapters\/OSIABSafariViewControllerRouterAdapter.swift",
+      "kind": "StringLiteral",
+      "offset": 2943,
+      "length": 25,
+      "value": "\"OSInAppBrowserLib.OSIABSafariViewController\""
     }
   ]
 }

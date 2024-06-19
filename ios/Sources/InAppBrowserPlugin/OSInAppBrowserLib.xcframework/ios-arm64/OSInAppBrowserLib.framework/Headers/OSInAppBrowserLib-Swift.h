@@ -318,7 +318,6 @@ SWIFT_CLASS("_TtC17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapter")
 
 @interface OSIABSafariViewControllerRouterAdapter (SWIFT_EXTENSION(OSInAppBrowserLib)) <SFSafariViewControllerDelegate>
 - (void)safariViewController:(SFSafariViewController * _Nonnull)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully;
-- (void)safariViewControllerDidFinish:(SFSafariViewController * _Nonnull)controller;
 @end
 
 

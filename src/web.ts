@@ -2,22 +2,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { WebPlugin } from '@capacitor/core';
 
-import type { InAppBrowserPlugin, SystemBrowserOptions, WebViewOptions } from './definitions';
+import type { InAppBrowserPlugin, OpenInWebViewParameterModel, OpenInSystemBrowserParameterModel, OpenInDefaultParameterModel } from './definitions';
 
 export class InAppBrowserWeb extends WebPlugin implements InAppBrowserPlugin {
   //@ts-ignore
-  openInWebView(url: string, options: WebViewOptions): void {
+  openInWebView(model: OpenInWebViewParameterModel): Promise<void> {
     throw this.unimplemented('Not implemented on web.');
   }
   //@ts-ignore
-  openInSystemBrowser(url: string, options: SystemBrowserOptions): void {
+  openInSystemBrowser(model: OpenInSystemBrowserParameterModel): Promise<void> {
     throw this.unimplemented('Not implemented on web.');
   }
   //@ts-ignore
-  openInExternalBrowser(url: string): void {
+  openInExternalBrowser(model: OpenInDefaultParameterModel): Promise<void> {
     throw this.unimplemented('Not implemented on web.');
   }
-  close(): void {
+  //@ts-ignore
+  close(): Promise<void> {
     throw this.unimplemented('Not implemented on web.');
   }
 }

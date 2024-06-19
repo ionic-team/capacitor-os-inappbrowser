@@ -66,6 +66,15 @@ const Home: React.FC = () => {
     });
   }
 
+  const close = () => {
+    InAppBrowser.openInWebView({
+      url: "https://www.google.com",
+      options: DefaultWebViewOptions
+    }).then(() => {
+      InAppBrowser.close();
+    }); 
+  }
+
   InAppBrowser.addListener('browserClosed', () => {
     console.log("browser was closed.");
   });
@@ -93,6 +102,7 @@ const Home: React.FC = () => {
           <IonButton onClick={openInSystemBrowserWithCustomValues}>System Browser with Custom Values</IonButton>
           <IonButton onClick={openInWebViewWithDefaults}>Web View with Defaults</IonButton>
           <IonButton onClick={openInWebViewWithCustomValues}>Web View with Custom Values</IonButton>
+          <IonButton onClick={close}>Close opened Browser</IonButton>
         </div>
       </IonContent>
     </IonPage>
