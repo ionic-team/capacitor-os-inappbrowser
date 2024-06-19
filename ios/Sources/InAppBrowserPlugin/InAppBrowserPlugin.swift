@@ -37,12 +37,11 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
         
         let target = OSInAppBrowserTarget.externalBrowser
         
-        guard
-            let urlString = call.getString("url"),
-            let url = URL(string: urlString)
-        else {
-            return self.error(call, type: .inputArgumentsIssue(target: target))
-        }
+        let urlString = call.getString("url", "")
+        guard self.isSchemeValid(urlString) else { return self.error(call, type: .invalidURLScheme) }
+        
+        guard let url = URL(string: urlString)
+        else { return self.error(call, type: .inputArgumentsIssue(target: target)) }
         
         delegateExternalBrowser(plugin, url, call)
     }
@@ -66,8 +65,10 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
             }
         }
         
+        let urlString = call.getString("url", "")
+        guard self.isSchemeValid(urlString) else { return self.error(call, type: .invalidURLScheme) }
+        
         guard
-            let urlString = call.getString("url"),
             let options: OSInAppBrowserSystemBrowserModel = self.createModel(for: call.getObject("options")),
             let url = URL(string: urlString)
         else { return self.error(call, type: .inputArgumentsIssue(target: target)) }
@@ -106,8 +107,10 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
             }
         }
         
+        let urlString = call.getString("url", "")
+        guard self.isSchemeValid(urlString) else { return self.error(call, type: .invalidURLScheme) }
+        
         guard
-            let urlString = call.getString("url"),
             let options: OSInAppBrowserWebViewModel = self.createModel(for: call.getObject("options")),
             let url = URL(string: urlString)
         else { return self.error(call, type: .inputArgumentsIssue(target: target)) }
@@ -121,7 +124,7 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
             self.load()
         }
         
-        guard let plugin else {
+        if self.plugin == nil {
             return self.error(call, type: .bridgeNotInitialised)
         }
         
@@ -188,6 +191,10 @@ private extension InAppBrowserPlugin {
         } else {
             showNewViewController()
         }
+    }
+    
+    func isSchemeValid(_ urlScheme: String) -> Bool {
+        ["http://", "https://"].contains(where: urlScheme.hasPrefix)
     }
     
     func success(_ call: CAPPluginCall) {
