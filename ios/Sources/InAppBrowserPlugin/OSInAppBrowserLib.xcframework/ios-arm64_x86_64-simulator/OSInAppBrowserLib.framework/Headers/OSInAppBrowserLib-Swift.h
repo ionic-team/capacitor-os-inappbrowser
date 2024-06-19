@@ -322,6 +322,20 @@ SWIFT_CLASS("_TtC17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapter")
 @end
 
 
+/// Adapter that makes the required calls so that an <code>WKWebView</code> implementation can perform the Web View routing.
+/// This is done via a customisable interface.
+SWIFT_CLASS("_TtC17OSInAppBrowserLib25OSIABWebViewRouterAdapter")
+@interface OSIABWebViewRouterAdapter : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface OSIABWebViewRouterAdapter (SWIFT_EXTENSION(OSInAppBrowserLib)) <UIAdaptivePresentationControllerDelegate>
+- (void)presentationControllerDidDismiss:(UIPresentationController * _Nonnull)presentationController;
+@end
+
+
 #endif
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -651,6 +665,20 @@ SWIFT_CLASS("_TtC17OSInAppBrowserLib38OSIABSafariViewControllerRouterAdapter")
 @interface OSIABSafariViewControllerRouterAdapter (SWIFT_EXTENSION(OSInAppBrowserLib)) <SFSafariViewControllerDelegate>
 - (void)safariViewController:(SFSafariViewController * _Nonnull)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully;
 - (void)safariViewControllerDidFinish:(SFSafariViewController * _Nonnull)controller;
+@end
+
+
+/// Adapter that makes the required calls so that an <code>WKWebView</code> implementation can perform the Web View routing.
+/// This is done via a customisable interface.
+SWIFT_CLASS("_TtC17OSInAppBrowserLib25OSIABWebViewRouterAdapter")
+@interface OSIABWebViewRouterAdapter : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@interface OSIABWebViewRouterAdapter (SWIFT_EXTENSION(OSInAppBrowserLib)) <UIAdaptivePresentationControllerDelegate>
+- (void)presentationControllerDidDismiss:(UIPresentationController * _Nonnull)presentationController;
 @end
 
 
