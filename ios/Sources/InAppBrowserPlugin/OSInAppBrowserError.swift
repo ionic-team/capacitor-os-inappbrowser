@@ -40,7 +40,7 @@ enum OSInAppBrowserError: Error {
             
             result = "Couldn't open '\(url)' using \(targetString)."
         case .noBrowserToClose:
-            result = "No browser view to close"
+            result = "No browser view to close."
         }
         
         return result
