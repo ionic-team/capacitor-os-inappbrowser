@@ -5,6 +5,7 @@ import com.getcapacitor.PluginCall
 import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEventListener
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABWebViewOptions
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABExternalBrowserRouterAdapter
@@ -15,10 +16,23 @@ class InAppBrowserPlugin : Plugin() {
 
     private var engine: OSIABEngine? = null
 
+    /**
+     * Sets a listener for the browser events
+     */
+    private val eventListener = object : OSIABEventListener {
+        override fun onBrowserFinished(callbackID: String?) {
+            notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
+        }
+
+        override fun onBrowserPageLoaded(callbackID: String?) {
+            notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
+        }
+    }
+
     override fun load() {
         super.load()
         val externalBrowserRouter = OSIABExternalBrowserRouterAdapter(context)
-        val webViewRouter = OSIABWebViewRouterAdapter(context)
+        val webViewRouter = OSIABWebViewRouterAdapter(context, eventListener)
         this.engine = OSIABEngine(externalBrowserRouter, webViewRouter)
     }
 
@@ -97,4 +111,9 @@ class InAppBrowserPlugin : Plugin() {
         }
     }
 
+}
+
+enum class OSIABEventType(val value: String) {
+    BROWSER_FINISHED("browserClosed"),
+    BROWSER_PAGE_LOADED("browserPageLoaded")
 }
