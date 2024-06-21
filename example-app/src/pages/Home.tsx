@@ -72,6 +72,36 @@ const Home: React.FC = () => {
     });
   }
 
+  const openInWebViewWithMoreCustomValues = () => {
+    InAppBrowser.openInWebView({
+      url: "https://www.outsystems.com/",
+      options: {
+        showURL: true,
+        showToolbar: true,
+        clearCache: true,
+        clearSessionCache: true,
+        mediaPlaybackRequiresUserAction: false,
+        closeButtonText: "Done",
+        toolbarPosition: ToolbarPosition.TOP,
+        showNavigationButtons: true,
+        leftToRight: false,
+        android: {
+          allowZoom: true,
+          hardwareBack: true,
+          pauseMedia: true
+        },
+        iOS: {
+          allowOverScroll: false,
+          enableViewportScale: true,
+          allowInLineMediaPlayback: true,
+          surpressIncrementalRendering: true,
+          viewStyle: iOSViewStyle.PAGE_SHEET,
+          animationEffect: iOSAnimation.CROSS_DISSOLVE
+        }
+      }
+    });
+  }
+
   const close = () => {
     InAppBrowser.openInWebView({
       url: "https://www.google.com",
@@ -108,6 +138,7 @@ const Home: React.FC = () => {
           <IonButton onClick={openInSystemBrowserWithCustomValues}>System Browser with Custom Values</IonButton>
           <IonButton onClick={openInWebViewWithDefaults}>Web View with Defaults</IonButton>
           <IonButton onClick={openInWebViewWithCustomValues}>Web View with Custom Values</IonButton>
+          <IonButton onClick={openInWebViewWithMoreCustomValues}>Web View with More Custom Values</IonButton>
           <IonButton onClick={close}>Close opened Browser</IonButton>
           <IonButton onClick={invalidScheme}>Invalid URL Scheme</IonButton>
         </div>
