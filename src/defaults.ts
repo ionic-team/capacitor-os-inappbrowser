@@ -11,16 +11,15 @@ export const DefaultiOSWebViewOptions: iOSWebViewOptions = {
 
     enableViewportScale: false,
     allowInLineMediaPlayback: false,
-    keyboardDisplayRequiresUserAction: true,
     surpressIncrementalRendering: false,
 
-    viewStyle: iOSViewStyle.PAGE_SHEET,
-    animation: iOSAnimation.FLIP_HORIZONTAL
+    viewStyle: iOSViewStyle.FULL_SCREEN,
+    animationEffect: iOSAnimation.COVER_VERTICAL
 }
 
 export const DefaultWebViewOptions: WebViewOptions = {
     showToolbar: true,
-    showURL: false,
+    showURL: true,
 
     clearCache: true,
     clearSessionCache: true,

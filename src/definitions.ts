@@ -109,14 +109,11 @@ export interface OpenInDefaultParameterModel {
 }
 
 /**
-
  * Defines the options for opening a URL in the system browser.
-
  */
 export interface OpenInSystemBrowserParameterModel extends OpenInDefaultParameterModel {
   options: SystemBrowserOptions;
 }
-
 
 /**
  * Defines the options for opening a URL in the web view.
@@ -126,10 +123,10 @@ export interface OpenInWebViewParameterModel extends OpenInDefaultParameterModel
 }
 
 export interface InAppBrowserPlugin {
-  openInWebView(model: OpenInWebViewParameterModel): void;
-  openInSystemBrowser(model: OpenInSystemBrowserParameterModel): void;
-  openInExternalBrowser(model: OpenInDefaultParameterModel): void;
-  close(): void;
+  openInWebView(model: OpenInWebViewParameterModel): Promise<void>;
+  openInSystemBrowser(model: OpenInSystemBrowserParameterModel): Promise<void>;
+  openInExternalBrowser(model: OpenInDefaultParameterModel): Promise<void>;
+  close(): Promise<void>;
   removeAllListeners(): void;
   addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void): Promise<PluginListenerHandle>;
 }
