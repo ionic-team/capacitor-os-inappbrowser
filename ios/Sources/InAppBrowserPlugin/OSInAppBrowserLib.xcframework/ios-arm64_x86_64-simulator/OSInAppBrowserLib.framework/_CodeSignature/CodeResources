@@ -6,19 +6,19 @@
 	<dict>
 		<key>Headers/OSInAppBrowserLib-Swift.h</key>
 		<data>
-		uRiinMJu3YZinPjXg/cqeYD7aHk=
+		7BagsdfOTMBD3CgxGr2CtHZ7R3Y=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		kG6zskYObjotgrQErsNeJwYZ4yY=
+		DCVlttFiO0Reil5GJ6BZ7ycGIh4=
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		mnL/qQBBmpV1XPJLHoHUkSL2V2k=
+		z8c86Hdqf2S5MEcxtUFEjf+XmiY=
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		de5d9Vg2R92sD9r97FIfI9LR/rk=
+		ABBRkF46FCY4u6rctAIDWD7Q/4I=
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		de5d9Vg2R92sD9r97FIfI9LR/rk=
+		ABBRkF46FCY4u6rctAIDWD7Q/4I=
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/JZ5VkiKEMbv7Db0DmSPyAHy0WI=
+		4ZCfGjwYqrCsfdTvSK/loUDHHYU=
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		mnL/qQBBmpV1XPJLHoHUkSL2V2k=
+		z8c86Hdqf2S5MEcxtUFEjf+XmiY=
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		iK71ubOwTFBWpbvjrrvh6+bjOhc=
+		hGjglFLIoYC7mtvjiT5FDgUSc04=
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		iK71ubOwTFBWpbvjrrvh6+bjOhc=
+		hGjglFLIoYC7mtvjiT5FDgUSc04=
 		</data>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		F6gJC1EiBUCTOkufaZE1hrWIHac=
+		QR/o9GtZcWvSRw2/giFfpGyBE8k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,21 +63,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a0ckGcq4Rl4V72/53mDuDGzmNR0y13ZGEQipX7faTn4=
+			gTx2NQ1xmU5BHtsZTr2v7xl0Gwby1IZxdixEqzo9/ww=
 			</data>
 		</dict>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			acCGO+XxYZ9fk9xMAllLqNC0PWEkqWIeH5b/BZTIdqg=
+			3/RzB8NUzwKaTo/zOiwoO3t4g2kHqFAhC1SrQGvdpTk=
 			</data>
 		</dict>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LZXpyNQt16CZIPQEjgyOFTJNUXdXvDAQBJP1YDA8OgY=
+			gYqICogrUNf6/SiVF28mi2gS0XorOKuEVZIL4J47k+c=
 			</data>
 		</dict>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -91,28 +91,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LZXpyNQt16CZIPQEjgyOFTJNUXdXvDAQBJP1YDA8OgY=
+			gYqICogrUNf6/SiVF28mi2gS0XorOKuEVZIL4J47k+c=
 			</data>
 		</dict>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/pObhliPH2YCa0kjbS0/0R3V5Eoryw4zVYHNzj9elKA=
+			TdiPF0oQ7FCDS29nc79NazODyJR3DJChQRXpsa8nGU8=
 			</data>
 		</dict>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			acCGO+XxYZ9fk9xMAllLqNC0PWEkqWIeH5b/BZTIdqg=
+			3/RzB8NUzwKaTo/zOiwoO3t4g2kHqFAhC1SrQGvdpTk=
 			</data>
 		</dict>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uIUgZpcZsHWcYKJ7OkzUi606Kp+9IM3qevYewvvQrSw=
+			esa/ibLE7naC4tFCN2YILU2P5oP8hFeR/CUTxEs8KHw=
 			</data>
 		</dict>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -126,14 +126,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uIUgZpcZsHWcYKJ7OkzUi606Kp+9IM3qevYewvvQrSw=
+			esa/ibLE7naC4tFCN2YILU2P5oP8hFeR/CUTxEs8KHw=
 			</data>
 		</dict>
 		<key>Modules/OSInAppBrowserLib.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+apNr2zBwyrV4w5QRX13Qlzi6H7DZ9D2n92vXmiUpzA=
+			pOGUvlrqzVLyS2uqQmilijNbh3bYVsGeap/ZoN+CeFY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

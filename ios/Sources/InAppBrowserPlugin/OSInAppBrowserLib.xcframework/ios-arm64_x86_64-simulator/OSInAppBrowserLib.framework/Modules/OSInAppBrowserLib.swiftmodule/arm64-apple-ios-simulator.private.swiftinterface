@@ -148,7 +148,6 @@ public class OSIABSystemBrowserOptions : OSInAppBrowserLib.OSIABOptions {
 }
 extension OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter : SafariServices.SFSafariViewControllerDelegate {
   @objc dynamic public func safariViewController(_ controller: SafariServices.SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Swift.Bool)
-  @objc dynamic public func safariViewControllerDidFinish(_ controller: SafariServices.SFSafariViewController)
 }
 extension OSInAppBrowserLib.OSIABSafariViewControllerRouterAdapter : UIKit.UIAdaptivePresentationControllerDelegate {
   @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationControllerDidDismiss(_ presentationController: UIKit.UIPresentationController)

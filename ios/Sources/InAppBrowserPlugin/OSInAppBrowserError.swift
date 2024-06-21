@@ -6,20 +6,10 @@ enum OSInAppBrowserTarget {
 
 enum OSInAppBrowserError: Error {
     case bridgeNotInitialised
+    case invalidURLScheme
     case inputArgumentsIssue(target: OSInAppBrowserTarget)
     case failedToOpen(url: String, onTarget: OSInAppBrowserTarget)
-    
-    private var code: Int {
-        let result: Int
-        
-        switch self {
-        case .bridgeNotInitialised: result = 0
-        case .inputArgumentsIssue: result = 0
-        case .failedToOpen: result = 0
-        }
-        
-        return result
-    }
+    case noBrowserToClose
     
     var description: String {
         let result: String
@@ -27,6 +17,8 @@ enum OSInAppBrowserError: Error {
         switch self {
         case .bridgeNotInitialised:
             result = "Capacitor bridge is not initialized."
+        case .invalidURLScheme:
+            result = "The provided URL must start with http:// or https://."
         case .inputArgumentsIssue(let target):
             let targetString: String
             
@@ -47,6 +39,8 @@ enum OSInAppBrowserError: Error {
             }
             
             result = "Couldn't open '\(url)' using \(targetString)."
+        case .noBrowserToClose:
+            result = "No browser view to close."
         }
         
         return result
