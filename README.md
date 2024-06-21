@@ -30,7 +30,7 @@ npx cap sync
 ### openInWebView(...)
 
 ```typescript
-openInWebView(model: OpenInWebViewParameterModel) => void
+openInWebView(model: OpenInWebViewParameterModel) => Promise<void>
 ```
 
 | Param       | Type                                                                                |
@@ -43,7 +43,7 @@ openInWebView(model: OpenInWebViewParameterModel) => void
 ### openInSystemBrowser(...)
 
 ```typescript
-openInSystemBrowser(model: OpenInSystemBrowserParameterModel) => void
+openInSystemBrowser(model: OpenInSystemBrowserParameterModel) => Promise<void>
 ```
 
 | Param       | Type                                                                                            |
@@ -56,7 +56,7 @@ openInSystemBrowser(model: OpenInSystemBrowserParameterModel) => void
 ### openInExternalBrowser(...)
 
 ```typescript
-openInExternalBrowser(model: OpenInDefaultParameterModel) => void
+openInExternalBrowser(model: OpenInDefaultParameterModel) => Promise<void>
 ```
 
 | Param       | Type                                                                                |
@@ -69,7 +69,7 @@ openInExternalBrowser(model: OpenInDefaultParameterModel) => void
 ### close()
 
 ```typescript
-close() => void
+close() => Promise<void>
 ```
 
 --------------------
