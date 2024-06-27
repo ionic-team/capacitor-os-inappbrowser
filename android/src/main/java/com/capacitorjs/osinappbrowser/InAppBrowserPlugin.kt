@@ -1,10 +1,12 @@
 package com.capacitorjs.osinappbrowser
+import androidx.lifecycle.lifecycleScope
 import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
 import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.helpers.OSIABFlowHelper
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABWebViewOptions
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABExternalBrowserRouterAdapter
@@ -17,9 +19,7 @@ class InAppBrowserPlugin : Plugin() {
 
     override fun load() {
         super.load()
-        val externalBrowserRouter = OSIABExternalBrowserRouterAdapter(context)
-        val webViewRouter = OSIABWebViewRouterAdapter(context)
-        this.engine = OSIABEngine(externalBrowserRouter, webViewRouter)
+        this.engine = OSIABEngine()
     }
 
     @PluginMethod
@@ -30,7 +30,7 @@ class InAppBrowserPlugin : Plugin() {
             return
         }
 
-        engine?.openExternalBrowser(url) { success ->
+        engine?.openExternalBrowser(OSIABExternalBrowserRouterAdapter(context), url) { success ->
             if (success) {
                 call.resolve()
             } else {
@@ -45,7 +45,20 @@ class InAppBrowserPlugin : Plugin() {
             val url = call.getString("url")
             val options = buildWebViewOptions(call.getObject("options"))
 
-            engine?.openWebView(url!!, options) { success ->
+            val webViewRouter = OSIABWebViewRouterAdapter(
+                context,
+                activity.lifecycleScope,
+                options,
+                OSIABFlowHelper(),
+                onBrowserPageLoaded = {
+                    notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
+                },
+                onBrowserFinished = {
+                    notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
+                }
+            )
+
+            engine?.openWebView(webViewRouter, url!!) { success ->
                 if (success) {
                     call.resolve()
                 } else {
@@ -97,4 +110,9 @@ class InAppBrowserPlugin : Plugin() {
         }
     }
 
+}
+
+enum class OSIABEventType(val value: String) {
+    BROWSER_FINISHED("browserClosed"),
+    BROWSER_PAGE_LOADED("browserPageLoaded")
 }
