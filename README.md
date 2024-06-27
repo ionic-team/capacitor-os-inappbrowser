@@ -30,13 +30,12 @@ npx cap sync
 ### openInWebView(...)
 
 ```typescript
-openInWebView(url: string, options: WebViewOptions) => void
+openInWebView(model: OpenInWebViewParameterModel) => Promise<void>
 ```
 
-| Param         | Type                                                      |
-| ------------- | --------------------------------------------------------- |
-| **`url`**     | <code>string</code>                                       |
-| **`options`** | <code><a href="#webviewoptions">WebViewOptions</a></code> |
+| Param       | Type                                                                                |
+| ----------- | ----------------------------------------------------------------------------------- |
+| **`model`** | <code><a href="#openinwebviewparametermodel">OpenInWebViewParameterModel</a></code> |
 
 --------------------
 
@@ -44,7 +43,7 @@ openInWebView(url: string, options: WebViewOptions) => void
 ### openInSystemBrowser(...)
 
 ```typescript
-openInSystemBrowser(model: OpenInSystemBrowserParameterModel) => void
+openInSystemBrowser(model: OpenInSystemBrowserParameterModel) => Promise<void>
 ```
 
 | Param       | Type                                                                                            |
@@ -57,7 +56,7 @@ openInSystemBrowser(model: OpenInSystemBrowserParameterModel) => void
 ### openInExternalBrowser(...)
 
 ```typescript
-openInExternalBrowser(model: OpenInDefaultParameterModel) => void
+openInExternalBrowser(model: OpenInDefaultParameterModel) => Promise<void>
 ```
 
 | Param       | Type                                                                                |
@@ -70,7 +69,7 @@ openInExternalBrowser(model: OpenInDefaultParameterModel) => void
 ### close()
 
 ```typescript
-close() => void
+close() => Promise<void>
 ```
 
 --------------------
@@ -104,6 +103,15 @@ addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () =
 ### Interfaces
 
 
+#### OpenInWebViewParameterModel
+
+Defines the options for opening a URL in the web view.
+
+| Prop          | Type                                                      |
+| ------------- | --------------------------------------------------------- |
+| **`options`** | <code><a href="#webviewoptions">WebViewOptions</a></code> |
+
+
 #### WebViewOptions
 
 | Prop                                  | Type                                                                    |
@@ -132,20 +140,19 @@ addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () =
 
 #### iOSWebViewOptions
 
-| Prop                                    | Type                                                  |
-| --------------------------------------- | ----------------------------------------------------- |
-| **`allowOverScroll`**                   | <code>boolean</code>                                  |
-| **`enableViewportScale`**               | <code>boolean</code>                                  |
-| **`allowInLineMediaPlayback`**          | <code>boolean</code>                                  |
-| **`keyboardDisplayRequiresUserAction`** | <code>boolean</code>                                  |
-| **`surpressIncrementalRendering`**      | <code>boolean</code>                                  |
-| **`viewStyle`**                         | <code><a href="#iosviewstyle">iOSViewStyle</a></code> |
-| **`animation`**                         | <code><a href="#iosanimation">iOSAnimation</a></code> |
+| Prop                               | Type                                                  |
+| ---------------------------------- | ----------------------------------------------------- |
+| **`allowOverScroll`**              | <code>boolean</code>                                  |
+| **`enableViewportScale`**          | <code>boolean</code>                                  |
+| **`allowInLineMediaPlayback`**     | <code>boolean</code>                                  |
+| **`surpressIncrementalRendering`** | <code>boolean</code>                                  |
+| **`viewStyle`**                    | <code><a href="#iosviewstyle">iOSViewStyle</a></code> |
+| **`animationEffect`**              | <code><a href="#iosanimation">iOSAnimation</a></code> |
 
 
 #### OpenInSystemBrowserParameterModel
 
-Defines the options for opening a URL in the syste, browser.
+Defines the options for opening a URL in the system browser.
 
 | Prop          | Type                                                                  |
 | ------------- | --------------------------------------------------------------------- |
