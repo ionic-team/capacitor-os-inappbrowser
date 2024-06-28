@@ -1,11 +1,12 @@
 package com.capacitorjs.osinappbrowser
-
+import androidx.lifecycle.lifecycleScope
 import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
 import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.helpers.OSIABFlowHelper
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABAnimation
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABBottomSheet
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABCustomTabsOptions
@@ -50,8 +51,11 @@ class InAppBrowserPlugin : Plugin() {
             val url = call.getString("url")
             val options = buildCustomTabsOptions(call.getObject("options"))
 
-            val customTabsRouter =
-                OSIABCustomTabsRouterAdapter(context, options)
+            val customTabsRouter = OSIABCustomTabsRouterAdapter(
+                context = context,
+                lifecycleScope = activity.lifecycleScope,
+                options = options
+            )
 
             engine?.openCustomTabs(customTabsRouter, url!!) { success ->
                 if (success) {
@@ -71,7 +75,18 @@ class InAppBrowserPlugin : Plugin() {
             val url = call.getString("url")
             val options = buildWebViewOptions(call.getObject("options"))
 
-            val webViewRouter = OSIABWebViewRouterAdapter(context, options)
+            val webViewRouter = OSIABWebViewRouterAdapter(
+                context,
+                activity.lifecycleScope,
+                options,
+                OSIABFlowHelper(),
+                onBrowserPageLoaded = {
+                    notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
+                },
+                onBrowserFinished = {
+                    notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
+                }
+            )
 
             engine?.openWebView(webViewRouter, url!!) { success ->
                 if (success) {
@@ -129,28 +144,28 @@ class InAppBrowserPlugin : Plugin() {
      * Parses options that come in a JSObject to create a 'OSIABCustomTabs' object.
      * @param options The options to open the URL in the system browser (Custom Tabs).
      */
-    private fun buildCustomTabsOptions(options: JSObject): OSIABCustomTabsOptions? {
+    private fun buildCustomTabsOptions(options: JSObject): OSIABCustomTabsOptions {
         val optionsJson = options.getJSObject("android")
 
-        return optionsJson?.let {
-            val showTitle = it.getBoolean("showTitle", true) ?: true
-            val hideToolbarOnScroll = it.getBoolean("hideToolbarOnScroll", false) ?: false
-            val viewStyle = it.getInteger("viewStyle")?.let { ordinal ->
+        return optionsJson.let {
+            val showTitle = it?.getBoolean("showTitle", true) ?: true
+            val hideToolbarOnScroll = it?.getBoolean("hideToolbarOnScroll", false) ?: false
+            val viewStyle = it?.getInteger("viewStyle")?.let { ordinal ->
                 OSIABViewStyle.entries[ordinal]
             } ?: OSIABViewStyle.FULL_SCREEN
 
-            val bottomSheetOptions = it.getJSObject("bottomSheetOptions")?.let { json ->
+            val bottomSheetOptions = it?.getJSObject("bottomSheetOptions")?.let { json ->
                 val height = json.getInteger("height", 1) ?: 1
                 val isFixed = json.getBoolean("isFixed", false) ?: false
 
                 OSIABBottomSheet(height, isFixed)
             }
 
-            val startAnimation = it.getInteger("startAnimation")?.let { ordinal ->
+            val startAnimation = it?.getInteger("startAnimation")?.let { ordinal ->
                 OSIABAnimation.entries[ordinal]
             } ?: OSIABAnimation.FADE_IN
 
-            val exitAnimation = it.getInteger("exitAnimation")?.let { ordinal ->
+            val exitAnimation = it?.getInteger("exitAnimation")?.let { ordinal ->
                 OSIABAnimation.entries[ordinal]
             } ?: OSIABAnimation.FADE_OUT
 
@@ -166,4 +181,9 @@ class InAppBrowserPlugin : Plugin() {
     }
 
 
+}
+
+enum class OSIABEventType(val value: String) {
+    BROWSER_FINISHED("browserClosed"),
+    BROWSER_PAGE_LOADED("browserPageLoaded")
 }
