@@ -30,30 +30,48 @@ class InAppBrowserPlugin : Plugin() {
     @PluginMethod
     fun openInExternalBrowser(call: PluginCall) {
         val url = call.getString("url")
-        if (url == null) {
-            call.reject("The input parameters for 'openInExternalBrowser' are invalid.")
+        if (url.isNullOrEmpty()) {
+            call.reject("The input parameter 'url' provided for 'openInExternalBrowser' is missing or empty.")
             return
         }
 
-        engine?.openExternalBrowser(OSIABExternalBrowserRouterAdapter(context), url) { success ->
-            if (success) {
-                call.resolve()
-            } else {
-                call.reject("Couldn't open '$url' using the external browser.")
+        try {
+            val externalBrowserRouter = OSIABExternalBrowserRouterAdapter(context)
+
+            engine?.openExternalBrowser(externalBrowserRouter, url) { success ->
+                if (success) {
+                    call.resolve()
+                } else {
+                    call.reject("Couldn't open '$url' using the external browser.")
+                }
             }
+        } catch (e: Exception) {
+            call.reject("An error occurred while trying to open the external browser: ${e.message}")
         }
     }
 
     @PluginMethod
     fun openInSystemBrowser(call: PluginCall) {
+        val url = call.getString("url")
+        val options = call.getObject("options")
+
+        if (url.isNullOrEmpty()) {
+            call.reject("The input parameter 'url' provided for 'openInSystemBrowser' is missing or empty.")
+            return
+        }
+
+        if (options == null) {
+            call.reject("The input parameter 'options' provided for 'openInSystemBrowser' is missing or invalid.")
+            return
+        }
+
         try {
-            val url = call.getString("url")
-            val options = buildCustomTabsOptions(call.getObject("options"))
+            val customTabsOptions = buildCustomTabsOptions(options)
 
             val customTabsRouter = OSIABCustomTabsRouterAdapter(
                 context = context,
                 lifecycleScope = activity.lifecycleScope,
-                options = options,
+                options = customTabsOptions,
                 onBrowserPageLoaded = {
                     notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
                 },
@@ -62,7 +80,7 @@ class InAppBrowserPlugin : Plugin() {
                 }
             )
 
-            engine?.openCustomTabs(customTabsRouter, url!!) { success ->
+            engine?.openCustomTabs(customTabsRouter, url) { success ->
                 if (success) {
                     call.resolve()
                 } else {
@@ -70,7 +88,7 @@ class InAppBrowserPlugin : Plugin() {
                 }
             }
         } catch (e: Exception) {
-            call.reject("The input parameters for 'openInSystemBrowser' are invalid.")
+            call.reject("An error occurred while trying to open the system browser: ${e.message}")
         }
     }
 
@@ -186,6 +204,7 @@ class InAppBrowserPlugin : Plugin() {
             )
         }
     }
+
 
 }
 
