@@ -74,7 +74,7 @@ class InAppBrowserPlugin : Plugin() {
                 options = customTabsOptions
             )
 
-            engine?.openCustomTabs(customTabsRouter, url!!) { success ->
+            engine?.openCustomTabs(customTabsRouter, url) { success ->
                 if (success) {
                     call.resolve()
                 } else {
