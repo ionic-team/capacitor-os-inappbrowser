@@ -1,5 +1,5 @@
 import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { InAppBrowser, SystemBrowserOptions, DefaultSystemBrowserOptions, DefaultAndroidSystemBrowserOptions, WebViewOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition } from '@capacitor/os-inappbrowser';
+import { InAppBrowser, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation } from '@capacitor/os-inappbrowser';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -27,7 +27,17 @@ const Home: React.FC = () => {
     InAppBrowser.openInSystemBrowser({
       url: "https://www.asymco.com/",
       options: {
-        android: DefaultAndroidSystemBrowserOptions,
+        android: {
+          showTitle: true,
+          hideToolbarOnScroll: true,
+          viewStyle: AndroidViewStyle.BOTTOM_SHEET,
+          startAnimation: AndroidAnimation.FADE_OUT,
+          exitAnimation: AndroidAnimation.FADE_IN,
+          bottomSheetOptions: {
+            height: 200,
+            isFixed: false
+          }
+        },
         iOS: {
           closeButtonText: DismissStyle.CANCEL,
           viewStyle: iOSViewStyle.FORM_SHEET,
