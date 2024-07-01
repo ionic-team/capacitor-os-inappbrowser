@@ -74,7 +74,7 @@ struct OSInAppBrowserWebViewModel: Decodable {
         self.toolbarPosition = .init(toolbarPositionValue)
         self.showNavigationButtons = try container.decode(Bool.self, forKey: .showNavigationButtons)
         self.leftToRight = try container.decode(Bool.self, forKey: .leftToRight)
-        self.customWebViewUserAgent = try container.decode(String.self, forKey: .customWebViewUserAgent)
+        self.customWebViewUserAgent = try container.decodeIfPresent(String.self, forKey: .customWebViewUserAgent)
         self.iOS = try container.decode(OSInAppBrowserWebViewModel.iOS.self, forKey: .iOS)
     }
 }
