@@ -7,8 +7,13 @@ import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.helpers.OSIABFlowHelper
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABAnimation
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABBottomSheet
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABCustomTabsOptions
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABViewStyle
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABWebViewOptions
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABCustomTabsRouterAdapter
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABExternalBrowserRouterAdapter
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABWebViewRouterAdapter
 
@@ -36,6 +41,36 @@ class InAppBrowserPlugin : Plugin() {
             } else {
                 call.reject("Couldn't open '$url' using the external browser.")
             }
+        }
+    }
+
+    @PluginMethod
+    fun openInSystemBrowser(call: PluginCall) {
+        try {
+            val url = call.getString("url")
+            val options = buildCustomTabsOptions(call.getObject("options"))
+
+            val customTabsRouter = OSIABCustomTabsRouterAdapter(
+                context = context,
+                lifecycleScope = activity.lifecycleScope,
+                options = options,
+                onBrowserPageLoaded = {
+                    notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
+                },
+                onBrowserFinished = {
+                    notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
+                }
+            )
+
+            engine?.openCustomTabs(customTabsRouter, url!!) { success ->
+                if (success) {
+                    call.resolve()
+                } else {
+                    call.reject("Couldn't open '$url' using the system browser.")
+                }
+            }
+        } catch (e: Exception) {
+            call.reject("The input parameters for 'openInSystemBrowser' are invalid.")
         }
     }
 
@@ -108,6 +143,46 @@ class InAppBrowserPlugin : Plugin() {
                 hardwareBack,
                 pauseMedia,
                 customWebViewAgent
+            )
+        }
+    }
+
+    /**
+     * Parses options that come in a JSObject to create a 'OSIABCustomTabs' object.
+     * @param options The options to open the URL in the system browser (Custom Tabs).
+     */
+    private fun buildCustomTabsOptions(options: JSObject): OSIABCustomTabsOptions {
+        val optionsJson = options.getJSObject("android")
+
+        return optionsJson.let {
+            val showTitle = it?.getBoolean("showTitle", true) ?: true
+            val hideToolbarOnScroll = it?.getBoolean("hideToolbarOnScroll", false) ?: false
+            val viewStyle = it?.getInteger("viewStyle")?.let { ordinal ->
+                OSIABViewStyle.entries[ordinal]
+            } ?: OSIABViewStyle.FULL_SCREEN
+
+            val bottomSheetOptions = it?.getJSObject("bottomSheetOptions")?.let { json ->
+                val height = json.getInteger("height", 1) ?: 1
+                val isFixed = json.getBoolean("isFixed", false) ?: false
+
+                OSIABBottomSheet(height, isFixed)
+            }
+
+            val startAnimation = it?.getInteger("startAnimation")?.let { ordinal ->
+                OSIABAnimation.entries[ordinal]
+            } ?: OSIABAnimation.FADE_IN
+
+            val exitAnimation = it?.getInteger("exitAnimation")?.let { ordinal ->
+                OSIABAnimation.entries[ordinal]
+            } ?: OSIABAnimation.FADE_OUT
+
+            OSIABCustomTabsOptions(
+                showTitle = showTitle,
+                hideToolbarOnScroll = hideToolbarOnScroll,
+                viewStyle = viewStyle,
+                bottomSheetOptions = bottomSheetOptions,
+                startAnimation = startAnimation,
+                exitAnimation = exitAnimation
             )
         }
     }
