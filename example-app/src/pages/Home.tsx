@@ -60,6 +60,7 @@ const Home: React.FC = () => {
         showNavigationButtons: false,
         leftToRight: true,
         android: DefaultAndroidWebViewOptions,
+        customWebViewUserAgent: `${window.navigator.userAgent} SepcialUser`,
         iOS: {
           allowOverScroll: false,
           enableViewportScale: true,

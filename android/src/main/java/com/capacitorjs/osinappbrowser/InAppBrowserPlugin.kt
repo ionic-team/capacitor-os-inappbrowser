@@ -88,11 +88,12 @@ class InAppBrowserPlugin : Plugin() {
             } ?: OSIABToolbarPosition.TOP
             val leftToRight = it.getBoolean("leftToRight", false) ?: false
             val showNavigationButtons = it.getBoolean("showNavigationButtons", false) ?: false
+            val customWebViewAgent = it.getString("customWebViewUserAgent", null) ?: null
             val androidOptions = it.getJSObject("android")
             val allowZoom = androidOptions?.getBoolean("allowZoom", true) ?: true
             val hardwareBack = androidOptions?.getBoolean("hardwareBack", true) ?: true
             val pauseMedia = androidOptions?.getBoolean("pauseMedia", true) ?: true
-
+            
             OSIABWebViewOptions(
                 showURL,
                 showToolbar,
@@ -105,7 +106,8 @@ class InAppBrowserPlugin : Plugin() {
                 showNavigationButtons,
                 allowZoom,
                 hardwareBack,
-                pauseMedia
+                pauseMedia,
+                customWebViewAgent
             )
         }
     }

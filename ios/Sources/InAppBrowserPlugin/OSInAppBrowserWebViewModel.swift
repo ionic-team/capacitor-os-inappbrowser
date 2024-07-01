@@ -44,6 +44,7 @@ struct OSInAppBrowserWebViewModel: Decodable {
     let toolbarPosition: OSIABToolbarPosition
     let showNavigationButtons: Bool
     let leftToRight: Bool
+    let customWebViewUserAgent: String?
     
     enum CodingKeys: CodingKey {
         case iOS
@@ -56,6 +57,7 @@ struct OSInAppBrowserWebViewModel: Decodable {
         case toolbarPosition
         case showNavigationButtons
         case leftToRight
+        case customWebViewUserAgent
     }
     
     init(from decoder: Decoder) throws {
@@ -72,12 +74,13 @@ struct OSInAppBrowserWebViewModel: Decodable {
         self.toolbarPosition = .init(toolbarPositionValue)
         self.showNavigationButtons = try container.decode(Bool.self, forKey: .showNavigationButtons)
         self.leftToRight = try container.decode(Bool.self, forKey: .leftToRight)
+        self.customWebViewUserAgent = try container.decodeIfPresent(String.self, forKey: .customWebViewUserAgent)
         self.iOS = try container.decode(OSInAppBrowserWebViewModel.iOS.self, forKey: .iOS)
     }
 }
 
 extension OSInAppBrowserWebViewModel {
-    func toWebViewOptions(with customUserAgent: String?) -> OSIABWebViewOptions {
+    func toWebViewOptions() -> OSIABWebViewOptions {
         OSIABWebViewOptions(
             showURL: self.showURL,
             showToolbar: self.showToolbar,
@@ -93,7 +96,7 @@ extension OSInAppBrowserWebViewModel {
             surpressIncrementalRendering: self.iOS.surpressIncrementalRendering,
             viewStyle: self.iOS.viewStyle,
             animationEffect: self.iOS.animationEffect,
-            customUserAgent: customUserAgent
+            customUserAgent: self.customWebViewUserAgent
         )
     }
 }

@@ -125,6 +125,7 @@ Defines the options for opening a URL in the web view.
 | **`toolbarPosition`**                 | <code><a href="#toolbarposition">ToolbarPosition</a></code>             |
 | **`showNavigationButtons`**           | <code>boolean</code>                                                    |
 | **`leftToRight`**                     | <code>boolean</code>                                                    |
+| **`customWebViewUserAgent`**          | <code><a href="#string">String</a> \| null</code>                       |
 | **`android`**                         | <code><a href="#androidwebviewoptions">AndroidWebViewOptions</a></code> |
 | **`iOS`**                             | <code><a href="#ioswebviewoptions">iOSWebViewOptions</a></code>         |
 
