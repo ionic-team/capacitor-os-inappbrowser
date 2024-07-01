@@ -115,8 +115,7 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
             let url = URL(string: urlString)
         else { return self.error(call, type: .inputArgumentsIssue(target: target)) }
         
-        let customUserAgent = self.bridge?.config.overridenUserAgentString
-        delegateWebView(url, options.toWebViewOptions(with: customUserAgent))
+        delegateWebView(url, options.toWebViewOptions())
     }
     
     @objc func close(_ call: CAPPluginCall) {

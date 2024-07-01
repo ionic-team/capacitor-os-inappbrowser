@@ -30,6 +30,7 @@ export const DefaultWebViewOptions: WebViewOptions = {
 
     showNavigationButtons: true,
     leftToRight: false,
+    customWebViewUserAgent: null,
 
     android: DefaultAndroidWebViewOptions,
     iOS: DefaultiOSWebViewOptions

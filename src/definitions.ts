@@ -43,6 +43,8 @@ export interface WebViewOptions {
   
   showNavigationButtons: boolean;
   leftToRight: boolean;
+
+  customWebViewUserAgent?: String | null;
   
   android: AndroidWebViewOptions,
   iOS: iOSWebViewOptions
