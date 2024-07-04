@@ -71,7 +71,13 @@ class InAppBrowserPlugin : Plugin() {
             val customTabsRouter = OSIABCustomTabsRouterAdapter(
                 context = context,
                 lifecycleScope = activity.lifecycleScope,
-                options = customTabsOptions
+                options = customTabsOptions,
+                onBrowserPageLoaded = {
+                    notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
+                },
+                onBrowserFinished = {
+                    notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
+                }
             )
 
             engine?.openCustomTabs(customTabsRouter, url) { success ->
