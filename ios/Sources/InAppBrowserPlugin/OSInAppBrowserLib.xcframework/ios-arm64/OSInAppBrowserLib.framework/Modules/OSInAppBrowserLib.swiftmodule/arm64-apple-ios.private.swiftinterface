@@ -40,6 +40,7 @@ public class OSIABWebViewOptions : OSInAppBrowserLib.OSIABOptions {
 
 
 
+
 public class OSIABOptions {
   public init(viewStyle: OSInAppBrowserLib.OSIABViewStyle, animationEffect: OSInAppBrowserLib.OSIABAnimationEffect)
   @objc deinit
@@ -124,6 +125,9 @@ public enum OSIABAnimationEffect : Swift.String {
 public struct OSIABWebViewCallbackHandler {
   public init(onDelegateURL: @escaping (Foundation.URL) -> Swift.Void, onDelegateAlertController: @escaping (UIKit.UIAlertController) -> Swift.Void, onBrowserPageLoad: @escaping () -> Swift.Void, onBrowserClosed: @escaping (Swift.Bool) -> Swift.Void)
 }
+
+
+
 
 
 
