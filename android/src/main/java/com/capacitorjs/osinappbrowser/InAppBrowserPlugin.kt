@@ -236,7 +236,6 @@ class InAppBrowserPlugin : Plugin() {
         return listOf("http://", "https://").any { url.startsWith(it, true) }
     }
 
-
 }
 
 enum class OSIABEventType(val value: String) {
