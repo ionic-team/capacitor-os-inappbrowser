@@ -35,6 +35,11 @@ class InAppBrowserPlugin : Plugin() {
             return
         }
 
+        if (!isSchemeValid(url)) {
+            call.reject("The provided URL must start with http:// or https://.")
+            return
+        }
+
         try {
             val externalBrowserRouter = OSIABExternalBrowserRouterAdapter(context)
 
@@ -42,11 +47,11 @@ class InAppBrowserPlugin : Plugin() {
                 if (success) {
                     call.resolve()
                 } else {
-                    call.reject("Couldn't open '$url' using the external browser.")
+                    call.reject("Couldn't open '$url' using the device's browser.")
                 }
             }
         } catch (e: Exception) {
-            call.reject("An error occurred while trying to open the external browser: ${e.message}")
+            call.reject("An error occurred while trying to open the device's browser: ${e.message}")
         }
     }
 
@@ -57,6 +62,11 @@ class InAppBrowserPlugin : Plugin() {
 
         if (url.isNullOrEmpty()) {
             call.reject("The input parameter 'url' provided for 'openInSystemBrowser' is missing or empty.")
+            return
+        }
+
+        if (!isSchemeValid(url)) {
+            call.reject("The provided URL must start with http:// or https://.")
             return
         }
 
@@ -84,24 +94,41 @@ class InAppBrowserPlugin : Plugin() {
                 if (success) {
                     call.resolve()
                 } else {
-                    call.reject("Couldn't open '$url' using the system browser.")
+                    call.reject("Couldn't open '$url' using Custom Tabs.")
                 }
             }
         } catch (e: Exception) {
-            call.reject("An error occurred while trying to open the system browser: ${e.message}")
+            call.reject("An error occurred while trying to open Custom Tabs: ${e.message}")
         }
     }
 
     @PluginMethod
     fun openInWebView(call: PluginCall) {
+        val url = call.getString("url")
+        val options = call.getObject("options")
+
+        if (url.isNullOrEmpty()) {
+            call.reject("The input parameter 'url' provided for 'openInWebView' is missing or empty.")
+            return
+        }
+
+        if (!isSchemeValid(url)) {
+            call.reject("The provided URL must start with http:// or https://.")
+            return
+        }
+
+        if (options == null) {
+            call.reject("The input parameter 'options' provided for 'openInWebView' is missing or invalid.")
+            return
+        }
+
         try {
-            val url = call.getString("url")
-            val options = buildWebViewOptions(call.getObject("options"))
+            val webViewOptions = buildWebViewOptions(options)
 
             val webViewRouter = OSIABWebViewRouterAdapter(
                 context,
                 activity.lifecycleScope,
-                options,
+                webViewOptions,
                 OSIABFlowHelper(),
                 onBrowserPageLoaded = {
                     notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
@@ -111,15 +138,15 @@ class InAppBrowserPlugin : Plugin() {
                 }
             )
 
-            engine?.openWebView(webViewRouter, url!!) { success ->
+            engine?.openWebView(webViewRouter, url) { success ->
                 if (success) {
                     call.resolve()
                 } else {
-                    call.reject("Couldn't open '$url' using the web view.")
+                    call.reject("Couldn't open '$url' using the WebView.")
                 }
             }
         } catch (e: Exception) {
-            call.reject("The input parameters for 'openInWebView' are invalid.")
+            call.reject("An error occurred while trying to open the WebView: ${e.message}")
         }
 
     }
@@ -203,6 +230,10 @@ class InAppBrowserPlugin : Plugin() {
                 exitAnimation = exitAnimation
             )
         }
+    }
+
+    private fun isSchemeValid(url: String): Boolean {
+        return listOf("http://", "https://").any { url.startsWith(it, true) }
     }
 
 
