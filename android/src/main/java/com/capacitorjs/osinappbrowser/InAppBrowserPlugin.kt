@@ -70,6 +70,7 @@ class InAppBrowserPlugin : Plugin() {
 
             val customTabsRouter = OSIABCustomTabsRouterAdapter(
                 context = context,
+                lifecycleOwner = activity,
                 lifecycleScope = activity.lifecycleScope,
                 options = customTabsOptions,
                 onBrowserPageLoaded = {
@@ -99,10 +100,11 @@ class InAppBrowserPlugin : Plugin() {
             val options = buildWebViewOptions(call.getObject("options"))
 
             val webViewRouter = OSIABWebViewRouterAdapter(
-                context,
-                activity.lifecycleScope,
-                options,
-                OSIABFlowHelper(),
+                context = context,
+                lifecycleOwner = activity,
+                lifecycleScope = activity.lifecycleScope,
+                options = options,
+                flowHelper = OSIABFlowHelper(),
                 onBrowserPageLoaded = {
                     notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
                 },
@@ -122,6 +124,17 @@ class InAppBrowserPlugin : Plugin() {
             call.reject("The input parameters for 'openInWebView' are invalid.")
         }
 
+    }
+
+    @PluginMethod
+    fun close(call: PluginCall) {
+        engine?.close {
+            if (it) {
+                call.resolve()
+            } else {
+                call.reject("No browser view to close.")
+            }
+        }
     }
 
     /**
