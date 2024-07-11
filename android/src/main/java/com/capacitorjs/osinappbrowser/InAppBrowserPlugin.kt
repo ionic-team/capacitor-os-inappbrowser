@@ -31,7 +31,7 @@ class InAppBrowserPlugin : Plugin() {
     fun openInExternalBrowser(call: PluginCall) {
         val url = call.getString("url")
         if (url.isNullOrEmpty()) {
-            call.reject("The input parameter 'url' provided for 'openInExternalBrowser' is missing or empty.")
+            call.reject("The value of the 'url' input parameter of the 'openInExternalBrowser' action is missing or is empty.")
             return
         }
 
@@ -47,11 +47,11 @@ class InAppBrowserPlugin : Plugin() {
                 if (success) {
                     call.resolve()
                 } else {
-                    call.reject("Couldn't open '$url' using the device's browser.")
+                    call.reject("External browser couldn't open the following URL: '$url'")
                 }
             }
         } catch (e: Exception) {
-            call.reject("An error occurred while trying to open the device's browser: ${e.message}")
+            call.reject("An error occurred while trying to open the external browser: ${e.message}")
         }
     }
 
@@ -61,7 +61,7 @@ class InAppBrowserPlugin : Plugin() {
         val options = call.getObject("options")
 
         if (url.isNullOrEmpty()) {
-            call.reject("The input parameter 'url' provided for 'openInSystemBrowser' is missing or empty.")
+            call.reject("The value of the 'url' input parameter of the 'openInSystemBrowser' action is missing or is empty.")
             return
         }
 
@@ -71,7 +71,7 @@ class InAppBrowserPlugin : Plugin() {
         }
 
         if (options == null) {
-            call.reject("The input parameter 'options' provided for 'openInSystemBrowser' is missing or invalid.")
+            call.reject("The value of the 'options' input parameter of the 'openInSystemBrowser' action is missing or isn't valid.")
             return
         }
 
@@ -94,7 +94,7 @@ class InAppBrowserPlugin : Plugin() {
                 if (success) {
                     call.resolve()
                 } else {
-                    call.reject("Couldn't open '$url' using Custom Tabs.")
+                    call.reject("Custom Tabs couldn't open the following URL:'$url'")
                 }
             }
         } catch (e: Exception) {
@@ -108,7 +108,7 @@ class InAppBrowserPlugin : Plugin() {
         val options = call.getObject("options")
 
         if (url.isNullOrEmpty()) {
-            call.reject("The input parameter 'url' provided for 'openInWebView' is missing or empty.")
+            call.reject("The value of the 'url' input parameter of the 'openInWebView' action is missing or is empty.")
             return
         }
 
@@ -118,7 +118,7 @@ class InAppBrowserPlugin : Plugin() {
         }
 
         if (options == null) {
-            call.reject("The input parameter 'options' provided for 'openInWebView' is missing or invalid.")
+            call.reject("The value of the 'options' input parameter of the 'openInWebView' action is missing or isn't valid.")
             return
         }
 
@@ -142,7 +142,7 @@ class InAppBrowserPlugin : Plugin() {
                 if (success) {
                     call.resolve()
                 } else {
-                    call.reject("Couldn't open '$url' using the WebView.")
+                    call.reject("The WebView couldn't open the following URL: '$url'")
                 }
             }
         } catch (e: Exception) {
