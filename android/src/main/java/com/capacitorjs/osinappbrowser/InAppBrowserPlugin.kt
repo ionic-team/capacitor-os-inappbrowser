@@ -232,6 +232,10 @@ class InAppBrowserPlugin : Plugin() {
         }
     }
 
+    /**
+     * Determines if URL scheme is valid - it must start with either 'http://' or 'https://'
+     * @param url string with URL to validate
+     */
     private fun isSchemeValid(url: String): Boolean {
         return listOf("http://", "https://").any { url.startsWith(it, true) }
     }
