@@ -16,31 +16,27 @@ enum OSInAppBrowserError: Error {
         
         switch self {
         case .bridgeNotInitialised:
-            result = "Capacitor bridge is not initialized."
+            result = "Capacitor bridge isn’t initialized."
         case .invalidURLScheme:
-            result = "The provided URL must start with http:// or https://."
+            result = "The URL provided must begin with either http:// or https://."
         case .inputArgumentsIssue(let target):
-            let targetString: String
-            
-            switch target {
-            case .externalBrowser: targetString = "openInExternalBrowser"
-            case .systemBrowser: targetString = "openInSystemBrowser"
-            case .webView: targetString = "openInWebView"
+            let targetString = switch target {
+            case .externalBrowser: "openInExternalBrowser"
+            case .systemBrowser: "openInSystemBrowser"
+            case .webView: "openInWebView"
             }
             
-            result = "The input parameters for '\(targetString)' are invalid."
+            result = "The '\(targetString)' input parameters aren't valid."
         case .failedToOpen(url: let url, onTarget: let target):
-            let targetString: String
-            
-            switch target {
-            case .externalBrowser: targetString = "Safari"
-            case .systemBrowser: targetString = "SFSafariViewController"
-            case .webView: targetString = "WebView"
+            let targetString = switch target {
+            case .externalBrowser: "External browser"
+            case .systemBrowser: "SafariViewController"
+            case .webView: "The WebView"
             }
             
-            result = "Couldn't open '\(url)' using \(targetString)."
+            result = "\(targetString) couldn't open the following URL: '\(url)'"
         case .noBrowserToClose:
-            result = "No browser view to close."
+            result = "There’s no browser view to close."
         }
         
         return result
