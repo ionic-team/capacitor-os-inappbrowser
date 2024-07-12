@@ -36,7 +36,7 @@ class InAppBrowserPlugin : Plugin() {
         }
 
         if (!isSchemeValid(url)) {
-            call.reject("The provided URL must start with http:// or https://.")
+            call.reject("The URL provided must begin with either http:// or https://.")
             return
         }
 
