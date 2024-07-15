@@ -34,7 +34,12 @@ class InAppBrowserPlugin : Plugin() {
     fun openInExternalBrowser(call: PluginCall) {
         val url = call.getString("url")
         if (url.isNullOrEmpty()) {
-            call.reject("The input parameter 'url' provided for 'openInExternalBrowser' is missing or empty.")
+            call.reject("The value of the 'url' input parameter of the 'openInExternalBrowser' action is missing or is empty.")
+            return
+        }
+
+        if (!isSchemeValid(url)) {
+            call.reject("The URL provided must begin with either http:// or https://.")
             return
         }
 
@@ -45,7 +50,7 @@ class InAppBrowserPlugin : Plugin() {
                 if (success) {
                     call.resolve()
                 } else {
-                    call.reject("Couldn't open '$url' using the external browser.")
+                    call.reject("External browser couldn't open the following URL: '$url'")
                 }
             }
         } catch (e: Exception) {
@@ -59,12 +64,17 @@ class InAppBrowserPlugin : Plugin() {
         val options = call.getObject("options")
 
         if (url.isNullOrEmpty()) {
-            call.reject("The input parameter 'url' provided for 'openInSystemBrowser' is missing or empty.")
+            call.reject("The value of the 'url' input parameter of the 'openInSystemBrowser' action is missing or is empty.")
+            return
+        }
+
+        if (!isSchemeValid(url)) {
+            call.reject("The URL provided must begin with either http:// or https://.")
             return
         }
 
         if (options == null) {
-            call.reject("The input parameter 'options' provided for 'openInSystemBrowser' is missing or invalid.")
+            call.reject("The value of the 'options' input parameter of the 'openInSystemBrowser' action is missing or isn't valid.")
             return
         }
 
@@ -91,17 +101,35 @@ class InAppBrowserPlugin : Plugin() {
                         activeRouter = customTabsRouter
                         call.resolve()
                     } else {
-                        call.reject("Couldn't open '$url' using the system browser.")
+                        call.reject("Custom Tabs couldn't open the following URL:'$url'")
                     }
                 }
             }
         } catch (e: Exception) {
-            call.reject("An error occurred while trying to open the system browser: ${e.message}")
+            call.reject("An error occurred while trying to open Custom Tabs: ${e.message}")
         }
     }
 
     @PluginMethod
     fun openInWebView(call: PluginCall) {
+        val url = call.getString("url")
+        val options = call.getObject("options")
+
+        if (url.isNullOrEmpty()) {
+            call.reject("The value of the 'url' input parameter of the 'openInWebView' action is missing or is empty.")
+            return
+        }
+
+        if (!isSchemeValid(url)) {
+            call.reject("The URL provided must begin with either http:// or https://.")
+            return
+        }
+
+        if (options == null) {
+            call.reject("The value of the 'options' input parameter of the 'openInWebView' action is missing or isn't valid.")
+            return
+        }
+
         try {
             // Try closing active router before continuing to open
             close {
@@ -126,12 +154,12 @@ class InAppBrowserPlugin : Plugin() {
                         activeRouter = webViewRouter
                         call.resolve()
                     } else {
-                        call.reject("Couldn't open '$url' using the web view.")
+                        call.reject("The WebView couldn't open the following URL: '$url'")
                     }
                 }
             }
         } catch (e: Exception) {
-            call.reject("The input parameters for 'openInWebView' are invalid.")
+            call.reject("An error occurred while trying to open the WebView: ${e.message}")
         }
 
     }
@@ -244,6 +272,13 @@ class InAppBrowserPlugin : Plugin() {
         }
     }
 
+    /**
+     * Determines if URL scheme is valid - it must start with either 'http://' or 'https://'
+     * @param url string with URL to validate
+     */
+    private fun isSchemeValid(url: String): Boolean {
+        return listOf("http://", "https://").any { url.startsWith(it, true) }
+    }
 
 }
 
