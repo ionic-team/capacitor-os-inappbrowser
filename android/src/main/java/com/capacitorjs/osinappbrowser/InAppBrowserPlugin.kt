@@ -133,7 +133,6 @@ class InAppBrowserPlugin : Plugin() {
         try {
             // Try closing active router before continuing to open
             close {
-                val url = call.getString("url")
                 val options = buildWebViewOptions(call.getObject("options"))
 
                 val webViewRouter = OSIABWebViewRouterAdapter(
@@ -149,7 +148,7 @@ class InAppBrowserPlugin : Plugin() {
                     }
                 )
 
-                engine?.openWebView(webViewRouter, url!!) { success ->
+                engine?.openWebView(webViewRouter, url) { success ->
                     if (success) {
                         activeRouter = webViewRouter
                         call.resolve()
@@ -176,19 +175,14 @@ class InAppBrowserPlugin : Plugin() {
     }
 
     private fun close(callback: (Boolean) -> Unit) {
-        if(activeRouter is OSIABClosable) {
-            (activeRouter as OSIABClosable).close { success ->
+        (activeRouter as? OSIABClosable)?.let { closableRouter ->
+            closableRouter.close { success ->
                 if (success) {
                     activeRouter = null
-                    callback(true)
-                } else {
-                    callback(false)
                 }
+                callback(success)
             }
-        }
-        else {
-            callback(false)
-        }
+        } ?: callback(false)
     }
 
     /**
