@@ -169,7 +169,7 @@ class InAppBrowserPlugin : Plugin() {
             if (success) {
                 call.resolve()
             } else {
-                call.reject("No browser view to close.")
+                call.reject("There's no browser view to close.")
             }
         }
     }
