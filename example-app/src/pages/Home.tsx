@@ -1,4 +1,4 @@
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { InAppBrowser, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation } from '@capacitor/os-inappbrowser';
 import './Home.css';
 
@@ -113,13 +113,27 @@ const Home: React.FC = () => {
     });
   }
 
-  const close = () => {
-    InAppBrowser.openInWebView({
+  const openInSystemBrowserThenClose = async () => {
+    await InAppBrowser.openInSystemBrowser({
+      url: "https://www.google.com",
+      options: DefaultSystemBrowserOptions
+    });
+
+    await new Promise(resolve => setTimeout(resolve, 500));
+    InAppBrowser.close();
+  }
+
+  const openInWebViewThenClose = async () => {
+    await InAppBrowser.openInWebView({
       url: "https://www.google.com",
       options: DefaultWebViewOptions
-    }).then(() => {
-      InAppBrowser.close();
-    }); 
+    });
+
+    await InAppBrowser.close();
+  }
+
+  const close = () => {
+    InAppBrowser.close();
   }
 
   InAppBrowser.addListener('browserClosed', () => {
@@ -150,8 +164,11 @@ const Home: React.FC = () => {
           <IonButton onClick={openInWebViewWithDefaults}>Web View with Defaults</IonButton>
           <IonButton onClick={openInWebViewWithCustomValues}>Web View with Custom Values</IonButton>
           <IonButton onClick={openInWebViewWithMoreCustomValues}>Web View with More Custom Values</IonButton>
+          <IonButton onClick={openInSystemBrowserThenClose}>Open System Browser then Close</IonButton>
+          <IonButton onClick={openInWebViewThenClose}>Open Web View then Close</IonButton>
           <IonButton onClick={close}>Close opened Browser</IonButton>
           <IonButton onClick={invalidScheme}>Invalid URL Scheme</IonButton>
+          <IonInput placeholder="Enter text here..." />
         </div>
       </IonContent>
     </IonPage>
