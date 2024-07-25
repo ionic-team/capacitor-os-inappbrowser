@@ -5,7 +5,9 @@ import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
 import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABClosable
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
+import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABRouter
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.helpers.OSIABFlowHelper
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABAnimation
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABBottomSheet
@@ -21,6 +23,7 @@ import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIA
 class InAppBrowserPlugin : Plugin() {
 
     private var engine: OSIABEngine? = null
+    private var activeRouter: OSIABRouter<Boolean>? = null
 
     override fun load() {
         super.load()
@@ -76,25 +79,30 @@ class InAppBrowserPlugin : Plugin() {
         }
 
         try {
-            val customTabsOptions = buildCustomTabsOptions(options)
+            // Try closing active router before continuing to open
+            close {
+                val customTabsOptions = buildCustomTabsOptions(options)
 
-            val customTabsRouter = OSIABCustomTabsRouterAdapter(
-                context = context,
-                lifecycleScope = activity.lifecycleScope,
-                options = customTabsOptions,
-                onBrowserPageLoaded = {
-                    notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
-                },
-                onBrowserFinished = {
-                    notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
-                }
-            )
+                val customTabsRouter = OSIABCustomTabsRouterAdapter(
+                    context = context,
+                    lifecycleScope = activity.lifecycleScope,
+                    options = customTabsOptions,
+                    flowHelper = OSIABFlowHelper(),
+                    onBrowserPageLoaded = {
+                        notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
+                    },
+                    onBrowserFinished = {
+                        notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
+                    }
+                )
 
-            engine?.openCustomTabs(customTabsRouter, url) { success ->
-                if (success) {
-                    call.resolve()
-                } else {
-                    call.reject("Custom Tabs couldn't open the following URL:'$url'")
+                engine?.openCustomTabs(customTabsRouter, url) { success ->
+                    if (success) {
+                        activeRouter = customTabsRouter
+                        call.resolve()
+                    } else {
+                        call.reject("Custom Tabs couldn't open the following URL:'$url'")
+                    }
                 }
             }
         } catch (e: Exception) {
@@ -123,32 +131,58 @@ class InAppBrowserPlugin : Plugin() {
         }
 
         try {
-            val webViewOptions = buildWebViewOptions(options)
+            // Try closing active router before continuing to open
+            close {
+                val options = buildWebViewOptions(call.getObject("options"))
 
-            val webViewRouter = OSIABWebViewRouterAdapter(
-                context,
-                activity.lifecycleScope,
-                webViewOptions,
-                OSIABFlowHelper(),
-                onBrowserPageLoaded = {
-                    notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
-                },
-                onBrowserFinished = {
-                    notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
-                }
-            )
+                val webViewRouter = OSIABWebViewRouterAdapter(
+                    context = context,
+                    lifecycleScope = activity.lifecycleScope,
+                    options = options,
+                    flowHelper = OSIABFlowHelper(),
+                    onBrowserPageLoaded = {
+                        notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
+                    },
+                    onBrowserFinished = {
+                        notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
+                    }
+                )
 
-            engine?.openWebView(webViewRouter, url) { success ->
-                if (success) {
-                    call.resolve()
-                } else {
-                    call.reject("The WebView couldn't open the following URL: '$url'")
+                engine?.openWebView(webViewRouter, url) { success ->
+                    if (success) {
+                        activeRouter = webViewRouter
+                        call.resolve()
+                    } else {
+                        call.reject("The WebView couldn't open the following URL: '$url'")
+                    }
                 }
             }
         } catch (e: Exception) {
             call.reject("An error occurred while trying to open the WebView: ${e.message}")
         }
 
+    }
+
+    @PluginMethod
+    fun close(call: PluginCall) {
+        close { success ->
+            if (success) {
+                call.resolve()
+            } else {
+                call.reject("There's no browser view to close.")
+            }
+        }
+    }
+
+    private fun close(callback: (Boolean) -> Unit) {
+        (activeRouter as? OSIABClosable)?.let { closableRouter ->
+            closableRouter.close { success ->
+                if (success) {
+                    activeRouter = null
+                }
+                callback(success)
+            }
+        } ?: callback(false)
     }
 
     /**
