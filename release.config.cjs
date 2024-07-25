@@ -4,6 +4,7 @@ module.exports = {
     { name: 'next', channel: 'next', prerelease: true },
     { name: 'dev', channel: 'dev', prerelease: true }
   ],
+  repositoryUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser.git',
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
