@@ -15,11 +15,11 @@ runs:
         cache-name: cache-node-modules
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-s-builds-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
+          ${{ runner.os }}-s-builds-${{ env.cache-name }}-
+          ${{ runner.os }}-s-builds-
+          ${{ runner.os }}-s-
     - name: Install dependencies
       shell: bash
       run: npm ci
