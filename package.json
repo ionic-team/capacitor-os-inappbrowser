@@ -60,6 +60,7 @@
     "@capacitor/docgen": "^0.2.2",
     "@capacitor/ios": "^6.0.0",
     "@eslint/js": "^8.56.0",
+    "@rollup/wasm-node": "~4.19.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^10.1.2",
