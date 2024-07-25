@@ -1,3 +1,10 @@
+# [1.0.0-dev.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2024-07-25)
+
+
+### Bug Fixes
+
+* more ci fixes ([d39fb72](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/d39fb729b3a005f472cc82efc566b516881ad8de))
+
 # [1.0.0-dev.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2024-07-25)
 
 

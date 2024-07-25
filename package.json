@@ -1,6 +1,6 @@
 {
   "name": "@capacitor/os-inappbrowser",
-  "version": "1.0.0-dev.2",
+  "version": "1.0.0-dev.3",
   "description": "in app browser",
   "main": "./dist/plugin.cjs",
   "module": "./dist/plugin.mjs",
