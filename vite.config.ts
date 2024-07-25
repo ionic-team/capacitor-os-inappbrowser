@@ -17,7 +17,7 @@ export default defineConfig({
       output: {
         globals: {
           '@capacitor/core': 'capacitorExports',
-        } 
+        },
       },
     },
   },

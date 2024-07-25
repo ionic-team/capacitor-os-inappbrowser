@@ -2,33 +2,32 @@ import type { PluginListenerHandle } from '@capacitor/core';
 
 export enum ToolbarPosition {
   TOP,
-  BOTTOM
+  BOTTOM,
 }
 
 export enum iOSViewStyle {
   PAGE_SHEET,
   FORM_SHEET,
-  FULL_SCREEN
+  FULL_SCREEN,
 }
 
 export enum AndroidViewStyle {
   BOTTOM_SHEET,
-  FULL_SCREEN
+  FULL_SCREEN,
 }
 
 export enum iOSAnimation {
   FLIP_HORIZONTAL,
   CROSS_DISSOLVE,
-  COVER_VERTICAL
+  COVER_VERTICAL,
 }
 
 export enum AndroidAnimation {
   FADE_IN,
   FADE_OUT,
   SLIDE_IN_LEFT,
-  SLIDE_OUT_RIGHT  
+  SLIDE_OUT_RIGHT,
 }
-
 
 export interface WebViewOptions {
   showURL: boolean;
@@ -37,17 +36,17 @@ export interface WebViewOptions {
   clearCache: boolean;
   clearSessionCache: boolean;
   mediaPlaybackRequiresUserAction: boolean;
-  
+
   closeButtonText: string;
   toolbarPosition: ToolbarPosition;
-  
+
   showNavigationButtons: boolean;
   leftToRight: boolean;
 
-  customWebViewUserAgent?: String | null;
-  
-  android: AndroidWebViewOptions,
-  iOS: iOSWebViewOptions
+  customWebViewUserAgent?: string | null;
+
+  android: AndroidWebViewOptions;
+  iOS: iOSWebViewOptions;
 }
 
 export interface iOSWebViewOptions {
@@ -56,7 +55,7 @@ export interface iOSWebViewOptions {
   enableViewportScale: boolean;
   allowInLineMediaPlayback: boolean;
   surpressIncrementalRendering: boolean;
-  
+
   viewStyle: iOSViewStyle;
   animationEffect: iOSAnimation;
 }
@@ -70,12 +69,12 @@ export interface AndroidWebViewOptions {
 export enum DismissStyle {
   CLOSE,
   CANCEL,
-  DONE
+  DONE,
 }
 
 export interface SystemBrowserOptions {
-  android: AndroidSystemBrowserOptions,
-  iOS: iOSSystemBrowserOptions
+  android: AndroidSystemBrowserOptions;
+  iOS: iOSSystemBrowserOptions;
 }
 
 export interface iOSSystemBrowserOptions {
@@ -96,9 +95,9 @@ export interface AndroidSystemBrowserOptions {
 
   hideToolbarOnScroll: boolean;
   viewStyle: AndroidViewStyle;
-  
+
   bottomSheetOptions?: AndroidBottomSheet;
-  
+
   startAnimation: AndroidAnimation;
   exitAnimation: AndroidAnimation;
 }
@@ -130,5 +129,8 @@ export interface InAppBrowserPlugin {
   openInExternalBrowser(model: OpenInDefaultParameterModel): Promise<void>;
   close(): Promise<void>;
   removeAllListeners(): void;
-  addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void): Promise<PluginListenerHandle>;
+  addListener(
+    eventName: 'browserClosed' | 'browserPageLoaded',
+    listenerFunc: () => void,
+  ): Promise<PluginListenerHandle>;
 }

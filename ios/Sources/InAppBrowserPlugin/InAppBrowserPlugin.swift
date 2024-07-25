@@ -18,45 +18,45 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
         .init(name: "openInWebView", returnType: CAPPluginReturnPromise),
         .init(name: "close", returnType: CAPPluginReturnPromise)
     ]
-    
+
     private var plugin: OSInAppBrowserEngine?
     private var openedViewController: UIViewController?
-    
+
     override public func load() {
         self.plugin = .init()
     }
-    
+
     @objc func openInExternalBrowser(_ call: CAPPluginCall) {
         if self.plugin == nil {
             self.load()
         }
-        
+
         guard let plugin else {
             return self.error(call, type: .bridgeNotInitialised)
         }
-        
+
         let target = OSInAppBrowserTarget.externalBrowser
-        
+
         let urlString = call.getString("url", "")
         guard self.isSchemeValid(urlString) else { return self.error(call, type: .invalidURLScheme) }
-        
+
         guard let url = URL(string: urlString)
         else { return self.error(call, type: .inputArgumentsIssue(target: target)) }
-        
+
         delegateExternalBrowser(plugin, url, call)
     }
-    
+
     @objc func openInSystemBrowser(_ call: CAPPluginCall) {
         if self.plugin == nil {
             self.load()
         }
-        
+
         guard let plugin else {
             return self.error(call, type: .bridgeNotInitialised)
         }
-        
+
         let target = OSInAppBrowserTarget.systemBrowser
-        
+
         func delegateSystemBrowser(_ url: URL, _ options: OSIABSystemBrowserOptions) {
             DispatchQueue.main.async {
                 plugin.openSystemBrowser(url, options, { [weak self] event, viewControllerToOpen in
@@ -64,29 +64,29 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
                 })
             }
         }
-        
+
         let urlString = call.getString("url", "")
         guard self.isSchemeValid(urlString) else { return self.error(call, type: .invalidURLScheme) }
-        
+
         guard
             let options: OSInAppBrowserSystemBrowserModel = self.createModel(for: call.getObject("options")),
             let url = URL(string: urlString)
         else { return self.error(call, type: .inputArgumentsIssue(target: target)) }
-        
+
         delegateSystemBrowser(url, options.toSystemBrowserOptions())
     }
-    
+
     @objc func openInWebView(_ call: CAPPluginCall) {
         if self.plugin == nil {
             self.load()
         }
-        
+
         guard let plugin else {
             return self.error(call, type: .bridgeNotInitialised)
         }
-        
+
         let target = OSInAppBrowserTarget.webView
-        
+
         func delegateWebView(_ url: URL, _ options: OSIABWebViewOptions) {
             DispatchQueue.main.async {
                 plugin.openWebView(
@@ -106,27 +106,27 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
                 )
             }
         }
-        
+
         let urlString = call.getString("url", "")
         guard self.isSchemeValid(urlString) else { return self.error(call, type: .invalidURLScheme) }
-        
+
         guard
             let options: OSInAppBrowserWebViewModel = self.createModel(for: call.getObject("options")),
             let url = URL(string: urlString)
         else { return self.error(call, type: .inputArgumentsIssue(target: target)) }
-        
+
         delegateWebView(url, options.toWebViewOptions())
     }
-    
+
     @objc func close(_ call: CAPPluginCall) {
         if self.plugin == nil {
             self.load()
         }
-        
+
         if self.plugin == nil {
             return self.error(call, type: .bridgeNotInitialised)
         }
-        
+
         if let openedViewController {
             DispatchQueue.main.async {
                 openedViewController.dismiss(animated: true) { [weak self] in
@@ -144,7 +144,7 @@ private extension InAppBrowserPlugin {
         DispatchQueue.main.async {
             plugin.openExternalBrowser(url, { [weak self] success in
                 guard let self else { return }
-                
+
                 if success {
                     self.success(call)
                 } else {
@@ -153,7 +153,7 @@ private extension InAppBrowserPlugin {
             })
         }
     }
-    
+
     func handleResult(_ event: OSIABEventType?, for call: CAPPluginCall, checking viewController: UIViewController?, error: OSInAppBrowserError) {
         if let event {
             if event == .pageClosed {
@@ -179,27 +179,27 @@ private extension InAppBrowserPlugin {
         else { return nil }
         return argumentsModel
     }
-    
+
     func present(_ viewController: UIViewController, _ completionHandler: (() -> Void)?) {
         let showNewViewController: () -> Void = {
             self.bridge?.viewController?.present(viewController, animated: true, completion: completionHandler)
         }
-        
+
         if let presentedViewController = self.bridge?.viewController?.presentedViewController, presentedViewController == self.openedViewController {
             presentedViewController.dismiss(animated: true, completion: showNewViewController)
         } else {
             showNewViewController()
         }
     }
-    
+
     func isSchemeValid(_ urlScheme: String) -> Bool {
         ["http://", "https://"].contains(where: urlScheme.hasPrefix)
     }
-    
+
     func success(_ call: CAPPluginCall) {
         call.resolve()
     }
-    
+
     func error(_ call: CAPPluginCall, type errorType: OSInAppBrowserError) {
         call.reject(errorType.description)
     }
@@ -210,7 +210,7 @@ private extension OSInAppBrowserEngine {
         let router = OSIABApplicationRouterAdapter(UIApplication.shared)
         self.openExternalBrowser(url, routerDelegate: router, completionHandler)
     }
-    
+
     func openSystemBrowser(_ url: URL, _ options: OSIABSystemBrowserOptions, _ completionHandler: @escaping (OSIABEventType?, UIViewController?) -> Void) {
         let router = OSIABSafariViewControllerRouterAdapter(
             options,
@@ -219,7 +219,7 @@ private extension OSInAppBrowserEngine {
         )
         self.openSystemBrowser(url, routerDelegate: router) { completionHandler(nil, $0) }
     }
-    
+
     func openWebView(
         _ url: URL,
         _ options: OSIABWebViewOptions,

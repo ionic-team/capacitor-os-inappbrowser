@@ -2,7 +2,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { WebPlugin } from '@capacitor/core';
 
-import type { InAppBrowserPlugin, OpenInWebViewParameterModel, OpenInSystemBrowserParameterModel, OpenInDefaultParameterModel } from './definitions';
+import type {
+  InAppBrowserPlugin,
+  OpenInWebViewParameterModel,
+  OpenInSystemBrowserParameterModel,
+  OpenInDefaultParameterModel,
+} from './definitions';
 
 export class InAppBrowserWeb extends WebPlugin implements InAppBrowserPlugin {
   //@ts-ignore
