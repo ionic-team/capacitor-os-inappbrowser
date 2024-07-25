@@ -3,7 +3,7 @@ name: "Setup"
 on: 
   workflow_call:
     secrets:
-      THE_GH_RELEASE_TOKEN:
+      CAP_GH_RELEASE_TOKEN:
         required: true
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.THE_GH_RELEASE_TOKEN }}
+          token: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
 
       - name: 'Setup Tools'
         uses: ./.github/actions/setup-tools
