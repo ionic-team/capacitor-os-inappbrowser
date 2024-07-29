@@ -1,11 +1,11 @@
-# @capacitor/os-inappbrowser
+# @capacitor/inappbrowser
 
 in app browser
 
 ## Install
 
 ```bash
-npm install @capacitor/os-inappbrowser
+npm install @capacitor/inappbrowser
 npx cap sync
 ```
 
@@ -125,7 +125,7 @@ Defines the options for opening a URL in the web view.
 | **`toolbarPosition`**                 | <code><a href="#toolbarposition">ToolbarPosition</a></code>             |
 | **`showNavigationButtons`**           | <code>boolean</code>                                                    |
 | **`leftToRight`**                     | <code>boolean</code>                                                    |
-| **`customWebViewUserAgent`**          | <code><a href="#string">String</a> \| null</code>                       |
+| **`customWebViewUserAgent`**          | <code>string \| null</code>                                             |
 | **`android`**                         | <code><a href="#androidwebviewoptions">AndroidWebViewOptions</a></code> |
 | **`iOS`**                             | <code><a href="#ioswebviewoptions">iOSWebViewOptions</a></code>         |
 
