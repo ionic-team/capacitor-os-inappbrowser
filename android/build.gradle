@@ -10,6 +10,17 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url 'https://pkgs.dev.azure.com/OutSystemsRD/9e79bc5b-69b2-4476-9ca5-d67594972a52/_packaging/PublicArtifactRepository/maven/v1'
+            name 'Azure'
+            credentials {
+                username = "optional"
+                password = ""
+            }
+            content {
+                includeGroup "com.github.outsystems"
+            }
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.2'
@@ -48,12 +59,24 @@ android {
 repositories {
     google()
     mavenCentral()
+    maven {
+        url 'https://pkgs.dev.azure.com/OutSystemsRD/9e79bc5b-69b2-4476-9ca5-d67594972a52/_packaging/PublicArtifactRepository/maven/v1'
+        name 'Azure'
+        credentials {
+            username = "optional"
+            password = ""
+        }
+        content {
+            includeGroup "com.github.outsystems"
+        }
+    }
 }
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
+    implementation "com.github.outsystems:osinappbrowser-android:0.+@aar"
     implementation 'androidx.browser:browser:1.8.0'
     implementation "androidx.constraintlayout:constraintlayout:2.2.0-alpha13"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"

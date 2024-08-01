@@ -38,6 +38,9 @@
     "native"
   ],
   "scripts": {
+    "run-e2e": "npm run run-e2e-ios && npm run run-e2e-android",
+    "run-e2e-ios": "./e2e/scripts/RuniOSTest.sh ./e2e/tests/basic.yaml",
+    "run-e2e-android": "./e2e/scripts/RunAndroidTest.sh ./e2e/tests/basic.yaml",
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
     "verify:ios": "xcodebuild -scheme CapacitorOsInappbrowser -destination generic/platform=iOS",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
