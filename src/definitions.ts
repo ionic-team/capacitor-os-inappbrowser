@@ -34,27 +34,27 @@ export interface WebViewOptions {
   showURL: boolean;
   /** Displays the toolbar on the Web View. */
   showToolbar: boolean;
-  
+
   /** Clears the Web View's cookie cache before a new window is opened. */
   clearCache: boolean;
   /** Clears the session cookie cache before a new window is opened. */
   clearSessionCache: boolean;
   /** Prevents HTML5 audio or video from auto-playing. */
   mediaPlaybackRequiresUserAction: boolean;
-  
+
   /** Sets the text to display on the Close button on the Web View. */
   closeButtonText: string;
   /** Sets the position to display the Toolbar on the Web View. */
   toolbarPosition: ToolbarPosition;
-  
+
   /** Displays the navigation buttons. */
   showNavigationButtons: boolean;
   /** Swaps the positions of the navigation buttons and the close button. */
   leftToRight: boolean;
-  
+
   /** Sets a custom user agent to open the Web View with. If empty or not set, the parameter will be ignored. */
   customWebViewUserAgent?: string | null;
-  
+
   /** Android-specific Web View options. */
   android: AndroidWebViewOptions;
   /** iOS-specific Web View options. */
@@ -64,14 +64,14 @@ export interface WebViewOptions {
 export interface iOSWebViewOptions {
   /** Turns on the Web View bounce property. */
   allowOverScroll: boolean;
-  
+
   /** Prevents viewport scaling through a meta tag. */
   enableViewportScale: boolean;
   /** Allows in-line HTML5 media playback, displaying within the browser window rather than a device-specific playback interface. Note: The HTML's video element must also include the webkit-playsinline attribute. */
   allowInLineMediaPlayback: boolean;
   /** Waits until all new view content is received before being rendered. */
   surpressIncrementalRendering: boolean;
-  
+
   /** Sets the presentation style of the Web View. */
   viewStyle: iOSViewStyle;
   /** Sets the transition style of the Web View. */
@@ -125,15 +125,15 @@ export interface AndroidBottomSheet {
 export interface AndroidSystemBrowserOptions {
   /** Enables the title display. */
   showTitle: boolean;
-  
+
   /** Hides the toolbar when scrolling. */
   hideToolbarOnScroll: boolean;
   /** Sets the presentation style of CustomTabs. */
   viewStyle: AndroidViewStyle;
-  
+
   /** Sets the options for the bottom sheet when this is selected as the viewStyle. If viewStyle is FULL_SCREEN, this will be ignored. */
   bottomSheetOptions?: AndroidBottomSheet;
-  
+
   /** Sets the start animation for when the browser appears. */
   startAnimation: AndroidAnimation;
   /** Sets the exit animation for when the browser disappears. */
@@ -170,24 +170,24 @@ export interface InAppBrowserPlugin {
    * @param model The parameters to open the URL in the web view
    */
   openInWebView(model: OpenInWebViewParameterModel): Promise<void>;
-  
+
   /**
    * Opens the web content of the given URL in your mobile app, using SafariViewController for iOS and Custom Tabs for Android.
    * @param model The parameters to open the URL in the system browser
    */
   openInSystemBrowser(model: OpenInSystemBrowserParameterModel): Promise<void>;
-  
+
   /**
    * Opens the web content of the given URL in a separate browser, outside of your mobile application.
    * @param model The parameters to open the URL in the external browser
    */
   openInExternalBrowser(model: OpenInDefaultParameterModel): Promise<void>;
-  
+
   /**
    * Closes the currently active browser. It can be used to close browsers launched through the openInSystemBrowser or openInWebView actions.
    */
   close(): Promise<void>;
-  
+
   /**
    * Adds a listener for the specified browser event.
    * @param eventName The name of the browser event to listen for: 'browserClosed' or 'browserPageLoaded'.
