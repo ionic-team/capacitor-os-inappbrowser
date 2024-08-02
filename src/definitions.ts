@@ -114,7 +114,9 @@ export interface iOSSystemBrowserOptions {
 }
 
 export interface AndroidBottomSheet {
-  /** Sets the height of the bottom sheet. */
+  /** Sets the height of the bottom sheet.
+   * This will be a minimum of 50% of the screen's height.
+   * If no value is passed, we will default to the minimum value. */
   height: number;
   /** Sets whether the bottom sheet is fixed. */
   isFixed: boolean;
@@ -187,11 +189,6 @@ export interface InAppBrowserPlugin {
   close(): Promise<void>;
   
   /**
-   * Removes all listeners for the browser events.
-   */
-  removeAllListeners(): void;
-  
-  /**
    * Adds a listener for the specified browser event.
    * @param eventName The name of the browser event to listen for: 'browserClosed' or 'browserPageLoaded'.
    * @param listenerFunc The function to be called when the event occurs.
@@ -200,4 +197,9 @@ export interface InAppBrowserPlugin {
     eventName: 'browserClosed' | 'browserPageLoaded',
     listenerFunc: () => void,
   ): Promise<PluginListenerHandle>;
+
+  /**
+   * Removes all listeners for the browser events.
+   */
+  removeAllListeners(): void;
 }
