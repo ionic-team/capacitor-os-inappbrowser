@@ -49,7 +49,7 @@ allprojects {
 ## Usage Example
 #### Open In External Browser
 ```typescript
-import { InAppBrowser } from '@capacitor/os-inappbrowser';
+import { InAppBrowser } from '@capacitor/inappbrowser';
 await InAppBrowser.openInExternalBrowser({
     url: "https://www.google.com"
 });
@@ -57,7 +57,7 @@ await InAppBrowser.openInExternalBrowser({
 
 #### Open In System Browser (Custom Tabs for Android, SFSafariViewController for iOS)
 ```typescript
-import { InAppBrowser, DefaultSystemBrowserOptions } from '@capacitor/os-inappbrowser';
+import { InAppBrowser, DefaultSystemBrowserOptions } from '@capacitor/inappbrowser';
 await InAppBrowser.openInSystemBrowser({
     url: "https://www.google.com",
     options: DefaultSystemBrowserOptions
@@ -66,7 +66,7 @@ await InAppBrowser.openInSystemBrowser({
 
 #### Open In Web View
 ```typescript
-import { InAppBrowser, DefaultWebViewOptions } from '@capacitor/os-inappbrowser';
+import { InAppBrowser, DefaultWebViewOptions } from '@capacitor/inappbrowser';
 await InAppBrowser.openInWebView({
     url: "https://www.google.com",
     options: DefaultWebViewOptions
@@ -75,13 +75,13 @@ await InAppBrowser.openInWebView({
 
 #### Close (Web View or System Browser)
 ```typescript
-import { InAppBrowser } from '@capacitor/os-inappbrowser';
+import { InAppBrowser } from '@capacitor/inappbrowser';
 await InAppBrowser.close();
 ```
 
 #### Add Listeners
 ```typescript
-import { InAppBrowser } from '@capacitor/os-inappbrowser';
+import { InAppBrowser } from '@capacitor/inappbrowser';
 await InAppBrowser.addListener('browserClosed', () => {
     console.log("browser was closed.");
 });
@@ -93,7 +93,7 @@ await InAppBrowser.addListener('browserPageLoaded', () => {
 
 #### Remove All Listeners
 ```typescript
-import { InAppBrowser } from '@capacitor/os-inappbrowser';
+import { InAppBrowser } from '@capacitor/inappbrowser';
 InAppBrowser.removeAllListeners();
 ```
 
