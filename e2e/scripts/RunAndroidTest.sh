@@ -48,7 +48,7 @@ if command -v maestro &> /dev/null; then
 
     sleep 1
     echo "Starting AVD ${AVD_NAME}..."
-    "$ANDROID_HOME/emulator/emulator" -avd "${AVD_NAME}" -no-snapshot-load -no-boot-anim > /dev/null 2>&1 &
+    "$ANDROID_HOME/emulator/emulator" -avd "${AVD_NAME}" -gpu auto -no-snapshot-load -no-boot-anim > /dev/null 2>&1 &
 
     # Wait for the emulator to start (check every 10 seconds)
     echo "Waiting for the emulator to start..."
