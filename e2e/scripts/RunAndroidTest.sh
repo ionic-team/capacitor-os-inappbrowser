@@ -6,6 +6,7 @@ START_DIR=$(pwd)
 APPS_DIR="$START_DIR/e2e/apps"
 
 if command -v maestro &> /dev/null; then
+    npm i && npm run build
     cd ./example-app
     npm i && npm run build && npx cap sync android
     cd android
