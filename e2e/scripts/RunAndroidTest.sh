@@ -5,6 +5,28 @@ TEST_FILE=$1
 START_DIR=$(pwd)
 APPS_DIR="$START_DIR/e2e/apps"
 
+function check_hardware_acceleration() {
+    if [[ "$HW_ACCEL_OVERRIDE" != "" ]]; then
+        hw_accel_flag="$HW_ACCEL_OVERRIDE"
+    else
+        if [[ "$OSTYPE" == "darwin"* ]]; then
+            # macOS-specific hardware acceleration check
+            HW_ACCEL_SUPPORT=$(sysctl -a | grep -E -c '(vmx|svm)')
+        else
+            # generic Linux hardware acceleration check
+            HW_ACCEL_SUPPORT=$(grep -E -c '(vmx|svm)' /proc/cpuinfo)
+        fi
+
+        if [[ $HW_ACCEL_SUPPORT == 0 ]]; then
+            hw_accel_flag="-accel off"
+        else
+            hw_accel_flag="-accel on"
+        fi
+    fi
+
+    echo "$hw_accel_flag"
+}
+
 if command -v maestro &> /dev/null; then
     npm i && npm run build
     cd ./example-app
@@ -32,6 +54,7 @@ if command -v maestro &> /dev/null; then
 
     # Name of the emulator
     AVD_NAME="OSTesterSim"
+    hw_accel_flag=$(check_hardware_acceleration)
 
     if "$ANDROID_HOME/cmdline-tools/latest/bin/avdmanager" list avd | grep -q "${AVD_NAME}"
     then
@@ -49,7 +72,7 @@ if command -v maestro &> /dev/null; then
 
     sleep 1
     echo "Starting AVD ${AVD_NAME}..."
-    "$ANDROID_HOME/emulator/emulator" -avd "${AVD_NAME}" -gpu auto -no-snapshot-load -no-boot-anim > /dev/null 2>&1 &
+    "$ANDROID_HOME/emulator/emulator" -avd "${AVD_NAME}" -gpu auto -noaudio -no-snapshot-load -no-boot-anim ${hw_accel_flag} > /dev/null 2>&1 &
 
     # Wait for the emulator to start (check every 10 seconds)
     echo "Waiting for the emulator to start..."
