@@ -24,9 +24,6 @@ jobs:
           ./e2e/scripts/RuniOSTest.sh
   android:    
     if: true
-    env:
-      ANDROID_BUILD_TOOLS_VERSION: 34.0.0
-      ANDROID_SDK_PACKAGES: system-images;android-34;google_apis_playstore;arm64-v8a platforms;android-34 build-tools;34.0.0 platform-tools emulator
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
@@ -36,13 +33,9 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-      - name: Add avdmanager and sdkmanager to system PATH
-        run: |
-            echo "$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/${{ env.ANDROID_BUILD_TOOLS_VERSION }}" >> $GITHUB_PATH
-      - name: Install Sdk
+      - name: Sdk
         run: |
            yes Y | sdkmanager --licenses
-           sdkmanager --install ${ANDROID_SDK_PACKAGES}
       - name: "Run Tests"
         run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
