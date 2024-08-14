@@ -1,3 +1,10 @@
+# [1.0.0-dev.4](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2024-08-14)
+
+
+### Bug Fixes
+
+* android dep ref ([f02d5e1](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/f02d5e14565eeed9c078e22f503776c032dd1359))
+
 # [1.0.0-dev.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2024-07-25)
 
 
