@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapacitorOsInappbrowser",
+    name: "CapacitorInappbrowser",
     platforms: [.iOS(.v13)],
     products: [
         .library(
-            name: "CapacitorOsInappbrowser",
+            name: "CapacitorInappbrowser",
             targets: ["InAppBrowserPlugin"])
     ],
     dependencies: [
