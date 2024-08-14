@@ -74,7 +74,8 @@ repositories {
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.github.outsystems:osinappbrowser-android:0.+@aar"
     implementation project(':capacitor-android')
     implementation "com.github.outsystems:osinappbrowser-android:0.0.29@aar"
     implementation 'androidx.browser:browser:1.8.0'
