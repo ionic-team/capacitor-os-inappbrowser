@@ -1,3 +1,10 @@
+# [1.0.0-dev.5](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2024-08-15)
+
+
+### Bug Fixes
+
+* podspec not published ([17d1417](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/17d1417562148590ac1db4b97bfe48662f8c341e))
+
 # [1.0.0-dev.4](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2024-08-14)
 
 
