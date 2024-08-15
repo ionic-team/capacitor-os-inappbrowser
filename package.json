@@ -21,7 +21,7 @@
     "ios/Sources",
     "ios/Tests",
     "Package.swift",
-    "CapacitorOsInappbrowser.podspec"
+    "CapacitorInappbrowser.podspec"
   ],
   "author": "Outsystems",
   "license": "MIT",
