@@ -1,5 +1,5 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { InAppBrowser, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation } from '@capacitor/os-inappbrowser';
+import { InAppBrowser, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation } from '@capacitor/inappbrowser';
 import './Home.css';
 
 const Home: React.FC = () => {

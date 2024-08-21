@@ -12,7 +12,7 @@ dependencies {
     implementation project(':capacitor-app')
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
-    implementation project(':capacitor-os-inappbrowser')
+    implementation project(':capacitor-inappbrowser')
     implementation project(':capacitor-status-bar')
 
 }
