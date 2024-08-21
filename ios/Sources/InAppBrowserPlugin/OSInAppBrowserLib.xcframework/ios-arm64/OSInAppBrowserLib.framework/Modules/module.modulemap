@@ -1,4 +1,0 @@
-framework module OSInAppBrowserLib {
-  header "OSInAppBrowserLib-Swift.h"
-  requires objc
-}

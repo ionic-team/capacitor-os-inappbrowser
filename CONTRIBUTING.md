@@ -52,9 +52,9 @@ Publishing is automated based on the branch committed to. When a commit or merge
 
 | Branch Name | Build Type | NPM Tag | Example NPM Version |
 |---|---|---|---|
-| dev | dev | dev | @capacitor/os-inappbrowser@1.0.0-dev.1 |
-| next | next (these are betas/alphas) | next | @capacitor/os-inappbrowser@1.0.1-next.1 |
-| main | latest | latest | @capacitor/os-inappbrowser@1.0.2 |
+| dev | dev | dev | @capacitor/inappbrowser@1.0.0-dev.1 |
+| next | next (these are betas/alphas) | next | @capacitor/inappbrowser@1.0.1-next.1 |
+| main | latest | latest | @capacitor/inappbrowser@1.0.2 |
 
 Dev work should be done by creating and merging PR's into the `dev` branch until a feature set is complete enough to then merge the `dev` branch into the `next` branch where it becomes a beta/alpha tagged under `next` for testing teams to use before full release. Upon completed testing the `next` branch is merged into `main` for a full release to be made. The `main` branch should then be merged into `dev` and `next` to keep them up to date with the latest code base.
 
