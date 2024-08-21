@@ -1,3 +1,10 @@
+# [1.0.0-dev.6](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2024-08-21)
+
+
+### Features
+
+* swap xcframework for cocoapod + update android aar ([ea7f639](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/ea7f639dfd745138bacc267f5e164ae2e5bbe3ba))
+
 # [1.0.0-dev.5](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2024-08-15)
 
 
