@@ -1,6 +1,7 @@
 import OSInAppBrowserLib
 
 struct OSInAppBrowserWebViewModel: Decodable {
+    // swiftlint:disable:next type_name
     struct iOS: Decodable {
         let allowOverScroll: Bool
         let enableViewportScale: Bool
@@ -8,7 +9,7 @@ struct OSInAppBrowserWebViewModel: Decodable {
         let surpressIncrementalRendering: Bool
         let viewStyle: OSIABViewStyle
         let animationEffect: OSIABAnimationEffect
-        
+
         enum CodingKeys: CodingKey {
             case allowOverScroll
             case enableViewportScale
@@ -17,13 +18,13 @@ struct OSInAppBrowserWebViewModel: Decodable {
             case viewStyle
             case animationEffect
         }
-        
+
         init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
-                        
+
             let viewStyleValue = try container.decode(Int.self, forKey: .viewStyle)
             let animationValue = try container.decode(Int.self, forKey: .animationEffect)
-            
+
             self.allowOverScroll = try container.decode(Bool.self, forKey: .allowOverScroll)
             self.enableViewportScale = try container.decode(Bool.self, forKey: .enableViewportScale)
             self.allowInLineMediaPlayback = try container.decode(Bool.self, forKey: .allowInLineMediaPlayback)
@@ -32,9 +33,9 @@ struct OSInAppBrowserWebViewModel: Decodable {
             self.animationEffect = .init(animationValue)
         }
     }
-    
+
     let iOS: iOS
-    
+
     let showURL: Bool
     let showToolbar: Bool
     let clearCache: Bool
@@ -45,7 +46,7 @@ struct OSInAppBrowserWebViewModel: Decodable {
     let showNavigationButtons: Bool
     let leftToRight: Bool
     let customWebViewUserAgent: String?
-    
+
     enum CodingKeys: CodingKey {
         case iOS
         case showURL
@@ -59,12 +60,12 @@ struct OSInAppBrowserWebViewModel: Decodable {
         case leftToRight
         case customWebViewUserAgent
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-                    
+
         let toolbarPositionValue = try container.decode(Int.self, forKey: .toolbarPosition)
-        
+
         self.showURL = try container.decode(Bool.self, forKey: .showURL)
         self.showToolbar = try container.decode(Bool.self, forKey: .showToolbar)
         self.clearCache = try container.decode(Bool.self, forKey: .clearCache)

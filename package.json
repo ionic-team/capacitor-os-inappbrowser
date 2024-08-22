@@ -1,7 +1,7 @@
 {
-  "name": "@capacitor/os-inappbrowser",
-  "version": "0.0.1",
-  "description": "in app browser",
+  "name": "@capacitor/inappbrowser",
+  "version": "1.0.0-dev.1",
+  "description": "The InAppBrowser Plugin provides a web browser view that allows you to load any web page externally. It behaves as a standard web browser and is useful to load untrusted content without risking your application's security. It offers three different ways to open URLs: in a WebView, in an in-app system browser (Custom Tabs for Android and SFSafariViewController for iOS), and in the device's default browser.",
   "main": "./dist/plugin.cjs",
   "module": "./dist/plugin.mjs",
   "types": "./dist/index.d.ts",
@@ -21,7 +21,7 @@
     "ios/Sources",
     "ios/Tests",
     "Package.swift",
-    "CapacitorOsInappbrowser.podspec"
+    "CapacitorInappbrowser.podspec"
   ],
   "author": "Outsystems",
   "license": "MIT",
@@ -39,44 +39,53 @@
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
-    "verify:ios": "xcodebuild -scheme CapacitorOsInappbrowser -destination generic/platform=iOS",
+    "verify:ios": "xcodebuild -scheme CapacitorInappbrowser -destination generic/platform=iOS",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
     "verify:web": "npm run build",
     "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
     "fmt": "npm run eslint -- --fix && npm run prettier -- --write && npm run swiftlint -- --fix --format",
-    "eslint": "eslint . --ext ts",
-    "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
+    "eslint": "eslint",
+    "prettier": "prettier \"src/**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
     "docgen": "docgen --api InAppBrowserPlugin --output-readme README.md --output-json dist/docs/docs.json",
     "build": "npm run clean && npm run docgen && vite build",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@capacitor/android": "^6.0.0",
     "@capacitor/core": "^6.0.0",
     "@capacitor/docgen": "^0.2.2",
     "@capacitor/ios": "^6.0.0",
-    "@ionic/eslint-config": "^0.3.0",
-    "@ionic/prettier-config": "^1.0.1",
-    "@ionic/swiftlint-config": "^1.1.2",
-    "eslint": "^7.11.0",
-    "prettier": "~2.3.0",
-    "prettier-plugin-java": "~1.0.2",
-    "swiftlint": "^1.0.1",
+    "@eslint/js": "^8.56.0",
+    "@rollup/wasm-node": "~4.19.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.1.2",
+    "@semantic-release/npm": "^12.0.1",
+    "@typescript-eslint/eslint-plugin": "~7.17.0",
+    "@typescript-eslint/parser": "~7.17.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "~3.3.3",
+    "prettier-plugin-java": "~2.6.4",
+    "rimraf": "^3.0.2",
+    "semantic-release": "^24.0.0",
+    "swiftlint": "^1.0.2",
     "typescript": "~5.4.5",
     "vite": "^5.2.11",
-    "vite-plugin-dts": "^3.9.1",
-    "rimraf": "^3.0.2"
+    "vite-plugin-dts": "^3.9.1"
   },
   "peerDependencies": {
     "@capacitor/core": "^6.0.0"
   },
-  "prettier": "@ionic/prettier-config",
-  "swiftlint": "@ionic/swiftlint-config",
-  "eslintConfig": {
-    "extends": "@ionic/eslint-config/recommended"
+  "overrides": {
+    "vite": {
+      "rollup": "npm:@rollup/wasm-node"
+    }
   },
   "capacitor": {
     "ios": {
