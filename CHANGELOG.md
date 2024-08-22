@@ -1,3 +1,19 @@
+# [1.0.0-dev.7](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2024-08-22)
+
+
+### Bug Fixes
+
+* android dep ref ([caaaf2c](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/caaaf2c61c424eaa6d82628728b2a17fa8a04133))
+* ci ([4df108d](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/4df108d97779e15c960cdc38e8c68707b0319f29))
+* ci release process ([38687ed](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/38687ed61d6ce624128c288dbc1c3ca25d2d7c7b))
+* more ci fixes ([a20f93c](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/a20f93c86c24be985e7bef470c9ca0d1105ece18))
+* podspec not published ([d031b43](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/d031b435001c7420245171815e8f281467786fc3))
+
+
+### Features
+
+* swap xcframework for cocoapod + update android aar ([521ce27](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/521ce2784c0e51ba2699cb8c468f3b7677ea9393))
+
 # [1.0.0-dev.6](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2024-08-21)
 
 
