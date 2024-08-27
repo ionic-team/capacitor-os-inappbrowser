@@ -1,3 +1,4 @@
+
 # 1.0.0 (2024-08-22)
 
 
@@ -39,6 +40,7 @@
 * update capacitor bridge with new version of OSInAppBrowserLib-Android ([65a1e1a](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/65a1e1ac299e9455a685e2b83d15afbd9b3fecab))
 * update dependency to OSInAppBrowserLib-Android library ([503eb86](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/503eb86a300da008620fa93722b8524249794622))
 * update xcframework ([b4d26c8](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/b4d26c84b3697c1cbfb62809e1a8cee0c394664d))
+
 
 # [1.0.0-dev.6](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2024-08-21)
 
