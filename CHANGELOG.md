@@ -4,6 +4,8 @@
 ### Bug Fixes
 
 * use maven dep ([c628449](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/c62844949d16f9aa0eeb2c42ae1dfd1e0bf35815))
+* Android: Fix issue where the custom tabs browser wasn't being closed when navigating back to the app
+* Android: Fix race condition that caused the `BrowserFinished` event to not be fired in some instances with the system browser
 
 ## [1.0.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.0...v1.0.1) (2024-08-27)
 
