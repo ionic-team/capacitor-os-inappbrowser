@@ -10,7 +10,7 @@ on:
 
 jobs:
   ios:    
-    if: false
+    if: true
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
           brew install facebook/fb/idb-companion
           ./e2e/scripts/RuniOSTest.sh
   android:    
-    if: true
+    if: false
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v4
