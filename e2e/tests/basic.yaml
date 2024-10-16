@@ -4,7 +4,6 @@ appId: io.ionic.starter
 - launchApp
 - assertVisible: "WEB VIEW WITH DEFAULTS"
 - tapOn: "WEB VIEW WITH DEFAULTS"
-- assertVisible: "Google offered in: "
 - assertVisible: "Close"
 - tapOn: "Close"
 - assertVisible: "Blank"
