@@ -23,6 +23,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
       - run: |
+          npm run build
+      - run: |
           curl -Ls "https://get.maestro.mobile.dev" | bash
           export PATH="$PATH":"$HOME/.maestro/bin"
           brew tap facebook/fb
