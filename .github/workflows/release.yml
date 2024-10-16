@@ -5,8 +5,13 @@ on:
     branches:
       - dev
       - next
-      # - main
+      - main
   workflow_dispatch:
+
+permissions:
+    contents: write
+    issues: write
+    deployments: write
 
 jobs:
   setup:
@@ -40,5 +45,6 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+          GH_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: npx semantic-release

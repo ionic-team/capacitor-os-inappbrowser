@@ -74,9 +74,9 @@ repositories {
 
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
-    implementation "com.github.outsystems:osinappbrowser-android:0.+@aar"
+    implementation "com.capacitorjs:osinappbrowser-android:1.0.0"
     implementation 'androidx.browser:browser:1.8.0'
     implementation "androidx.constraintlayout:constraintlayout:2.2.0-alpha13"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"

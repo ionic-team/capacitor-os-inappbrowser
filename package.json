@@ -1,7 +1,7 @@
 {
   "name": "@capacitor/inappbrowser",
-  "version": "1.0.0-dev.3",
-  "description": "in app browser",
+  "version": "1.0.2",
+  "description": "The InAppBrowser Plugin provides a web browser view that allows you to load any web page externally. It behaves as a standard web browser and is useful to load untrusted content without risking your application's security. It offers three different ways to open URLs; in a WebView, in an in-app system browser (Custom Tabs for Android and SFSafariViewController for iOS), and in the device's default browser.",
   "main": "./dist/plugin.cjs",
   "module": "./dist/plugin.mjs",
   "types": "./dist/index.d.ts",
@@ -21,7 +21,7 @@
     "ios/Sources",
     "ios/Tests",
     "Package.swift",
-    "CapacitorOsInappbrowser.podspec"
+    "CapacitorInappbrowser.podspec"
   ],
   "author": "Outsystems",
   "license": "MIT",
@@ -42,7 +42,7 @@
     "run-e2e-ios": "./e2e/scripts/RuniOSTest.sh ./e2e/tests/basic.yaml",
     "run-e2e-android": "./e2e/scripts/RunAndroidTest.sh ./e2e/tests/basic.yaml",
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
-    "verify:ios": "xcodebuild -scheme CapacitorOsInappbrowser -destination generic/platform=iOS",
+    "verify:ios": "xcodebuild -scheme CapacitorInappbrowser -destination generic/platform=iOS",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
     "verify:web": "npm run build",
     "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
