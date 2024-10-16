@@ -62,10 +62,6 @@ Dev work should be done by creating and merging PR's into the `dev` branch until
 
 ## E2E Testing
 
-### Demo Location
-- Branch: `chore/e2e-tests` in the Capacitor In-AppBrowser repository
-- URL: https://github.com/ionic-team/capacitor-os-inappbrowser/tree/chore/e2e-tests
-
 ### Running Tests Locally
 
 1. Install Maestro suite: https://maestro.mobile.dev/getting-started/installing-maestro
