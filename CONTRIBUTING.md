@@ -59,3 +59,27 @@ Publishing is automated based on the branch committed to. When a commit or merge
 Dev work should be done by creating and merging PR's into the `dev` branch until a feature set is complete enough to then merge the `dev` branch into the `next` branch where it becomes a beta/alpha tagged under `next` for testing teams to use before full release. Upon completed testing the `next` branch is merged into `main` for a full release to be made. The `main` branch should then be merged into `dev` and `next` to keep them up to date with the latest code base.
 
 > **Note**: The [`files`](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files) array in `package.json` specifies which files get published. If you rename files/directories or add files elsewhere, you may need to update it.
+
+## E2E Testing
+
+### Demo Location
+- Branch: `chore/e2e-tests` in the Capacitor In-AppBrowser repository
+- URL: https://github.com/ionic-team/capacitor-os-inappbrowser/tree/chore/e2e-tests
+
+### Running Tests Locally
+
+1. Install Maestro suite: https://maestro.mobile.dev/getting-started/installing-maestro
+2. Run `npm i` in the root directory
+3. Execute tests:
+   - iOS: `npm run run-e2e-ios`
+   - Android: `npm run run-e2e-android`
+
+### Test Configuration
+
+- Test flow file: `./e2e/tests/basic.yaml`
+- Tests run against the example app in the `./example-app` folder
+
+### Editing and Expanding Tests
+
+Refer to the Maestro documentation for creating test flows:
+https://maestro.mobile.dev/getting-started/maestro-studio
