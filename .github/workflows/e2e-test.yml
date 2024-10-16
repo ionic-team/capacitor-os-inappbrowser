@@ -12,7 +12,7 @@ jobs:
   setup:
     uses: ./.github/workflows/reusable_setup.yml
     secrets:
-      CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+      THE_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
 
   ios:    
     if: true
