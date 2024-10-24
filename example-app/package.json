@@ -12,11 +12,11 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@capacitor/android": "^6.0.0",
+    "@capacitor/android": "next",
     "@capacitor/app": "6.0.0",
-    "@capacitor/core": "^6.0.0",
+    "@capacitor/core": "next",
     "@capacitor/haptics": "6.0.0",
-    "@capacitor/ios": "^6.0.0",
+    "@capacitor/ios": "next",
     "@capacitor/keyboard": "6.0.0",
     "@capacitor/inappbrowser": "file:../",
     "@capacitor/status-bar": "6.0.0",
@@ -31,7 +31,7 @@
     "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
-    "@capacitor/cli": "6.0.0",
+    "@capacitor/cli": "next",
     "@testing-library/dom": ">=7.21.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
