@@ -96,7 +96,7 @@ InAppBrowser.removeAllListeners();
 ### openInWebView(...)
 
 ```typescript
-openInWebView(model: OpenInWebViewParameterModel) => any
+openInWebView(model: OpenInWebViewParameterModel) => Promise<void>
 ```
 
 Opens the web content of the given URL in your mobile app using a custom web view within your application.
@@ -105,15 +105,13 @@ Opens the web content of the given URL in your mobile app using a custom web vie
 | ----------- | ----------------------------------------------------------------------------------- | ---------------------------------------------- |
 | **`model`** | <code><a href="#openinwebviewparametermodel">OpenInWebViewParameterModel</a></code> | The parameters to open the URL in the web view |
 
-**Returns:** <code>any</code>
-
 --------------------
 
 
 ### openInSystemBrowser(...)
 
 ```typescript
-openInSystemBrowser(model: OpenInSystemBrowserParameterModel) => any
+openInSystemBrowser(model: OpenInSystemBrowserParameterModel) => Promise<void>
 ```
 
 Opens the web content of the given URL in your mobile app, using SafariViewController for iOS and Custom Tabs for Android.
@@ -122,15 +120,13 @@ Opens the web content of the given URL in your mobile app, using SafariViewContr
 | ----------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | **`model`** | <code><a href="#openinsystembrowserparametermodel">OpenInSystemBrowserParameterModel</a></code> | The parameters to open the URL in the system browser |
 
-**Returns:** <code>any</code>
-
 --------------------
 
 
 ### openInExternalBrowser(...)
 
 ```typescript
-openInExternalBrowser(model: OpenInDefaultParameterModel) => any
+openInExternalBrowser(model: OpenInDefaultParameterModel) => Promise<void>
 ```
 
 Opens the web content of the given URL in a separate browser, outside of your mobile application.
@@ -139,20 +135,16 @@ Opens the web content of the given URL in a separate browser, outside of your mo
 | ----------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------ |
 | **`model`** | <code><a href="#openindefaultparametermodel">OpenInDefaultParameterModel</a></code> | The parameters to open the URL in the external browser |
 
-**Returns:** <code>any</code>
-
 --------------------
 
 
 ### close()
 
 ```typescript
-close() => any
+close() => Promise<void>
 ```
 
 Closes the currently active browser. It can be used to close browsers launched through the openInSystemBrowser or openInWebView actions.
-
-**Returns:** <code>any</code>
 
 --------------------
 
@@ -160,7 +152,7 @@ Closes the currently active browser. It can be used to close browsers launched t
 ### addListener('browserClosed' | 'browserPageLoaded', ...)
 
 ```typescript
-addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void) => any
+addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle>
 ```
 
 Adds a listener for the specified browser event.
@@ -170,7 +162,7 @@ Adds a listener for the specified browser event.
 | **`eventName`**    | <code>'browserClosed' \| 'browserPageLoaded'</code> | The name of the browser event to listen for: 'browserClosed' or 'browserPageLoaded'. |
 | **`listenerFunc`** | <code>() =&gt; void</code>                          | The function to be called when the event occurs.                                     |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
 --------------------
 
@@ -296,9 +288,9 @@ Defines the options for opening a URL in the external browser and used by the ot
 
 #### PluginListenerHandle
 
-| Prop         | Type                      |
-| ------------ | ------------------------- |
-| **`remove`** | <code>() =&gt; any</code> |
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 
 ### Enums
