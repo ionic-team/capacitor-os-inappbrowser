@@ -1,3 +1,10 @@
+# [1.1.0-dev.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.2...v1.1.0-dev.1) (2024-10-24)
+
+
+### Features
+
+* updates plugin to be cap7 ready ([2d1b119](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/2d1b119abb2bbe3d2a4e5274bfdd9ff5c96de24b))
+
 ## [1.0.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.1...v1.0.2) (2024-10-03)
 
 
