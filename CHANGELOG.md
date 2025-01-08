@@ -1,3 +1,11 @@
+# [1.1.0-dev.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2025-01-08)
+
+
+### Bug Fixes
+
+* basic-tests github action ([#38](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/38)) ([634425a](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/634425a23ea0eecb3de645335f594823e59312dc))
+* use proper repository and bugs urls ([d2c0bcf](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/d2c0bcf740b2c4ffae5a28efa5c5541547245e69))
+
 # [1.1.0-dev.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.2...v1.1.0-dev.1) (2024-10-24)
 
 
