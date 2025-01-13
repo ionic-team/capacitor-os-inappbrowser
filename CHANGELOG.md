@@ -1,3 +1,15 @@
+# [2.0.0-dev.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.1.0-dev.2...v2.0.0-dev.1) (2025-01-13)
+
+
+### Bug Fixes
+
+* Remove unnecessary permissions from AndroidManifest.xml ([#39](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/39)) ([90fb0b2](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/90fb0b2bdf282b896dec3f6433ddb44082f99509))
+
+
+### BREAKING CHANGES
+
+* There were Capacitor 7 changes, that require a major version update.
+
 # [1.1.0-dev.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2025-01-08)
 
 
