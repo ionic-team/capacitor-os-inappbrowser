@@ -1,3 +1,12 @@
+## [1.0.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.2...v1.0.3) (2025-01-15)
+
+
+### Bug Fixes
+
+* **android:** native lib causes app compilation to fail ([#42](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/42)) ([8a57a22](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/8a57a22f1c2cb8ce6d27f18d716ecacd2f83155c))
+* **android:** Unknown Kotlin JVM target 21 ([#41](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/41)) ([78245bc](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/78245bc5e8119c88b4e90afd5e85e158217a8cfb))
+* Remove unnecessary permissions from AndroidManifest.xml ([#39](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/39)) ([a7218d5](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/a7218d5549743198177f97df60b155a19532f72e))
+
 ## [1.0.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.1...v1.0.2) (2024-10-03)
 
 
