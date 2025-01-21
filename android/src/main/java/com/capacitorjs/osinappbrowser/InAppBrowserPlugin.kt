@@ -38,6 +38,10 @@ class InAppBrowserPlugin : Plugin() {
             return
         }
 
+//        val headers = call.getString("headers")
+        val headers = hashMapOf<String, String>()
+        headers.put("auth-key-test", "new_header_external")
+
         if (!isSchemeValid(url)) {
             call.reject("The URL provided must begin with either http:// or https://.")
             return
@@ -46,7 +50,7 @@ class InAppBrowserPlugin : Plugin() {
         try {
             val externalBrowserRouter = OSIABExternalBrowserRouterAdapter(context)
 
-            engine?.openExternalBrowser(externalBrowserRouter, url) { success ->
+            engine?.openExternalBrowser(externalBrowserRouter, url, headers) { success ->
                 if (success) {
                     call.resolve()
                 } else {
@@ -62,6 +66,10 @@ class InAppBrowserPlugin : Plugin() {
     fun openInSystemBrowser(call: PluginCall) {
         val url = call.getString("url")
         val options = call.getObject("options")
+
+        //        val headers = call.getString("headers")
+        val headers = hashMapOf<String, String>()
+        headers.put("auth-key-test", "new_header_system")
 
         if (url.isNullOrEmpty()) {
             call.reject("The value of the 'url' input parameter of the 'openInSystemBrowser' action is missing or is empty.")
@@ -96,7 +104,7 @@ class InAppBrowserPlugin : Plugin() {
                     }
                 )
 
-                engine?.openCustomTabs(customTabsRouter, url) { success ->
+                engine?.openCustomTabs(customTabsRouter, url, headers) { success ->
                     if (success) {
                         activeRouter = customTabsRouter
                         call.resolve()
@@ -114,6 +122,10 @@ class InAppBrowserPlugin : Plugin() {
     fun openInWebView(call: PluginCall) {
         val url = call.getString("url")
         val options = call.getObject("options")
+
+        //        val headers = call.getString("headers")
+        val headers = hashMapOf<String, String>()
+        headers.put("auth-key-test", "new_header_webview")
 
         if (url.isNullOrEmpty()) {
             call.reject("The value of the 'url' input parameter of the 'openInWebView' action is missing or is empty.")
@@ -148,7 +160,7 @@ class InAppBrowserPlugin : Plugin() {
                     }
                 )
 
-                engine?.openWebView(webViewRouter, url) { success ->
+                engine?.openWebView(webViewRouter, url, headers) { success ->
                     if (success) {
                         activeRouter = webViewRouter
                         call.resolve()
