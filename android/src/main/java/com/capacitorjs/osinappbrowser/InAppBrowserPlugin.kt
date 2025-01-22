@@ -5,6 +5,8 @@ import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
 import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABClosable
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
 import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABRouter
@@ -123,9 +125,9 @@ class InAppBrowserPlugin : Plugin() {
         val url = call.getString("url")
         val options = call.getObject("options")
 
-        //        val headers = call.getString("headers")
-        val headers = hashMapOf<String, String>()
-        headers.put("auth-key-test", "new_header_webview")
+        val headersObject = call.getObject("headers", JSObject()) ?: JSObject()
+        val type = object: TypeToken<HashMap<String, String>>(){}.type
+        val headersMap: HashMap<String, String> = Gson().fromJson(headersObject.toString(), type)
 
         if (url.isNullOrEmpty()) {
             call.reject("The value of the 'url' input parameter of the 'openInWebView' action is missing or is empty.")
@@ -160,7 +162,7 @@ class InAppBrowserPlugin : Plugin() {
                     }
                 )
 
-                engine?.openWebView(webViewRouter, url, headers) { success ->
+                engine?.openWebView(webViewRouter, url, headersMap) { success ->
                     if (success) {
                         activeRouter = webViewRouter
                         call.resolve()
