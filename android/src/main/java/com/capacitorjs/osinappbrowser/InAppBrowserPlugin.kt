@@ -40,9 +40,9 @@ class InAppBrowserPlugin : Plugin() {
             return
         }
 
-//        val headers = call.getString("headers")
-        val headers = hashMapOf<String, String>()
-        headers.put("auth-key-test", "new_header_external")
+        val headersObject = call.getObject("headers", JSObject()) ?: JSObject()
+        val type = object: TypeToken<HashMap<String, String>>(){}.type
+        val headersMap: HashMap<String, String> = Gson().fromJson(headersObject.toString(), type)
 
         if (!isSchemeValid(url)) {
             call.reject("The URL provided must begin with either http:// or https://.")
@@ -52,7 +52,7 @@ class InAppBrowserPlugin : Plugin() {
         try {
             val externalBrowserRouter = OSIABExternalBrowserRouterAdapter(context)
 
-            engine?.openExternalBrowser(externalBrowserRouter, url, headers) { success ->
+            engine?.openExternalBrowser(externalBrowserRouter, url, headersMap) { success ->
                 if (success) {
                     call.resolve()
                 } else {
@@ -69,9 +69,9 @@ class InAppBrowserPlugin : Plugin() {
         val url = call.getString("url")
         val options = call.getObject("options")
 
-        //        val headers = call.getString("headers")
-        val headers = hashMapOf<String, String>()
-        headers.put("auth-key-test", "new_header_system")
+        val headersObject = call.getObject("headers", JSObject()) ?: JSObject()
+        val type = object: TypeToken<HashMap<String, String>>(){}.type
+        val headersMap: HashMap<String, String> = Gson().fromJson(headersObject.toString(), type)
 
         if (url.isNullOrEmpty()) {
             call.reject("The value of the 'url' input parameter of the 'openInSystemBrowser' action is missing or is empty.")
@@ -106,7 +106,7 @@ class InAppBrowserPlugin : Plugin() {
                     }
                 )
 
-                engine?.openCustomTabs(customTabsRouter, url, headers) { success ->
+                engine?.openCustomTabs(customTabsRouter, url, headersMap) { success ->
                     if (success) {
                         activeRouter = customTabsRouter
                         call.resolve()

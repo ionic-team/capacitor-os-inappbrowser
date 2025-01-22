@@ -59,7 +59,7 @@ dependencies {
     // implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
 //    implementation "com.capacitorjs:osinappbrowser-android:1.2.1@aar"
-    implementation files('/Users/akonovalik/Workspace/OSInAppBrowserLib-Android/build/outputs/aar/OSInAppBrowserLib-debug.aar')
+    implementation files('/local/path/OSInAppBrowserLib-debug.aar')
     implementation 'androidx.browser:browser:1.8.0'
     implementation "androidx.constraintlayout:constraintlayout:2.2.0-alpha13"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
