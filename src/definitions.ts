@@ -148,7 +148,7 @@ export interface OpenInDefaultParameterModel {
   url: string;
 
   /** The headers for the http request */
-  headers?: object;
+  headers?: Record<string, string>;
 }
 
 /**

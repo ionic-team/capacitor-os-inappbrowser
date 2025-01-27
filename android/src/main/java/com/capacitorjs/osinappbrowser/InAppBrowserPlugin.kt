@@ -7,19 +7,19 @@ import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABClosable
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABRouter
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.helpers.OSIABFlowHelper
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABAnimation
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABBottomSheet
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABCustomTabsOptions
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABViewStyle
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABWebViewOptions
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABCustomTabsRouterAdapter
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABExternalBrowserRouterAdapter
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABWebViewRouterAdapter
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.OSIABClosable
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.OSIABRouter
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.helpers.OSIABFlowHelper
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABAnimation
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABBottomSheet
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABCustomTabsOptions
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABViewStyle
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABWebViewOptions
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABCustomTabsRouterAdapter
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABExternalBrowserRouterAdapter
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABWebViewRouterAdapter
 
 @CapacitorPlugin(name = "InAppBrowser")
 class InAppBrowserPlugin : Plugin() {
@@ -221,7 +221,7 @@ class InAppBrowserPlugin : Plugin() {
             val allowZoom = androidOptions?.getBoolean("allowZoom", true) ?: true
             val hardwareBack = androidOptions?.getBoolean("hardwareBack", true) ?: true
             val pauseMedia = androidOptions?.getBoolean("pauseMedia", true) ?: true
-            
+
             OSIABWebViewOptions(
                 showURL,
                 showToolbar,
