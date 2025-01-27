@@ -95,8 +95,8 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
                     onDelegateClose: { [weak self] in
                         self?.bridge?.viewController?.dismiss(animated: true)
                     },
-                    onDelegateURL: { [weak self] urlRequest in
-                        self?.delegateExternalBrowser(plugin, urlRequest, call)
+                    onDelegateURL: { [weak self] url in
+                        self?.delegateExternalBrowser(plugin, url, call)
                     },
                     onDelegateAlertController: { [weak self] alert in
                         self?.bridge?.viewController?.presentedViewController?.show(alert, sender: nil)
@@ -235,7 +235,7 @@ private extension OSInAppBrowserEngine {
         _ urlRequest: URLRequest,
         _ options: OSIABWebViewOptions,
         onDelegateClose: @escaping () -> Void,
-        onDelegateURL: @escaping (URLRequest) -> Void,
+        onDelegateURL: @escaping (URL) -> Void,
         onDelegateAlertController: @escaping (UIAlertController) -> Void,
         _ completionHandler: @escaping (OSIABEventType?, UIViewController?) -> Void
     ) {
