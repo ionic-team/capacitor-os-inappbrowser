@@ -86,6 +86,7 @@ InAppBrowser.removeAllListeners();
 * [`addListener('browserClosed' | 'browserPageLoaded', ...)`](#addlistenerbrowserclosed--browserpageloaded-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 * [Enums](#enums)
 
 </docgen-index>
@@ -281,9 +282,10 @@ Defines the options for opening a URL in the system browser.
 
 Defines the options for opening a URL in the external browser and used by the others.
 
-| Prop      | Type                | Description                                                                            |
-| --------- | ------------------- | -------------------------------------------------------------------------------------- |
-| **`url`** | <code>string</code> | The URL to be opened. It must contain either 'http' or 'https' as the protocol prefix. |
+| Prop          | Type                                                            | Description                                                                            |
+| ------------- | --------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| **`url`**     | <code>string</code>                                             | The URL to be opened. It must contain either 'http' or 'https' as the protocol prefix. |
+| **`headers`** | <code><a href="#record">Record</a>&lt;string, string&gt;</code> | The headers for the http request                                                       |
 
 
 #### PluginListenerHandle
@@ -291,6 +293,16 @@ Defines the options for opening a URL in the external browser and used by the ot
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
 | **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
+
+
+### Type Aliases
+
+
+#### Record
+
+Construct a type with a set of properties K of type T
+
+<code>{ [P in K]: T; }</code>
 
 
 ### Enums
