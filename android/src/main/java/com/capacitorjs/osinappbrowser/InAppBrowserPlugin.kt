@@ -5,19 +5,21 @@ import com.getcapacitor.Plugin
 import com.getcapacitor.PluginCall
 import com.getcapacitor.PluginMethod
 import com.getcapacitor.annotation.CapacitorPlugin
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABClosable
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.OSIABRouter
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.helpers.OSIABFlowHelper
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABAnimation
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABBottomSheet
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABCustomTabsOptions
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABViewStyle
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.models.OSIABWebViewOptions
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABCustomTabsRouterAdapter
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABExternalBrowserRouterAdapter
-import com.outsystems.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABWebViewRouterAdapter
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.OSIABClosable
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.OSIABEngine
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.OSIABRouter
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.helpers.OSIABFlowHelper
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABAnimation
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABBottomSheet
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABCustomTabsOptions
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABToolbarPosition
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABViewStyle
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.models.OSIABWebViewOptions
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABCustomTabsRouterAdapter
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABExternalBrowserRouterAdapter
+import com.tradingpoint.plugins.inappbrowser.osinappbrowserlib.routeradapters.OSIABWebViewRouterAdapter
 
 @CapacitorPlugin(name = "InAppBrowser")
 class InAppBrowserPlugin : Plugin() {
@@ -38,6 +40,10 @@ class InAppBrowserPlugin : Plugin() {
             return
         }
 
+        val headersObject = call.getObject("headers", JSObject()) ?: JSObject()
+        val type = object: TypeToken<HashMap<String, String>>(){}.type
+        val headersMap: HashMap<String, String> = Gson().fromJson(headersObject.toString(), type)
+
         if (!isSchemeValid(url)) {
             call.reject("The URL provided must begin with either http:// or https://.")
             return
@@ -46,7 +52,7 @@ class InAppBrowserPlugin : Plugin() {
         try {
             val externalBrowserRouter = OSIABExternalBrowserRouterAdapter(context)
 
-            engine?.openExternalBrowser(externalBrowserRouter, url) { success ->
+            engine?.openExternalBrowser(externalBrowserRouter, url, headersMap) { success ->
                 if (success) {
                     call.resolve()
                 } else {
@@ -62,6 +68,10 @@ class InAppBrowserPlugin : Plugin() {
     fun openInSystemBrowser(call: PluginCall) {
         val url = call.getString("url")
         val options = call.getObject("options")
+
+        val headersObject = call.getObject("headers", JSObject()) ?: JSObject()
+        val type = object: TypeToken<HashMap<String, String>>(){}.type
+        val headersMap: HashMap<String, String> = Gson().fromJson(headersObject.toString(), type)
 
         if (url.isNullOrEmpty()) {
             call.reject("The value of the 'url' input parameter of the 'openInSystemBrowser' action is missing or is empty.")
@@ -96,7 +106,7 @@ class InAppBrowserPlugin : Plugin() {
                     }
                 )
 
-                engine?.openCustomTabs(customTabsRouter, url) { success ->
+                engine?.openCustomTabs(customTabsRouter, url, headersMap) { success ->
                     if (success) {
                         activeRouter = customTabsRouter
                         call.resolve()
@@ -114,6 +124,10 @@ class InAppBrowserPlugin : Plugin() {
     fun openInWebView(call: PluginCall) {
         val url = call.getString("url")
         val options = call.getObject("options")
+
+        val headersObject = call.getObject("headers", JSObject()) ?: JSObject()
+        val type = object: TypeToken<HashMap<String, String>>(){}.type
+        val headersMap: HashMap<String, String> = Gson().fromJson(headersObject.toString(), type)
 
         if (url.isNullOrEmpty()) {
             call.reject("The value of the 'url' input parameter of the 'openInWebView' action is missing or is empty.")
@@ -148,7 +162,7 @@ class InAppBrowserPlugin : Plugin() {
                     }
                 )
 
-                engine?.openWebView(webViewRouter, url) { success ->
+                engine?.openWebView(webViewRouter, url, headersMap) { success ->
                     if (success) {
                         activeRouter = webViewRouter
                         call.resolve()
@@ -207,7 +221,7 @@ class InAppBrowserPlugin : Plugin() {
             val allowZoom = androidOptions?.getBoolean("allowZoom", true) ?: true
             val hardwareBack = androidOptions?.getBoolean("hardwareBack", true) ?: true
             val pauseMedia = androidOptions?.getBoolean("pauseMedia", true) ?: true
-            
+
             OSIABWebViewOptions(
                 showURL,
                 showToolbar,

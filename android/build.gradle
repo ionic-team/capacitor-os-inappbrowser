@@ -54,11 +54,18 @@ repositories {
     mavenCentral()
 }
 
+allprojects {
+  repositories {
+    repositories {
+      mavenCentral()
+      maven { url 'https://jitpack.io' }
+    }
+  }
+}
 
 dependencies {
-    // implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
-    implementation "com.capacitorjs:osinappbrowser-android:1.2.0"
+    implementation 'com.github.trading-point:OSInAppBrowserLib-Android:v2-headers'
     implementation 'androidx.browser:browser:1.8.0'
     implementation "androidx.constraintlayout:constraintlayout:2.2.0"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
