@@ -87,35 +87,46 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
 
         let target = OSInAppBrowserTarget.webView
 
-        func delegateWebView(_ url: URL, _ options: OSIABWebViewOptions) {
+        func delegateWebView(_ urlRequest: URLRequest, _ options: OSIABWebViewOptions) {
             DispatchQueue.main.async {
                 plugin.openWebView(
-                    url,
+                    urlRequest,
                     options,
                     onDelegateClose: { [weak self] in
                         self?.bridge?.viewController?.dismiss(animated: true)
                     },
-                    onDelegateURL: { [weak self] url in
-                        self?.delegateExternalBrowser(plugin, url, call)
+                    onDelegateURL: { [weak self] urlRequest in
+                        self?.delegateExternalBrowser(plugin, urlRequest, call)
                     },
                     onDelegateAlertController: { [weak self] alert in
                         self?.bridge?.viewController?.presentedViewController?.show(alert, sender: nil)
                     }, { [weak self] event, viewControllerToOpen in
-                        self?.handleResult(event, for: call, checking: viewControllerToOpen, error: .failedToOpen(url: url.absoluteString, onTarget: target))
+                        self?.handleResult(
+                            event,
+                            for: call,
+                            checking: viewControllerToOpen,
+                            error: .failedToOpen(url: urlRequest.url?.absoluteString ?? "", onTarget: target)
+                        )
                     }
                 )
             }
         }
 
         let urlString = call.getString("url", "")
+        let headers: [String: String] = call.getObject("headers") as? [String: String] ?? [:]
         guard self.isSchemeValid(urlString) else { return self.error(call, type: .invalidURLScheme) }
 
         guard
             let options: OSInAppBrowserWebViewModel = self.createModel(for: call.getObject("options")),
-            let url = URL(string: urlString)
+            let url = URL(string: urlString),
+            var urlRequest = URLRequest(url: url)
         else { return self.error(call, type: .inputArgumentsIssue(target: target)) }
+        
+        for header in headers {
+            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
+        }
 
-        delegateWebView(url, options.toWebViewOptions())
+        delegateWebView(urlRequest, options.toWebViewOptions())
     }
 
     @objc func close(_ call: CAPPluginCall) {
@@ -221,10 +232,10 @@ private extension OSInAppBrowserEngine {
     }
 
     func openWebView(
-        _ url: URL,
+        _ urlRequest: URLRequest,
         _ options: OSIABWebViewOptions,
         onDelegateClose: @escaping () -> Void,
-        onDelegateURL: @escaping (URL) -> Void,
+        onDelegateURL: @escaping (URLRequest) -> Void,
         onDelegateAlertController: @escaping (UIAlertController) -> Void,
         _ completionHandler: @escaping (OSIABEventType?, UIViewController?) -> Void
     ) {
@@ -240,7 +251,7 @@ private extension OSInAppBrowserEngine {
             }
         )
         let router = OSIABWebViewRouterAdapter(options, cacheManager: OSIABBrowserCacheManager(dataStore: .default()), callbackHandler: callbackHandler)
-        self.openWebView(url, routerDelegate: router) { completionHandler(nil, $0) }
+        self.openWebView(urlRequest, routerDelegate: router) { completionHandler(nil, $0) }
     }
 }
 
