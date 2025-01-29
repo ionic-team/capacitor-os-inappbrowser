@@ -1,3 +1,42 @@
+# [2.0.0-next.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.2...v2.0.0-next.1) (2025-01-13)
+
+
+### Bug Fixes
+
+* basic-tests github action ([#38](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/38)) ([634425a](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/634425a23ea0eecb3de645335f594823e59312dc))
+* Remove unnecessary permissions from AndroidManifest.xml ([#39](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/39)) ([90fb0b2](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/90fb0b2bdf282b896dec3f6433ddb44082f99509))
+* use proper repository and bugs urls ([d2c0bcf](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/d2c0bcf740b2c4ffae5a28efa5c5541547245e69))
+
+
+### Features
+
+* updates plugin to be cap7 ready ([2d1b119](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/2d1b119abb2bbe3d2a4e5274bfdd9ff5c96de24b))
+
+
+### BREAKING CHANGES
+
+* There were Capacitor 7 changes, that require a major version update.
+
+# [2.0.0-dev.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.1.0-dev.2...v2.0.0-dev.1) (2025-01-13)
+
+
+### Bug Fixes
+
+* Remove unnecessary permissions from AndroidManifest.xml ([#39](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/39)) ([90fb0b2](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/90fb0b2bdf282b896dec3f6433ddb44082f99509))
+
+
+### BREAKING CHANGES
+
+* There were Capacitor 7 changes, that require a major version update.
+
+# [1.1.0-dev.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.1.0-dev.1...v1.1.0-dev.2) (2025-01-08)
+
+
+### Bug Fixes
+
+* basic-tests github action ([#38](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/38)) ([634425a](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/634425a23ea0eecb3de645335f594823e59312dc))
+* use proper repository and bugs urls ([d2c0bcf](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/d2c0bcf740b2c4ffae5a28efa5c5541547245e69))
+
 # [1.1.0-dev.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.2...v1.1.0-dev.1) (2024-10-24)
 
 
