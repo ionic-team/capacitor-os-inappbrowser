@@ -1,0 +1,26 @@
+name: Publish Howbout NPM Package
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - run: |
+          npm config set registry=https://howbout-665247112122.d.codeartifact.eu-west-2.amazonaws.com/npm/howbout/
+          npm config set //howbout-665247112122.d.codeartifact.eu-west-2.amazonaws.com/npm/howbout/:_authToken=$(aws codeartifact get-authorization-token --domain howbout --domain-owner 665247112122 --query authorizationToken --output text)
+          npm i
+          npm run build
+          npm publish --ignore-scripts
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_CODEARTIFACT_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_CODEARTIFACT_KEY_SECRET }}
+  AWS_DEFAULT_REGION: 'eu-west-2'
