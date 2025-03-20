@@ -54,7 +54,7 @@ class InAppBrowserPlugin : Plugin() {
                 }
             }
         } catch (e: Exception) {
-            sendErrorResult(call, OSInAppBrowserError.GeneralError(url, OSInAppBrowserTarget.EXTERNAL_BROWSER, e))
+            sendErrorResult(call, OSInAppBrowserError.OpenFailed(url, OSInAppBrowserTarget.EXTERNAL_BROWSER))
         }
     }
 
@@ -101,7 +101,7 @@ class InAppBrowserPlugin : Plugin() {
                 }
             }
         } catch (e: Exception) {
-            sendErrorResult(call, OSInAppBrowserError.GeneralError(url, OSInAppBrowserTarget.SYSTEM_BROWSER, e))
+            sendErrorResult(call, OSInAppBrowserError.OpenFailed(url, OSInAppBrowserTarget.SYSTEM_BROWSER))
         }
     }
 
@@ -148,7 +148,7 @@ class InAppBrowserPlugin : Plugin() {
                 }
             }
         } catch (e: Exception) {
-            sendErrorResult(call, OSInAppBrowserError.GeneralError(url, OSInAppBrowserTarget.WEB_VIEW, e))
+            sendErrorResult(call, OSInAppBrowserError.OpenFailed(url, OSInAppBrowserTarget.WEB_VIEW))
         }
 
     }

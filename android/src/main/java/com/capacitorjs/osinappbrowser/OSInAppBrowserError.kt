@@ -20,11 +20,6 @@ sealed class OSInAppBrowserError(val code: String, val message: String) {
         code = 3.formatErrorCode(),
         message = "The URL provided must begin with either http:// or https://."
     )
-
-    data class GeneralError(val url: String, val target: OSInAppBrowserTarget, val exception: Exception) : OSInAppBrowserError(
-        code = target.generalErrorCode.formatErrorCode(),
-        message = "An error occurred while trying to open the '${target.openFailedText}': ${exception.message}"
-    )
 }
 
 enum class OSInAppBrowserTarget(
@@ -32,11 +27,10 @@ enum class OSInAppBrowserTarget(
     val inputIssueText: String,
     val openFailedCode: Int,
     val openFailedText: String,
-    val generalErrorCode: Int
 ) {
-    EXTERNAL_BROWSER(5, "openInExternalBrowser", 8, "External browser", 13),
-    SYSTEM_BROWSER(6, "openInSystemBrowser", 10, "Custom Tabs", 14),
-    WEB_VIEW(7, "openInWebView", 11, "The WebView", 15)
+    EXTERNAL_BROWSER(5, "openInExternalBrowser", 8, "External browser"),
+    SYSTEM_BROWSER(6, "openInSystemBrowser", 10, "Custom Tabs"),
+    WEB_VIEW(7, "openInWebView", 11, "The WebView")
 }
 
 private fun Int.formatErrorCode(): String {
