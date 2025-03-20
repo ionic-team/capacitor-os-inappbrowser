@@ -62,7 +62,7 @@ enum OSInAppBrowserError: Error {
         case .noBrowserToClose:
             baseCode = 12
         case .bridgeNotInitialised:
-            baseCode = 16
+            baseCode = 13
         }
         return "OS-PLUG-IABP-\(String(format: "%04d", baseCode))"
     }
