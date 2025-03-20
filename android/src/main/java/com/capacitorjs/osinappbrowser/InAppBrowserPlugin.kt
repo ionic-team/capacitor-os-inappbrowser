@@ -34,12 +34,12 @@ class InAppBrowserPlugin : Plugin() {
     fun openInExternalBrowser(call: PluginCall) {
         val url = call.getString("url")
         if (url.isNullOrEmpty()) {
-            call.reject("The value of the 'url' input parameter of the 'openInExternalBrowser' action is missing or is empty.")
+            sendErrorResult(call, OSInAppBrowserError.InputArgumentsIssue(OSInAppBrowserTarget.EXTERNAL_BROWSER))
             return
         }
 
         if (!isSchemeValid(url)) {
-            call.reject("The URL provided must begin with either http:// or https://.")
+            sendErrorResult(call, OSInAppBrowserError.InvalidURL)
             return
         }
 
@@ -50,11 +50,11 @@ class InAppBrowserPlugin : Plugin() {
                 if (success) {
                     call.resolve()
                 } else {
-                    call.reject("External browser couldn't open the following URL: '$url'")
+                    sendErrorResult(call, OSInAppBrowserError.OpenFailed(url, OSInAppBrowserTarget.EXTERNAL_BROWSER))
                 }
             }
         } catch (e: Exception) {
-            call.reject("An error occurred while trying to open the external browser: ${e.message}")
+            sendErrorResult(call, OSInAppBrowserError.OpenFailed(url, OSInAppBrowserTarget.EXTERNAL_BROWSER))
         }
     }
 
@@ -63,18 +63,13 @@ class InAppBrowserPlugin : Plugin() {
         val url = call.getString("url")
         val options = call.getObject("options")
 
-        if (url.isNullOrEmpty()) {
-            call.reject("The value of the 'url' input parameter of the 'openInSystemBrowser' action is missing or is empty.")
+        if (url.isNullOrEmpty() || options == null) {
+            sendErrorResult(call, OSInAppBrowserError.InputArgumentsIssue(OSInAppBrowserTarget.SYSTEM_BROWSER))
             return
         }
 
         if (!isSchemeValid(url)) {
-            call.reject("The URL provided must begin with either http:// or https://.")
-            return
-        }
-
-        if (options == null) {
-            call.reject("The value of the 'options' input parameter of the 'openInSystemBrowser' action is missing or isn't valid.")
+            sendErrorResult(call, OSInAppBrowserError.InvalidURL)
             return
         }
 
@@ -101,12 +96,12 @@ class InAppBrowserPlugin : Plugin() {
                         activeRouter = customTabsRouter
                         call.resolve()
                     } else {
-                        call.reject("Custom Tabs couldn't open the following URL:'$url'")
+                        sendErrorResult(call, OSInAppBrowserError.OpenFailed(url, OSInAppBrowserTarget.SYSTEM_BROWSER))
                     }
                 }
             }
         } catch (e: Exception) {
-            call.reject("An error occurred while trying to open Custom Tabs: ${e.message}")
+            sendErrorResult(call, OSInAppBrowserError.OpenFailed(url, OSInAppBrowserTarget.SYSTEM_BROWSER))
         }
     }
 
@@ -115,30 +110,25 @@ class InAppBrowserPlugin : Plugin() {
         val url = call.getString("url")
         val options = call.getObject("options")
 
-        if (url.isNullOrEmpty()) {
-            call.reject("The value of the 'url' input parameter of the 'openInWebView' action is missing or is empty.")
+        if (url.isNullOrEmpty() || options == null) {
+            sendErrorResult(call, OSInAppBrowserError.InputArgumentsIssue(OSInAppBrowserTarget.WEB_VIEW))
             return
         }
 
         if (!isSchemeValid(url)) {
-            call.reject("The URL provided must begin with either http:// or https://.")
-            return
-        }
-
-        if (options == null) {
-            call.reject("The value of the 'options' input parameter of the 'openInWebView' action is missing or isn't valid.")
+            sendErrorResult(call, OSInAppBrowserError.InvalidURL)
             return
         }
 
         try {
             // Try closing active router before continuing to open
             close {
-                val options = buildWebViewOptions(call.getObject("options"))
+                val webViewOptions = buildWebViewOptions(options)
 
                 val webViewRouter = OSIABWebViewRouterAdapter(
                     context = context,
                     lifecycleScope = activity.lifecycleScope,
-                    options = options,
+                    options = webViewOptions,
                     flowHelper = OSIABFlowHelper(),
                     onBrowserPageLoaded = {
                         notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
@@ -153,12 +143,12 @@ class InAppBrowserPlugin : Plugin() {
                         activeRouter = webViewRouter
                         call.resolve()
                     } else {
-                        call.reject("The WebView couldn't open the following URL: '$url'")
+                        sendErrorResult(call, OSInAppBrowserError.OpenFailed(url, OSInAppBrowserTarget.WEB_VIEW))
                     }
                 }
             }
         } catch (e: Exception) {
-            call.reject("An error occurred while trying to open the WebView: ${e.message}")
+            sendErrorResult(call, OSInAppBrowserError.OpenFailed(url, OSInAppBrowserTarget.WEB_VIEW))
         }
 
     }
@@ -169,7 +159,7 @@ class InAppBrowserPlugin : Plugin() {
             if (success) {
                 call.resolve()
             } else {
-                call.reject("There's no browser view to close.")
+                sendErrorResult(call, OSInAppBrowserError.CloseFailed)
             }
         }
     }
@@ -273,6 +263,16 @@ class InAppBrowserPlugin : Plugin() {
     private fun isSchemeValid(url: String): Boolean {
         return listOf("http://", "https://").any { url.startsWith(it, true) }
     }
+
+    /**
+     * Helper method to send an error result using call.reject
+     * @param call The PluginCall object to send the error result
+     * @param error The OSInAppBrowserError object to send as the error result
+     */
+    private fun sendErrorResult(call: PluginCall, error: OSInAppBrowserError) {
+        call.reject(error.message, error.code)
+    }
+
 
 }
 

@@ -10,10 +10,19 @@ const Home: React.FC = () => {
     });
   }
 
-  const invalidScheme = () => {
-    InAppBrowser.openInExternalBrowser({
-      url: "mailto://mail@outsystems.com"
-    });
+  const invalidScheme = async () => {
+    try {
+      const result = await InAppBrowser.openInExternalBrowser({
+        url: "mailto://mail@outsystems.com"
+      });
+    } catch (error) {
+      if (error instanceof Error) {
+        alert("Error: " + (error as any).code + ": " + error.message);
+      } else {
+        alert("Error: Unknown error");
+      }
+    }
+    
   }
 
   const openInSystemBrowserWithDefaults = () => {
