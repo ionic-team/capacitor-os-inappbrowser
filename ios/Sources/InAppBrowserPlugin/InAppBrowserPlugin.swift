@@ -201,7 +201,7 @@ private extension InAppBrowserPlugin {
     }
 
     func error(_ call: CAPPluginCall, type errorType: OSInAppBrowserError) {
-        call.reject(errorType.description)
+        call.reject(errorType.description, errorType.code)
     }
 }
 
