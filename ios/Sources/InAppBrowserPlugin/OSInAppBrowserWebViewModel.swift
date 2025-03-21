@@ -90,6 +90,7 @@ extension OSInAppBrowserWebViewModel {
             mediaPlaybackRequiresUserAction: self.mediaPlaybackRequiresUserAction,
             closeButtonText: self.closeButtonText,
             toolbarPosition: self.toolbarPosition,
+            showNavigationButtons: self.showNavigationButtons,
             leftToRight: self.leftToRight,
             allowOverScroll: self.iOS.allowOverScroll,
             enableViewportScale: self.iOS.enableViewportScale,
