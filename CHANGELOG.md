@@ -1,3 +1,14 @@
+# [2.0.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.0.0...v2.0.1) (2025-03-26)
+
+### Bug Fixes
+
+* ios: include showNavigationButtons in conversion function ([#55](https://github.com/ionic-team/capacitor-os-inappbrowser/pull/55)) ([d860de5](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/d860de5d704e2d925ea77b538f5544940cd5818f))
+* properly return errors ([#54](https://github.com/ionic-team/capacitor-os-inappbrowser/pull/54)) ([383d67f](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/383d67fbc28cdff4ade88674c095268e31193584))
+
+### Chores
+
+* update dependency to Android native lib ([#46](https://github.com/ionic-team/capacitor-os-inappbrowser/pull/46)) ([898a962](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/898a9626612d344bf4ff7a1d33a3dae6ec729e29))
+
 # [2.0.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v1.0.2...v2.0.0) (2025-01-13)
 
 
