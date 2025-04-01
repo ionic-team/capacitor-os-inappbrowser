@@ -190,12 +190,12 @@ export interface InAppBrowserPlugin {
 
   /**
    * Adds a listener for the specified browser event.
-   * @param eventName The name of the browser event to listen for: 'browserClosed' or 'browserPageLoaded'.
+   * @param eventName The name of the browser event to listen for: 'browserClosed', 'browserPageLoaded' or 'browserPageNavigationCompleted'.
    * @param listenerFunc The function to be called when the event occurs.
    */
   addListener(
-    eventName: 'browserClosed' | 'browserPageLoaded',
-    listenerFunc: () => void,
+    eventName: 'browserClosed' | 'browserPageLoaded' | 'browserPageNavigationCompleted',
+    listenerFunc: (data) => void,
   ): Promise<PluginListenerHandle>;
 
   /**
