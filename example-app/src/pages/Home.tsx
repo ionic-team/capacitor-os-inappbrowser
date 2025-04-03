@@ -1,5 +1,5 @@
 import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { InAppBrowser, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation } from '@capacitor/inappbrowser';
+import { InAppBrowser, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation, BrowserPageNavigationCompletedEventData } from '@capacitor/inappbrowser';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -153,8 +153,8 @@ const Home: React.FC = () => {
     console.log("browser was loaded.");
   });
 
-  InAppBrowser.addListener('browserPageNavigationCompleted', (data) => {
-    console.log("browser page navigation was completed. " + data['url']);
+  InAppBrowser.addListener('browserPageNavigationCompleted', (data: BrowserPageNavigationCompletedEventData) => {
+    console.log("browser page navigation was completed. " + data.url);
   });
 
   return (

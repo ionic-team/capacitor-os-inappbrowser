@@ -45,6 +45,7 @@ class InAppBrowserPlugin : Plugin() {
         handleBrowserCall(call, OSInAppBrowserTarget.SYSTEM_BROWSER) { url ->
             val options = call.getObject("options")
                 ?: return@handleBrowserCall sendErrorResult(call, OSInAppBrowserError.InputArgumentsIssue(OSInAppBrowserTarget.SYSTEM_BROWSER))
+            // Try closing active router before continuing to open
             close {
                 val customTabsOptions = buildCustomTabsOptions(options)
                 val customTabsRouter = OSIABCustomTabsRouterAdapter(
@@ -57,8 +58,7 @@ class InAppBrowserPlugin : Plugin() {
                     },
                     onBrowserFinished = {
                         notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
-                    },
-                    onBrowserPageNavigationCompleted = {}
+                    }
                 )
                 engine?.openCustomTabs(customTabsRouter, url) { success ->
                     if (success) activeRouter = customTabsRouter
