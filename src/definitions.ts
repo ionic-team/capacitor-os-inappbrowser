@@ -164,6 +164,14 @@ export interface OpenInWebViewParameterModel extends OpenInDefaultParameterModel
   options: WebViewOptions;
 }
 
+/**
+ * Defines the data for the 'browserPageNavigationCompleted' event.
+ */
+export interface BrowserPageNavigationCompletedEventData {
+  /** The URL of the page that was loaded. */
+  url: string | undefined;
+}
+
 export interface InAppBrowserPlugin {
   /**
    * Opens the web content of the given URL in your mobile app using a custom web view within your application.
@@ -190,12 +198,22 @@ export interface InAppBrowserPlugin {
 
   /**
    * Adds a listener for the specified browser event.
-   * @param eventName The name of the browser event to listen for: 'browserClosed', 'browserPageLoaded' or 'browserPageNavigationCompleted'.
+   * @param eventName The name of the browser event to listen for: 'browserClosed' or 'browserPageLoaded'.
    * @param listenerFunc The function to be called when the event occurs.
    */
   addListener(
-    eventName: 'browserClosed' | 'browserPageLoaded' | 'browserPageNavigationCompleted',
-    listenerFunc: (data) => void,
+    eventName: 'browserClosed' | 'browserPageLoaded',
+    listenerFunc: () => void,
+  ): Promise<PluginListenerHandle>;
+
+  /**
+   * Adds a listener for the specified browser event.
+   * @param eventName The name of the browser event to listen for: 'browserPageNavigationCompleted'.
+   * @param listenerFunc The function to be called when the event occurs.
+   */
+  addListener(
+    eventName: 'browserPageNavigationCompleted',
+    listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void,
   ): Promise<PluginListenerHandle>;
 
   /**
