@@ -1,3 +1,9 @@
+# [2.1.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.0.1...v2.1.0) (2025-04-15)
+
+### Features
+
+* implement browserPageNavigationCompleted event ([943419f](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/943419ff434ef28a468eb111cc18267ee1783cb3))
+
 # [2.0.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.0.0...v2.0.1) (2025-03-26)
 
 ### Bug Fixes
