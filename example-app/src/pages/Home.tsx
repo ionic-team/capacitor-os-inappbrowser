@@ -4,7 +4,7 @@ import './Home.css';
 
 const Home: React.FC = () => {
 
-  const test = () => {
+  const openInExternalBrowser = () => {
     InAppBrowser.openInExternalBrowser({
       url: "https://www.google.com"
     });
@@ -153,6 +153,10 @@ const Home: React.FC = () => {
     console.log("browser was loaded.");
   });
 
+  InAppBrowser.addListener('browserPageNavigationCompleted', (data) => {
+    console.log("browser page navigation was completed. " + data['url']);
+  });
+
   return (
     <IonPage>
       <IonHeader>
@@ -167,7 +171,7 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <div>
-          <IonButton onClick={test}>TEST</IonButton>
+          <IonButton onClick={openInExternalBrowser}>External Browser</IonButton>
           <IonButton onClick={openInSystemBrowserWithDefaults}>System Browser with Defaults</IonButton>
           <IonButton onClick={openInSystemBrowserWithCustomValues}>System Browser with Custom Values</IonButton>
           <IonButton onClick={openInWebViewWithDefaults}>Web View with Defaults</IonButton>

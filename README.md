@@ -64,6 +64,10 @@ await InAppBrowser.addListener('browserClosed', () => {
     console.log("browser was closed.");
 });
 
+await InAppBrowser.addListener('browserPageNavigationCompleted', (data) => {
+    console.log("browser page navigation was completed. " + data['url']);
+});
+
 await InAppBrowser.addListener('browserPageLoaded', () => {
     console.log("browser was loaded.");
 });
@@ -83,7 +87,7 @@ InAppBrowser.removeAllListeners();
 * [`openInSystemBrowser(...)`](#openinsystembrowser)
 * [`openInExternalBrowser(...)`](#openinexternalbrowser)
 * [`close()`](#close)
-* [`addListener('browserClosed' | 'browserPageLoaded', ...)`](#addlistenerbrowserclosed--browserpageloaded-)
+* [`addListener('browserClosed' | 'browserPageLoaded' | 'browserPageNavigationCompleted', ...)`](#addlistenerbrowserclosed--browserpageloaded--browserpagenavigationcompleted-)
 * [`removeAllListeners()`](#removealllisteners)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
@@ -149,18 +153,18 @@ Closes the currently active browser. It can be used to close browsers launched t
 --------------------
 
 
-### addListener('browserClosed' | 'browserPageLoaded', ...)
+### addListener('browserClosed' | 'browserPageLoaded' | 'browserPageNavigationCompleted', ...)
 
 ```typescript
-addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle>
+addListener(eventName: 'browserClosed' | 'browserPageLoaded' | 'browserPageNavigationCompleted', listenerFunc: (data: any) => void) => Promise<PluginListenerHandle>
 ```
 
 Adds a listener for the specified browser event.
 
-| Param              | Type                                                | Description                                                                          |
-| ------------------ | --------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| **`eventName`**    | <code>'browserClosed' \| 'browserPageLoaded'</code> | The name of the browser event to listen for: 'browserClosed' or 'browserPageLoaded'. |
-| **`listenerFunc`** | <code>() =&gt; void</code>                          | The function to be called when the event occurs.                                     |
+| Param              | Type                                                                                    | Description                                                                                                            |
+| ------------------ | --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'browserClosed' \| 'browserPageLoaded' \| 'browserPageNavigationCompleted'</code> | The name of the browser event to listen for: 'browserClosed', 'browserPageLoaded' or 'browserPageNavigationCompleted'. |
+| **`listenerFunc`** | <code>(data: any) =&gt; void</code>                                                     | The function to be called when the event occurs.                                                                       |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
