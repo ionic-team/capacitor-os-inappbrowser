@@ -2,7 +2,7 @@
 
 ### Features
 
-* Added support for back and forward swipe navigation gestures in `WKWebView` via the `allowsBackForwardNavigationGestures` option. (for openInWebView option only) ([]())
+* Added support for back and forward swipe navigation gestures in `WKWebView` via the `allowsBackForwardNavigationGestures` option. (for openInWebView option only) ([35ab447](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/35ab44790eb98b2d0d748c130642b321e9dc1156))
 
 # [2.1.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.0.1...v2.1.0) (2025-04-15)
 
