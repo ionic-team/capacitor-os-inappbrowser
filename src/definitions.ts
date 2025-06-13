@@ -76,6 +76,9 @@ export interface iOSWebViewOptions {
   viewStyle: iOSViewStyle;
   /** Sets the transition style of the Web View. */
   animationEffect: iOSAnimation;
+
+  /** Enables back and forward swipe gestures in the Web View. */
+  allowsBackForwardNavigationGestures: boolean;
 }
 
 export interface AndroidWebViewOptions {

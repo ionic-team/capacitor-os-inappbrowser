@@ -56,6 +56,7 @@
   },
   "devDependencies": {
     "@capacitor/android": "next",
+    "@capacitor/cli": "^7.3.0",
     "@capacitor/core": "next",
     "@capacitor/docgen": "^0.2.2",
     "@capacitor/ios": "next",

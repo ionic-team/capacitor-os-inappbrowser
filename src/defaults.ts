@@ -28,6 +28,7 @@ export const DefaultiOSWebViewOptions: iOSWebViewOptions = {
 
   viewStyle: iOSViewStyle.FULL_SCREEN,
   animationEffect: iOSAnimation.COVER_VERTICAL,
+  allowsBackForwardNavigationGestures: true
 };
 
 export const DefaultWebViewOptions: WebViewOptions = {
