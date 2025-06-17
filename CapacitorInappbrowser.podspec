@@ -15,5 +15,4 @@ Pod::Spec.new do |s|
   s.dependency 'OSInAppBrowserLib', spec='~> 2.0.1'
   s.dependency 'Capacitor'
   s.swift_version = '5.1'
-  
 end
