@@ -9,6 +9,7 @@ struct OSInAppBrowserWebViewModel: Decodable {
         let surpressIncrementalRendering: Bool
         let viewStyle: OSIABViewStyle
         let animationEffect: OSIABAnimationEffect
+        let allowsBackForwardNavigationGestures: Bool
 
         enum CodingKeys: CodingKey {
             case allowOverScroll
@@ -17,6 +18,7 @@ struct OSInAppBrowserWebViewModel: Decodable {
             case surpressIncrementalRendering
             case viewStyle
             case animationEffect
+            case allowsBackForwardNavigationGestures
         }
 
         init(from decoder: Decoder) throws {
@@ -31,6 +33,7 @@ struct OSInAppBrowserWebViewModel: Decodable {
             self.surpressIncrementalRendering = try container.decode(Bool.self, forKey: .surpressIncrementalRendering)
             self.viewStyle = .init(viewStyleValue)
             self.animationEffect = .init(animationValue)
+            self.allowsBackForwardNavigationGestures = try container.decode(Bool.self, forKey: .allowsBackForwardNavigationGestures)
         }
     }
 
@@ -98,7 +101,8 @@ extension OSInAppBrowserWebViewModel {
             surpressIncrementalRendering: self.iOS.surpressIncrementalRendering,
             viewStyle: self.iOS.viewStyle,
             animationEffect: self.iOS.animationEffect,
-            customUserAgent: self.customWebViewUserAgent
+            customUserAgent: self.customWebViewUserAgent,
+            allowsBackForwardNavigationGestures: self.iOS.allowsBackForwardNavigationGestures
         )
     }
 }

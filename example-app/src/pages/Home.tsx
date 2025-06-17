@@ -86,7 +86,8 @@ const Home: React.FC = () => {
           allowInLineMediaPlayback: true,
           surpressIncrementalRendering: true,
           viewStyle: iOSViewStyle.PAGE_SHEET,
-          animationEffect: iOSAnimation.CROSS_DISSOLVE
+          animationEffect: iOSAnimation.CROSS_DISSOLVE,
+          allowsBackForwardNavigationGestures: true
         }
       }
     });
@@ -116,7 +117,8 @@ const Home: React.FC = () => {
           allowInLineMediaPlayback: true,
           surpressIncrementalRendering: true,
           viewStyle: iOSViewStyle.PAGE_SHEET,
-          animationEffect: iOSAnimation.CROSS_DISSOLVE
+          animationEffect: iOSAnimation.CROSS_DISSOLVE,
+          allowsBackForwardNavigationGestures: true
         }
       }
     });
