@@ -1,4 +1,4 @@
-## Unreleased
+# [2.1.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.1.0...v2.1.1) (2025-06-18)
 
 ### Features
 
