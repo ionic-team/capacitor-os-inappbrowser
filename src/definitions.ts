@@ -117,9 +117,9 @@ export interface iOSSystemBrowserOptions {
 }
 
 export interface AndroidBottomSheet {
-  /** Sets the height of the bottom sheet.
-   * This will be a minimum of 50% of the screen's height.
-   * If no value is passed, we will default to the minimum value. */
+  /** Sets the height of the bottom sheet, in pixels.
+   * Custom tabs will set the bottom height to at least 50% of the screen.
+   * If no value is passed, it will default to the minimum value. */
   height: number;
   /** Sets whether the bottom sheet is fixed. */
   isFixed: boolean;
