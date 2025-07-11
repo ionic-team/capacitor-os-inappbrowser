@@ -200,7 +200,7 @@ export interface InAppBrowserPlugin {
   close(): Promise<void>;
 
   /**
-   * Adds a listener for the specified browser event.
+   * Adds a listener for the specified browser events, with no data being returned.
    * @param eventName The name of the browser event to listen for: 'browserClosed' or 'browserPageLoaded'.
    * @param listenerFunc The function to be called when the event occurs.
    */
@@ -210,8 +210,8 @@ export interface InAppBrowserPlugin {
   ): Promise<PluginListenerHandle>;
 
   /**
-   * Adds a listener for the specified browser event.
-   * @param eventName The name of the browser event to listen for: 'browserPageNavigationCompleted'.
+   * Adds a listener for the specified browser event, which receives data.
+   * @param eventName The name of the browser event to listen for: 'browserPageNavigationCompleted'. Applies only to openInWebView.
    * @param listenerFunc The function to be called when the event occurs.
    */
   addListener(
