@@ -284,10 +284,10 @@ Defines the options for opening a URL in the system browser.
 
 #### AndroidBottomSheet
 
-| Prop          | Type                 | Description                                                                                                                                             |
-| ------------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`height`**  | <code>number</code>  | Sets the height of the bottom sheet. This will be a minimum of 50% of the screen's height. If no value is passed, we will default to the minimum value. |
-| **`isFixed`** | <code>boolean</code> | Sets whether the bottom sheet is fixed.                                                                                                                 |
+| Prop          | Type                 | Description                                                                                                                                                                        |
+| ------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`height`**  | <code>number</code>  | Sets the height of the bottom sheet, in pixels. Custom tabs will set the bottom height to at least 50% of the screen. If no value is passed, it will default to the minimum value. |
+| **`isFixed`** | <code>boolean</code> | Sets whether the bottom sheet is fixed.                                                                                                                                            |
 
 
 #### iOSSystemBrowserOptions
