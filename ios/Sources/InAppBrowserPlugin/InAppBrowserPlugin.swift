@@ -53,10 +53,14 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
             guard let options: OSInAppBrowserWebViewModel = self.createModel(for: call.getObject("options")) else {
                 return self.error(call, type: .inputArgumentsIssue(target: .webView))
             }
+            let customHeaders = call.getObject("customHeaders")?.compactMapValues {
+                ($0 as? String) ?? ($0 as? NSNumber)?.stringValue
+            }
             DispatchQueue.main.async {
                 engine.openWebView(
-                    url,
-                    options.toWebViewOptions(),
+                    url: url,
+                    options: options.toWebViewOptions(),
+                    customHeaders: customHeaders,
                     onDelegateClose: { [weak self] in
                         self?.bridge?.viewController?.dismiss(animated: true)
                     },
@@ -65,7 +69,7 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
                     },
                     onDelegateAlertController: { [weak self] alert in
                         self?.bridge?.viewController?.presentedViewController?.show(alert, sender: nil)
-                    }, { [weak self] event, viewControllerToOpen, data  in
+                    }, completionHandler: { [weak self] event, viewControllerToOpen, data  in
                         self?.handleResult(event, for: call, checking: viewControllerToOpen, data: data, error: .failedToOpen(url: url.absoluteString, onTarget: .webView))
                     }
                 )
@@ -75,22 +79,22 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
 
     @objc func close(_ call: CAPPluginCall) {
         guard loadEngineIfNeeded(call) != nil else { return }
-        if let openedViewController {
-            DispatchQueue.main.async {
-                openedViewController.dismiss(animated: true) { [weak self] in
-                    self?.success(call)
-                }
+        guard let openedViewController else {
+            error(call, type: .noBrowserToClose)
+            return
+        }
+        DispatchQueue.main.async {
+            openedViewController.dismiss(animated: true) { [weak self] in
+                self?.success(call)
             }
-        } else {
-            self.error(call, type: .noBrowserToClose)
         }
     }
 }
 
 private extension InAppBrowserPlugin {
     func loadEngineIfNeeded(_ call: CAPPluginCall) -> OSInAppBrowserEngine? {
-        if self.engine == nil { self.load() }
-        guard let engine = self.engine else {
+        if self.engine == nil { load() }
+        guard let engine else {
             self.error(call, type: .bridgeNotInitialised)
             return nil
         }
@@ -124,11 +128,11 @@ private extension InAppBrowserPlugin {
     func handleResult(_ event: OSIABEventType?, for call: CAPPluginCall, checking viewController: UIViewController?, data: [String: Any]?, error: OSInAppBrowserError) {
         if let event {
             if event == .pageClosed {
-                self.openedViewController = nil
+                openedViewController = nil
             }
-            self.notifyListeners(event.rawValue, data: data)
+            notifyListeners(event.rawValue, data: data)
         } else if let viewController {
-            self.present(viewController) { [weak self] in
+            present(viewController) { [weak self] in
                 self?.openedViewController = viewController
                 self?.success(call)
             }
@@ -173,9 +177,10 @@ private extension InAppBrowserPlugin {
 }
 
 private extension OSInAppBrowserEngine {
+    
     func openExternalBrowser(_ url: URL, _ completionHandler: @escaping (Bool) -> Void) {
         let router = OSIABApplicationRouterAdapter()
-        self.openExternalBrowser(url, routerDelegate: router, completionHandler)
+        openExternalBrowser(url, routerDelegate: router, completionHandler)
     }
 
     func openSystemBrowser(_ url: URL, _ options: OSIABSystemBrowserOptions, _ completionHandler: @escaping (OSIABEventType?, UIViewController?) -> Void) {
@@ -184,16 +189,17 @@ private extension OSInAppBrowserEngine {
             onBrowserPageLoad: { completionHandler(.pageLoadCompleted, nil) },
             onBrowserClosed: { completionHandler(.pageClosed, nil) }
         )
-        self.openSystemBrowser(url, routerDelegate: router) { completionHandler(nil, $0) }
+        openSystemBrowser(url, routerDelegate: router) { completionHandler(nil, $0) }
     }
 
     func openWebView(
-        _ url: URL,
-        _ options: OSIABWebViewOptions,
+        url: URL,
+        options: OSIABWebViewOptions,
+        customHeaders: [String: String]? = nil,
         onDelegateClose: @escaping () -> Void,
         onDelegateURL: @escaping (URL) -> Void,
         onDelegateAlertController: @escaping (UIAlertController) -> Void,
-        _ completionHandler: @escaping (OSIABEventType?, UIViewController?, [String: Any]?) -> Void
+        completionHandler: @escaping (OSIABEventType?, UIViewController?, [String: Any]?) -> Void
     ) {
         let callbackHandler = OSIABWebViewCallbackHandler(
             onDelegateURL: onDelegateURL,
@@ -208,8 +214,8 @@ private extension OSInAppBrowserEngine {
                 completionHandler(.pageNavigationCompleted, nil, ["url": url ?? ""])
             }
         )
-        let router = OSIABWebViewRouterAdapter(options, cacheManager: OSIABBrowserCacheManager(dataStore: .default()), callbackHandler: callbackHandler)
-        self.openWebView(url, routerDelegate: router) { completionHandler(nil, $0, nil) }
+        let router = OSIABWebViewRouterAdapter(options: options, customHeaders: customHeaders, cacheManager: OSIABBrowserCacheManager(dataStore: .default()), callbackHandler: callbackHandler)
+        openWebView(url, routerDelegate: router) { completionHandler(nil, $0, nil) }
     }
 }
 

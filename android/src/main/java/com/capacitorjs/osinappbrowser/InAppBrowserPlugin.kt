@@ -73,12 +73,25 @@ class InAppBrowserPlugin : Plugin() {
         handleBrowserCall(call, OSInAppBrowserTarget.WEB_VIEW) { url ->
             val options = call.getObject("options")
                 ?: return@handleBrowserCall sendErrorResult(call, OSInAppBrowserError.InputArgumentsIssue(OSInAppBrowserTarget.WEB_VIEW))
+
+            val customHeaders: Map<String, String>? = call.getObject("customHeaders")?.let { jsObject ->
+                val result = mutableMapOf<String, String>()
+                jsObject.keys().forEach { key ->
+                    when (val value = jsObject.opt(key)) {
+                        is String -> result[key] = value
+                        is Number -> result[key] = value.toString()
+                    }
+                }
+                result
+            }
+
             close {
                 val webViewOptions = buildWebViewOptions(options)
                 val webViewRouter = OSIABWebViewRouterAdapter(
                     context = context,
                     lifecycleScope = activity.lifecycleScope,
                     options = webViewOptions,
+                    customHeaders = customHeaders,
                     flowHelper = OSIABFlowHelper(),
                     onBrowserPageLoaded = {
                         notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)

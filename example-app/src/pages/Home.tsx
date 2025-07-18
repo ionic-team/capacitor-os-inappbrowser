@@ -89,6 +89,10 @@ const Home: React.FC = () => {
           animationEffect: iOSAnimation.CROSS_DISSOLVE,
           allowsBackForwardNavigationGestures: true
         }
+      },
+      customHeaders: {
+        "X-Custom-Header": "CustomValue",
+        "X-Another-Header": "AnotherValue"
       }
     });
   }

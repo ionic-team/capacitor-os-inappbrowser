@@ -165,6 +165,8 @@ export interface OpenInSystemBrowserParameterModel extends OpenInDefaultParamete
 export interface OpenInWebViewParameterModel extends OpenInDefaultParameterModel {
   /** A structure containing some configurations to apply to the Web View. */
   options: WebViewOptions;
+  /** A map of custom headers to be sent with the request. */
+  customHeaders?: { [key: string]: string };
 }
 
 /**
