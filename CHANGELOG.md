@@ -1,3 +1,9 @@
+# [2.2.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.1.1...v2.2.0) (2025-07-21)
+
+### Features
+
+* Add support for passing custom headers to web view (only for the OpenInWebView option). ([6be21ea](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/6be21eacc376a7d80908a89ca13ee08c75a60933))
+
 # [2.1.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.1.0...v2.1.1) (2025-06-18)
 
 ### Features
