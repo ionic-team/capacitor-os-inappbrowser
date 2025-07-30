@@ -11,6 +11,7 @@ buildscript {
         google()
         mavenCentral()
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:8.7.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -54,12 +55,10 @@ repositories {
     mavenCentral()
 }
 
-
 dependencies {
     // implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
-    //implementation "io.ionic.libs:ioninappbrowser-android:1.4.0"
-    api files('../android/src/main/libs/OSInAppBrowserLib-debug.aar')
+    implementation("io.ionic.libs:ioninappbrowser-android:1.4.1@aar")
     implementation 'androidx.browser:browser:1.8.0'
     implementation "androidx.constraintlayout:constraintlayout:2.2.0"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
