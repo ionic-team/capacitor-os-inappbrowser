@@ -1,3 +1,9 @@
+# [2.2.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.2.0...v2.2.1) (2025-07-30)
+
+### Features
+
+* Add support for for predictive back navigation for Android 13+ ([5bd722b](https://github.com/ionic-team/capacitor-os-inappbrowser/pull/68/commits/5bd722b1ba57bac635b239acedc645d0a31a5416))
+
 # [2.2.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.1.1...v2.2.0) (2025-07-21)
 
 ### Features
