@@ -3,15 +3,15 @@ name: "Release"
 on:
   push:
     branches:
-      - dev
+      - development
       - next
-      - main
   workflow_dispatch:
 
 permissions:
     contents: write
     issues: write
     deployments: write
+    id-token: write # to enable use of OIDC for npm provenance
 
 jobs:
   setup:

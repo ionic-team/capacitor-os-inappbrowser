@@ -2,7 +2,7 @@ module.exports = {
   branches: [
     { name: 'main', channel: 'latest' },
     { name: 'next', channel: 'next', prerelease: true },
-    { name: 'dev', channel: 'dev', prerelease: true }
+    { name: 'development', channel: 'dev', prerelease: true }
   ],
   repositoryUrl: 'https://github.com/ionic-team/capacitor-os-inappbrowser.git',
   plugins: [
