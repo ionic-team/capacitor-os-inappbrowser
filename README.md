@@ -160,7 +160,7 @@ Closes the currently active browser. It can be used to close browsers launched t
 addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle>
 ```
 
-Adds a listener for the specified browser event.
+Adds a listener for the specified browser events, with no data being returned.
 
 | Param              | Type                                                | Description                                                                          |
 | ------------------ | --------------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -178,12 +178,12 @@ Adds a listener for the specified browser event.
 addListener(eventName: 'browserPageNavigationCompleted', listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void) => Promise<PluginListenerHandle>
 ```
 
-Adds a listener for the specified browser event.
+Adds a listener for the specified browser event, which receives data.
 
-| Param              | Type                                                                                                                           | Description                                                                    |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| **`eventName`**    | <code>'browserPageNavigationCompleted'</code>                                                                                  | The name of the browser event to listen for: 'browserPageNavigationCompleted'. |
-| **`listenerFunc`** | <code>(data: <a href="#browserpagenavigationcompletedeventdata">BrowserPageNavigationCompletedEventData</a>) =&gt; void</code> | The function to be called when the event occurs.                               |
+| Param              | Type                                                                                                                           | Description                                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'browserPageNavigationCompleted'</code>                                                                                  | The name of the browser event to listen for: 'browserPageNavigationCompleted'. Applies only to openInWebView. |
+| **`listenerFunc`** | <code>(data: <a href="#browserpagenavigationcompletedeventdata">BrowserPageNavigationCompletedEventData</a>) =&gt; void</code> | The function to be called when the event occurs.                                                              |
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
@@ -208,9 +208,10 @@ Removes all listeners for the browser events.
 
 Defines the options for opening a URL in the web view.
 
-| Prop          | Type                                                      | Description                                                          |
-| ------------- | --------------------------------------------------------- | -------------------------------------------------------------------- |
-| **`options`** | <code><a href="#webviewoptions">WebViewOptions</a></code> | A structure containing some configurations to apply to the Web View. |
+| Prop                | Type                                                      | Description                                                          |
+| ------------------- | --------------------------------------------------------- | -------------------------------------------------------------------- |
+| **`options`**       | <code><a href="#webviewoptions">WebViewOptions</a></code> | A structure containing some configurations to apply to the Web View. |
+| **`customHeaders`** | <code>{ [key: string]: string; }</code>                   | A map of custom headers to be sent with the request.                 |
 
 
 #### WebViewOptions

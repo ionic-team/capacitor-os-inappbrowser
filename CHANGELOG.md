@@ -1,3 +1,15 @@
+# [2.2.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.2.0...v2.2.1) (2025-07-30)
+
+### Features
+
+* Add support for for predictive back navigation for Android 13+ ([5bd722b](https://github.com/ionic-team/capacitor-os-inappbrowser/pull/68/commits/5bd722b1ba57bac635b239acedc645d0a31a5416))
+
+# [2.2.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.1.1...v2.2.0) (2025-07-21)
+
+### Features
+
+* Add support for passing custom headers to web view (only for the OpenInWebView option). ([6be21ea](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/6be21eacc376a7d80908a89ca13ee08c75a60933))
+
 # [2.1.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.1.0...v2.1.1) (2025-06-18)
 
 ### Features
