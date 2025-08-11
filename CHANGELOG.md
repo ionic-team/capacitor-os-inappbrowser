@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.2.0...v2.2.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* **android:** migrate back navigation to API supported for Android 16 ([#68](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/68)) ([6e3cf17](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/6e3cf174ae09797160cc78d3568ece27fefee993))
+
 # [2.2.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.2.0...v2.2.1) (2025-07-30)
 
 ### Features
