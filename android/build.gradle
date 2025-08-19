@@ -58,7 +58,7 @@ repositories {
 dependencies {
     // implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
-    implementation("io.ionic.libs:ioninappbrowser-android:1.4.1")
+    implementation("io.ionic.libs:ioninappbrowser-android:1.5.0")
     implementation 'androidx.browser:browser:1.8.0'
     implementation "androidx.constraintlayout:constraintlayout:2.2.0"
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
