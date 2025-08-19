@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.2.1...v2.3.0) (2025-08-19)
+
+
+### Features
+
+* **android:** add pdf support ([4039035](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/4039035e90c0c8414d655fa4a9519416ccee641c))
+
 ## [2.2.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.2.0...v2.2.1) (2025-08-11)
 
 
