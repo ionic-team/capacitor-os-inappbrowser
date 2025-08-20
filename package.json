@@ -11,7 +11,8 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/plugin.mjs",
       "require": "./dist/plugin.cjs"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "unpkg": "dist/plugin.js",
   "files": [
