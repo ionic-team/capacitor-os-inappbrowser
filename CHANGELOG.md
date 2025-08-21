@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.3.0...v2.3.1) (2025-08-21)
+
+
+### Bug Fixes
+
+* export package.json to fix cap sync issues ([#52](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/52)) ([2ed7b04](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/2ed7b0474ace52845de5836955cb7f4335852ba5))
+
 # [2.3.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.2.1...v2.3.0) (2025-08-19)
 
 
