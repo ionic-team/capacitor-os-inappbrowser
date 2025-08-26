@@ -2,6 +2,13 @@
 
 This guide provides instructions for contributing to this Capacitor plugin.
 
+## Native code
+
+This repository contains minimal code for native Android and iOS. The implementation for native mobile exists in separate repositories:
+
+- [Contributing for Android](https://github.com/OutSystems/OSInAppBrowserLib-Android)
+- [For iOS](https://github.com/OutSystems/OSInAppBrowserLib-iOS)
+
 ## Developing
 
 ### Local Setup
@@ -43,19 +50,18 @@ This template is integrated with ESLint, Prettier, and SwiftLint. Using these to
 
 ## Commits/PR's
 
-Commits and PR's should use the `conventional-commits` format so the release process can version and create changelog correctly.
-
+Commits and PR's should use the [conventional-commits](https://www.conventionalcommits.org/) format so the release process can version and create changelog correctly.
 
 ## Publishing
 
-Publishing is automated based on the branch committed to. When a commit or merge is made to a branch a release that corresponds with the branch will be created:
+Publishing is automated based on the branch committed to. When a commit or merge is made to a branch a release that corresponds with the branch will be created (main requires manual trigger):
 
-| Branch Name | Build Type | NPM Tag | Example NPM Version |
-|---|---|---|---|
-| dev | dev | dev | @capacitor/inappbrowser@1.0.0-dev.1 |
-| next | next (these are betas/alphas) | next | @capacitor/inappbrowser@1.0.1-next.1 |
-| main | latest | latest | @capacitor/inappbrowser@1.0.2 |
+| Branch Name | Build Type                    | NPM Tag | Example NPM Version                |
+| ----------- | ----------------------------- | ------- | ---------------------------------- |
+| development | dev                           | dev     | @capacitor/inappbrowser@1.0.0-dev.1  |
+| next        | next (these are betas/alphas) | next    | @capacitor/inappbrowser@1.0.0-next.1 |
+| main        | latest                        | latest  | @capacitor/inappbrowser@1.0.0        |
 
-Dev work should be done by creating and merging PR's into the `dev` branch until a feature set is complete enough to then merge the `dev` branch into the `next` branch where it becomes a beta/alpha tagged under `next` for testing teams to use before full release. Upon completed testing the `next` branch is merged into `main` for a full release to be made. The `main` branch should then be merged into `dev` and `next` to keep them up to date with the latest code base.
+- In general new developments will go straight to `main`. If we want to have non-stable versions (e.g. for new Capacitor versions or when there are many changes), we may use `next` or `development` branch, and then once they are ready for stable version, open a PR to main (should be rebased to keep history).
 
 > **Note**: The [`files`](https://docs.npmjs.com/cli/v7/configuring-npm/package-json#files) array in `package.json` specifies which files get published. If you rename files/directories or add files elsewhere, you may need to update it.
