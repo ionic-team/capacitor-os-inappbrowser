@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.3.1...v2.4.0) (2025-09-08)
+
+
+### Features
+
+* **android:** allow for photo and video capturing and filter for media type for file uploads (onShowFileChooser) ([c696bd2](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/c696bd2c22df4aa8f928ec21bf1dba1043fbaf7e))
+
 ## [2.3.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.3.0...v2.3.1) (2025-08-21)
 
 
