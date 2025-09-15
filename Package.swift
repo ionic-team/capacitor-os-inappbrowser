@@ -10,7 +10,7 @@ let package = Package(
             targets: ["InAppBrowserPlugin"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", branch: "main"),
+        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "7.0.0"),
         .package(url: "https://github.com/OutSystems/OSInAppBrowserLib-iOS.git", from: "2.2.0")
     ],
     targets: [
