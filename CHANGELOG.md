@@ -1,3 +1,19 @@
+## [2.5.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.5.0...v2.5.1) (2025-10-03)
+
+
+### Bug Fixes
+
+* **ios:** allow iframe content to load in webview ([#86](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/86)) ([193ce0a](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/193ce0a5bad5624d6d8417e7bbd59831d1bf9461))
+* **ios** allow use of developer tools in debug apps for iOS >= 16.4 ([#86](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/86)) ([193ce0a](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/193ce0a5bad5624d6d8417e7bbd59831d1bf9461))
+
+# [2.5.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.4.0...v2.5.0) (2025-09-16)
+
+
+### Bug Fixes
+
+* **ios:** prevent alert view dismiss from triggering onBrowserClosed event ([#83](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/83)) ([101a1d2](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/101a1d26f2f6ee140f3e5744c38ba2fb7456c6b5))
+* **ios:** use version instead of branch for SPM ([#80](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/80)) ([2765458](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/2765458e572efdbc46d46538c1e0fe4f33359984))
+
 # [3.0.0-next.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.3.1...v3.0.0-next.1) (2025-09-08)
 
 
@@ -9,6 +25,15 @@
 ### BREAKING CHANGES
 
 * Capacitor major version update requires major version update on the plugin.
+* add OSInAppBrowserLib-iOS dependency ([5ada205](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/5ada2053a0d3c7e72d35bb1b77070017528970db))
+* example app with spm ([d3bd8f2](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/d3bd8f2d6d00ab14cdc29e457b77e11bded2e5f8))
+
+# [2.4.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.3.1...v2.4.0) (2025-09-08)
+
+
+### Features
+
+* **android:** allow for photo and video capturing and filter for media type for file uploads (onShowFileChooser) ([c696bd2](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/c696bd2c22df4aa8f928ec21bf1dba1043fbaf7e))
 
 ## [2.3.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.3.0...v2.3.1) (2025-08-21)
 
