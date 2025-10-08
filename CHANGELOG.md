@@ -4,6 +4,7 @@
 ### Bug Fixes
 
 * **ios:** allow iframe content to load in webview ([#86](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/86)) ([193ce0a](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/193ce0a5bad5624d6d8417e7bbd59831d1bf9461))
+* **ios** allow use of developer tools in debug apps for iOS >= 16.4 ([#86](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/86)) ([193ce0a](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/193ce0a5bad5624d6d8417e7bbd59831d1bf9461))
 
 # [2.5.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.4.0...v2.5.0) (2025-09-16)
 
