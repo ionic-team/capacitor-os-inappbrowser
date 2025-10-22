@@ -1,3 +1,15 @@
+# [3.0.0-development.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.5.1...v3.0.0-development.1) (2025-10-22)
+
+
+### Features
+
+* Capacitor 8 support ([0d4cc6c](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/0d4cc6c4d5e19c88310425bc2434fea329c6c8ba))
+
+
+### BREAKING CHANGES
+
+* Capacitor major version update requires major version update on the plugin.
+
 # [3.0.0-next.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v3.0.0-next.1...v3.0.0-next.2) (2025-10-08)
 
 
