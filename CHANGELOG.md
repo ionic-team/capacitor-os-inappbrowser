@@ -1,4 +1,4 @@
-# [3.0.0-next.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v3.0.0-next.2...v3.0.0-next.3) (2025-11-17)
+# [3.0.0-next.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v3.0.0-next.2...v3.0.0-next.3) (2025-11-17)
 
 
 * **android:** Update gradle and gradle dependencies to latest versions
