@@ -157,7 +157,7 @@ Closes the currently active browser. It can be used to close browsers launched t
 ### addListener('browserClosed' | 'browserPageLoaded', ...)
 
 ```typescript
-addListener(eventName: 'browserClosed' | 'browserPageLoaded', listenerFunc: () => void) => Promise<PluginListenerHandle>
+addListener(eventName: "browserClosed" | "browserPageLoaded", listenerFunc: () => void) => Promise<PluginListenerHandle>
 ```
 
 Adds a listener for the specified browser events, with no data being returned.
@@ -175,7 +175,7 @@ Adds a listener for the specified browser events, with no data being returned.
 ### addListener('browserPageNavigationCompleted', ...)
 
 ```typescript
-addListener(eventName: 'browserPageNavigationCompleted', listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void) => Promise<PluginListenerHandle>
+addListener(eventName: "browserPageNavigationCompleted", listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void) => Promise<PluginListenerHandle>
 ```
 
 Adds a listener for the specified browser event, which receives data.

@@ -100,7 +100,7 @@ private extension InAppBrowserPlugin {
         }
         return engine
     }
-    
+
     func handleBrowserCall(_ call: CAPPluginCall, target: OSInAppBrowserTarget, action: (URL) -> Void) {
         let urlString = call.getString("url", "")
         guard self.isSchemeValid(urlString) else {
@@ -111,7 +111,7 @@ private extension InAppBrowserPlugin {
         }
         action(url)
     }
-    
+
     func delegateExternalBrowser(_ engine: OSInAppBrowserEngine, _ url: URL, _ call: CAPPluginCall) {
         DispatchQueue.main.async {
             engine.openExternalBrowser(url) { [weak self] success in
@@ -177,7 +177,7 @@ private extension InAppBrowserPlugin {
 }
 
 private extension OSInAppBrowserEngine {
-    
+
     func openExternalBrowser(_ url: URL, _ completionHandler: @escaping (Bool) -> Void) {
         let router = OSIABApplicationRouterAdapter()
         openExternalBrowser(url, routerDelegate: router, completionHandler)

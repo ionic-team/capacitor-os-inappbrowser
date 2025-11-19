@@ -41,7 +41,7 @@ enum OSInAppBrowserError: Error {
 
         return result
     }
-    
+
     var code: String {
         let baseCode: Int
         switch self {
@@ -49,15 +49,15 @@ enum OSInAppBrowserError: Error {
             baseCode = 3
         case .inputArgumentsIssue(let target):
             baseCode = switch target {
-                case .externalBrowser: 5
-                case .systemBrowser: 6
-                case .webView: 7
+            case .externalBrowser: 5
+            case .systemBrowser: 6
+            case .webView: 7
             }
         case .failedToOpen(_, let target):
             baseCode = switch target {
-                case .externalBrowser: 8
-                case .systemBrowser: 9
-                case .webView: 11
+            case .externalBrowser: 8
+            case .systemBrowser: 9
+            case .webView: 11
             }
         case .noBrowserToClose:
             baseCode = 12
@@ -66,5 +66,5 @@ enum OSInAppBrowserError: Error {
         }
         return "OS-PLUG-IABP-\(String(format: "%04d", baseCode))"
     }
-    
+
 }
