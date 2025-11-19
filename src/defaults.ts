@@ -11,7 +11,7 @@ import {
   iOSSystemBrowserOptions,
   iOSViewStyle,
   iOSWebViewOptions,
-} from './definitions';
+} from "./definitions";
 
 export const DefaultAndroidWebViewOptions: AndroidWebViewOptions = {
   allowZoom: false,
@@ -39,7 +39,7 @@ export const DefaultWebViewOptions: WebViewOptions = {
   clearSessionCache: true,
   mediaPlaybackRequiresUserAction: false,
 
-  closeButtonText: 'Close',
+  closeButtonText: "Close",
   toolbarPosition: ToolbarPosition.TOP,
 
   showNavigationButtons: true,
