@@ -1,5 +1,6 @@
-import type { PluginListenerHandle } from '@capacitor/core';
+import type { PluginListenerHandle } from "@capacitor/core";
 
+/* eslint-disable no-unused-vars */
 export enum ToolbarPosition {
   TOP,
   BOTTOM,
@@ -28,6 +29,7 @@ export enum AndroidAnimation {
   SLIDE_IN_LEFT,
   SLIDE_OUT_RIGHT,
 }
+/* eslint-enable no-unused-vars */
 
 export interface WebViewOptions {
   /** Displays the URL on the Web View. */
@@ -90,11 +92,13 @@ export interface AndroidWebViewOptions {
   pauseMedia: boolean;
 }
 
+/* eslint-disable no-unused-vars */
 export enum DismissStyle {
   CLOSE,
   CANCEL,
   DONE,
 }
+/* eslint-enable no-unused-vars */
 
 export interface SystemBrowserOptions {
   /** Android-specific System Browser options. */
@@ -154,7 +158,8 @@ export interface OpenInDefaultParameterModel {
 /**
  * Defines the options for opening a URL in the system browser.
  */
-export interface OpenInSystemBrowserParameterModel extends OpenInDefaultParameterModel {
+export interface OpenInSystemBrowserParameterModel
+  extends OpenInDefaultParameterModel {
   /** A structure containing some configurations to apply to the System Browser. */
   options: SystemBrowserOptions;
 }
@@ -162,7 +167,8 @@ export interface OpenInSystemBrowserParameterModel extends OpenInDefaultParamete
 /**
  * Defines the options for opening a URL in the web view.
  */
-export interface OpenInWebViewParameterModel extends OpenInDefaultParameterModel {
+export interface OpenInWebViewParameterModel
+  extends OpenInDefaultParameterModel {
   /** A structure containing some configurations to apply to the Web View. */
   options: WebViewOptions;
   /** A map of custom headers to be sent with the request. */
@@ -177,6 +183,7 @@ export interface BrowserPageNavigationCompletedEventData {
   url: string | undefined;
 }
 
+/* eslint-disable no-unused-vars */
 export interface InAppBrowserPlugin {
   /**
    * Opens the web content of the given URL in your mobile app using a custom web view within your application.
@@ -207,7 +214,7 @@ export interface InAppBrowserPlugin {
    * @param listenerFunc The function to be called when the event occurs.
    */
   addListener(
-    eventName: 'browserClosed' | 'browserPageLoaded',
+    eventName: "browserClosed" | "browserPageLoaded",
     listenerFunc: () => void,
   ): Promise<PluginListenerHandle>;
 
@@ -217,7 +224,7 @@ export interface InAppBrowserPlugin {
    * @param listenerFunc The function to be called when the event occurs.
    */
   addListener(
-    eventName: 'browserPageNavigationCompleted',
+    eventName: "browserPageNavigationCompleted",
     listenerFunc: (data: BrowserPageNavigationCompletedEventData) => void,
   ): Promise<PluginListenerHandle>;
 
@@ -226,3 +233,4 @@ export interface InAppBrowserPlugin {
    */
   removeAllListeners(): void;
 }
+/* eslint-enable no-unused-vars */
