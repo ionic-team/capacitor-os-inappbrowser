@@ -158,8 +158,7 @@ export interface OpenInDefaultParameterModel {
 /**
  * Defines the options for opening a URL in the system browser.
  */
-export interface OpenInSystemBrowserParameterModel
-  extends OpenInDefaultParameterModel {
+export interface OpenInSystemBrowserParameterModel extends OpenInDefaultParameterModel {
   /** A structure containing some configurations to apply to the System Browser. */
   options: SystemBrowserOptions;
 }
@@ -167,8 +166,7 @@ export interface OpenInSystemBrowserParameterModel
 /**
  * Defines the options for opening a URL in the web view.
  */
-export interface OpenInWebViewParameterModel
-  extends OpenInDefaultParameterModel {
+export interface OpenInWebViewParameterModel extends OpenInDefaultParameterModel {
   /** A structure containing some configurations to apply to the Web View. */
   options: WebViewOptions;
   /** A map of custom headers to be sent with the request. */
