@@ -1,3 +1,10 @@
+## [2.5.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.5.1...v2.5.2) (2025-12-11)
+
+
+### Bug Fixes
+
+* set cap dependencies to ^7.0.0 ([#101](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/101)) ([289e14e](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/289e14e8302e826e87c746a365117b34c1eb0311))
+
 ## [2.5.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.5.0...v2.5.1) (2025-10-03)
 
 
