@@ -1,3 +1,10 @@
+## [2.5.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.5.2...v2.5.3) (2025-12-16)
+
+
+### Bug Fixes
+
+* Use latest-7 for 2.x docs ([#102](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/102)) ([a40f034](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/a40f034dea50f58f6cdd6966a6df4e2a77aa939a))
+
 ## [2.5.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.5.1...v2.5.2) (2025-12-11)
 
 
