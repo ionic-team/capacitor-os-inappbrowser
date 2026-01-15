@@ -12,13 +12,13 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@capacitor/app": "^7.0.0 || ^8.0.0",
+    "@capacitor/app": "^8.0.0",
     "@capacitor/core": "^8.0.0",
-    "@capacitor/haptics": "^7.0.0 || ^8.0.0",
+    "@capacitor/haptics": "^8.0.0",
     "@capacitor/inappbrowser": "file:../",
     "@capacitor/ios": "^8.0.0",
-    "@capacitor/keyboard": "^7.0.0 || ^8.0.0",
-    "@capacitor/status-bar": "^7.0.0 || ^8.0.0",
+    "@capacitor/keyboard": "^8.0.0",
+    "@capacitor/status-bar": "^8.0.0",
     "@ionic/react": "^8.7.10",
     "@ionic/react-router": "^8.7.10",
     "ionicons": "^8.0.13",
