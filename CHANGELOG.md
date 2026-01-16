@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v3.0.0...v3.0.1) (2026-01-16)
+
+
+### Bug Fixes
+
+* **android:** Do not show error in WebView when web page has a resource that is unresolvable ([#105](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/105)) ([0d407b6](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/0d407b60a330019f257cd76e819f3ccf9ba78869))
+
 # [3.0.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.5.1...v3.0.0) (2025-12-08)
 
 
