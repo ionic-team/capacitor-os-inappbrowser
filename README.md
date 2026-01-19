@@ -14,6 +14,13 @@ npx cap sync
 - iOS
 - Android
 
+#### LocalStorage Isolation
+The `openInWebView` option provides isolation for `localStorage` and `cookies` to ensure that content loaded in the InAppBrowser does not interfere with the main application's storage.
+
+- **iOS**: Storage is isolated by default.
+- **Android (API 28+)**: Storage is isolated by running the InAppBrowser in a separate process (`:OSInAppBrowser`) with a dedicated data directory suffix.
+- **Android (API < 28)**: Storage is **shared** with the main application due to platform limitations. On these devices, if the URL opened has the same origin as the main app, they will share the same `localStorage`.
+
 #### Android
 
 The InAppBrowser plugin requires a minimum Android SDK target of 26. This is higher than the default that comes with your Capacitor application. You can update this value in your `android/variables.gradle` file.
