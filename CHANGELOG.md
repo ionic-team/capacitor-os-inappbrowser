@@ -1,3 +1,10 @@
+## [2.5.4](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.5.3...v2.5.4) (2026-02-11)
+
+
+### Bug Fixes
+
+* **android:** AGP 9.0 no longer supports `proguard-android.txt` ([#107](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/107)) ([14f9d6c](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/14f9d6c9e0f3abf0e6bf8f31138e556afc4ba8a5))
+
 ## [2.5.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v2.5.2...v2.5.3) (2025-12-16)
 
 
