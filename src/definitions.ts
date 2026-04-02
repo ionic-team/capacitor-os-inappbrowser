@@ -90,6 +90,8 @@ export interface AndroidWebViewOptions {
   hardwareBack: boolean;
   /** Makes the Web View pause/resume with the app to stop background audio. */
   pauseMedia: boolean;
+  /** Whether to run the InAppBrowser in an isolated process. Android only. Defaults to true. */
+  isIsolated?: boolean;
 }
 
 /* eslint-disable no-unused-vars */
