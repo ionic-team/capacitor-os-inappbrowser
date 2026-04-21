@@ -57,7 +57,6 @@ class InAppBrowserPlugin : Plugin() {
                         notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
                     },
                     onBrowserFinished = {
-                        activeRouter = null
                         notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
                     }
                 )
@@ -98,7 +97,6 @@ class InAppBrowserPlugin : Plugin() {
                         notifyListeners(OSIABEventType.BROWSER_PAGE_LOADED.value, null)
                     },
                     onBrowserFinished = {
-                        activeRouter = null
                         notifyListeners(OSIABEventType.BROWSER_FINISHED.value, null)
                     },
                     onBrowserPageNavigationCompleted = {
