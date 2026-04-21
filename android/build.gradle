@@ -22,6 +22,16 @@ buildscript {
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
+def osInAppBrowserLibsDir = file('libs')
+
+rootProject.allprojects {
+    repositories {
+        flatDir {
+            dirs osInAppBrowserLibsDir
+        }
+    }
+}
+
 android {
     namespace = "com.capacitorjs.osinappbrowser"
     compileSdk = project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 36
@@ -54,9 +64,6 @@ kotlin {
 repositories {
     google()
     mavenCentral()
-    flatDir {
-        dirs 'libs'
-    }
 }
 
 dependencies {
