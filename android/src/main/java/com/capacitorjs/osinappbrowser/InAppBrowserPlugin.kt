@@ -186,7 +186,7 @@ class InAppBrowserPlugin : Plugin() {
                 hardwareBack = androidOptions?.getBoolean("hardwareBack", true) ?: true,
                 pauseMedia = androidOptions?.getBoolean("pauseMedia", true) ?: true,
                 customUserAgent = it.getString("customWebViewUserAgent", null),
-                isIsolated = androidOptions?.getBoolean("isIsolated", true) ?: it.getBoolean("isIsolated", true) ?: true
+                isIsolated = androidOptions?.getBoolean("isIsolated", true) ?: true
             )
         }
     }

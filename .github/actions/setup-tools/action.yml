@@ -10,7 +10,7 @@ runs:
         node-version: 22 # semantic-release requires at least this version
     - name: Update npm # To ensure npm 11.5.1 or later is installed for Trusted publishing
       shell: bash
-      run: npm install -g npm@latest
+      run: npm install -g npm@~11.10.0
     - name: Install dependencies
       shell: bash
       run: npm i
