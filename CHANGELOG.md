@@ -1,3 +1,11 @@
+## [3.0.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v3.0.2...v3.0.3) (2026-04-17)
+
+
+### Bug Fixes
+
+* **android:** Duplicate requests for checking if a url hosts PDF ([#108](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/108)) ([f752a54](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/f752a54416dfcb3aeeaa86ea87e07dc729fa9080))
+* **ios:** `window.open()` and `target="_blank"` inside webview ([#110](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/110)) ([5490786](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/54907860483b6bc1db976c8f782e0ffe1523ffb3))
+
 ## [3.0.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v3.0.1...v3.0.2) (2026-02-11)
 
 
