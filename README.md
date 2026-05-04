@@ -34,11 +34,17 @@ The `openInWebView` option provides isolation for `localStorage` and `cookies` t
 ### Opting-out of Isolation (Android)
 If your use case requires sharing `localStorage` or `cookies` between the main app and the InAppBrowser on Android, you can opt-out of isolation by setting `isIsolated: false` in the `android` options.
 
-> [!CAUTION]
-> Disabling isolation reduces the security of your app by allowing potentially untrusted web content to access your application's private storage (Cookies, LocalStorage, etc.). Use this only if absolutely necessary.
+:::caution
 
-> [!WARNING]
-> **Breaking Change (Android)**: Apps upgrading to this version will lose any existing `localStorage` or cookies previously stored by the InAppBrowser on the first run. This is because the WebView now runs in a separate process with its own data directory. Users may need to re-authenticate with websites that relied on persisted session data.
+Disabling isolation reduces the security of your app by allowing potentially untrusted web content to access your application's private storage (Cookies, LocalStorage, etc.). Use this only if absolutely necessary.
+
+:::
+
+:::warning
+
+**Breaking Change (Android)**: Apps upgrading to this version will lose any existing `localStorage` or cookies previously stored by the InAppBrowser on the first run. This is because the WebView now runs in a separate process with its own data directory. Users may need to re-authenticate with websites that relied on persisted session data.
+
+:::
 
 ---
 
