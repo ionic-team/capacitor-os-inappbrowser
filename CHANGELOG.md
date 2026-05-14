@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v3.0.3...v4.0.0) (2026-05-14)
+
+
+### Bug Fixes
+
+* **android:** separate local storage between WebView processes ([#106](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/106)) ([7447bf6](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/7447bf6b88b3f4ec01b47891edd0ae568b367f33))
+
+
+### BREAKING CHANGES
+
+* **android:** Android `openInWebView` now isolates WebView storage by default on Android 28+. Apps that need to share the main app WebView's `localStorage` or cookies must set `android.isIsolated` to `false`.
+
 ## [3.0.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v3.0.2...v3.0.3) (2026-04-17)
 
 
