@@ -1,8 +1,13 @@
-import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React, { useState } from 'react';
+import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar, useIonRouter, IonItem, IonLabel, IonToggle } from '@ionic/react';
 import { InAppBrowser, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation, BrowserPageNavigationCompletedEventData } from '@capacitor/inappbrowser';
 import './Home.css';
 
 const Home: React.FC = () => {
+
+  const [testUrl, setTestUrl] = useState("https://mdn.github.io/dom-examples/web-storage/");
+  const [showIframe, setShowIframe] = useState(false);
+  const [isIsolated, setIsIsolated] = useState(true);
 
   const openInExternalBrowser = () => {
     InAppBrowser.openInExternalBrowser({
@@ -22,7 +27,7 @@ const Home: React.FC = () => {
         alert("Error: Unknown error");
       }
     }
-    
+
   }
 
   const openInSystemBrowserWithDefaults = () => {
@@ -151,6 +156,32 @@ const Home: React.FC = () => {
     InAppBrowser.close();
   }
 
+  const router = useIonRouter();
+
+  const toggleIframe = () => {
+    setShowIframe(!showIframe);
+  };
+
+  const openLocalStorageTestInWebView = () => {
+    // We open the local storage test page in the InAppBrowser
+    // NOTE: On Android with Process Isolation, 'http://localhost' may 404
+    // because the new process doesn't have the Capacitor local server.
+    // For a true same-origin test, use a remote URL.
+    InAppBrowser.openInWebView({
+      url: testUrl,
+      options: {
+        ...DefaultWebViewOptions,
+        showURL: true,
+        showToolbar: true,
+        clearCache: false,
+        android: {
+          ...DefaultAndroidWebViewOptions,
+          isIsolated: isIsolated
+        }
+      }
+    });
+  }
+
   InAppBrowser.addListener('browserClosed', () => {
     console.log("browser was closed.");
   });
@@ -185,8 +216,48 @@ const Home: React.FC = () => {
           <IonButton onClick={openInWebViewWithMoreCustomValues}>Web View with More Custom Values</IonButton>
           <IonButton onClick={openInSystemBrowserThenClose}>Open System Browser then Close</IonButton>
           <IonButton onClick={openInWebViewThenClose}>Open Web View then Close</IonButton>
-          <IonButton onClick={close}>Close opened Browser</IonButton>
           <IonButton onClick={invalidScheme}>Invalid URL Scheme</IonButton>
+
+          <div style={{ padding: '10px', margin: '10px', border: '1px solid #ccc', borderRadius: '8px' }}>
+            <h3>Isolation Test</h3>
+            <IonItem>
+              <IonLabel position="stacked">Test URL</IonLabel>
+              <IonInput value={testUrl} onIonChange={e => setTestUrl(e.detail.value!)} />
+            </IonItem>
+            <IonItem>
+              <IonLabel>Enable Storage Isolation (Android)</IonLabel>
+              <IonToggle checked={isIsolated} onIonChange={e => setIsIsolated(e.detail.checked)} />
+            </IonItem>
+            <p style={{ fontSize: '0.8em', color: '#666' }}>
+              <strong>To replicate shared storage on API &lt; 28:</strong><br />
+              1. Show the "Site Setter" below.<br />
+              2. Use the embedded page to set a value.<br />
+              3. Tap "2. Open Site (InAppBrowser)". It should share the value.<br />
+              <br />
+              <strong>On API 28+ (Isolated):</strong><br />
+              The value will NOT be shared.
+            </p>
+            <IonButton expand="block" color="secondary" onClick={toggleIframe}>
+              {showIframe ? "Hide Site Setter" : "1. Show Site Setter (Main App)"}
+            </IonButton>
+
+            {showIframe && (
+              <div style={{ margin: '10px 0', border: '2px solid #3880ff', borderRadius: '4px', overflow: 'hidden' }}>
+                <p style={{ padding: '5px', margin: 0, backgroundColor: '#3880ff', color: 'white', fontSize: '0.8em', textAlign: 'center' }}>
+                  Main App Context (Iframe)
+                </p>
+                <iframe
+                  src={testUrl}
+                  style={{ width: '100%', height: '300px', border: 'none' }}
+                  title="Storage Setter"
+                />
+              </div>
+            )}
+
+            <IonButton expand="block" color="tertiary" onClick={openLocalStorageTestInWebView}>2. Open Site (InAppBrowser)</IonButton>
+            <IonButton expand="block" fill="outline" onClick={() => router.push('/local-storage-test')}>Go to Local Test Component</IonButton>
+          </div>
+
           <IonInput placeholder="Enter text here..." />
         </div>
       </IonContent>

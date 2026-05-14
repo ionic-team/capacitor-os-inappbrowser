@@ -183,7 +183,8 @@ class InAppBrowserPlugin : Plugin() {
                 allowZoom = androidOptions?.getBoolean("allowZoom", true) ?: true,
                 hardwareBack = androidOptions?.getBoolean("hardwareBack", true) ?: true,
                 pauseMedia = androidOptions?.getBoolean("pauseMedia", true) ?: true,
-                customUserAgent = it.getString("customWebViewUserAgent", null)
+                customUserAgent = it.getString("customWebViewUserAgent", null),
+                isIsolated = androidOptions?.getBoolean("isIsolated", true) ?: true
             )
         }
     }
