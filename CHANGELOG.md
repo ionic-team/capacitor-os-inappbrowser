@@ -1,3 +1,10 @@
+## [4.0.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.0...v4.0.1) (2026-07-08)
+
+
+### Bug Fixes
+
+* **android:** bump ioninappbrowser-android to 2.0.1 for Android 18 URI grant fix ([#112](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/112)) ([e46c41a](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/e46c41a90e9b1a5025dab1310c40a4b004052f3b))
+
 # [4.0.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v3.0.3...v4.0.0) (2026-05-14)
 
 
