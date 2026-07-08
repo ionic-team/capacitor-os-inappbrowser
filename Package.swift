@@ -3,14 +3,14 @@ import PackageDescription
 
 let package = Package(
     name: "CapacitorInappbrowser",
-    platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v16)],
     products: [
         .library(
             name: "CapacitorInappbrowser",
             targets: ["InAppBrowserPlugin"])
     ],
     dependencies: [
-        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "8.0.0"),
+        .package(url: "https://github.com/ionic-team/capacitor-swift-pm.git", from: "9.0.0-alpha.5"),
         .package(url: "https://github.com/OutSystems/OSInAppBrowserLib-iOS.git", exact: "2.3.2")
     ],
     targets: [
