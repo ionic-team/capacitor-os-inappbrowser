@@ -3,6 +3,7 @@ import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import LocalStorageTest from './pages/LocalStorageTest';
+import BrowserPiPTest from './pages/BrowserPiPTest';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -46,6 +47,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/local-storage-test">
           <LocalStorageTest />
+        </Route>
+        <Route exact path="/browser-pip-test">
+          <BrowserPiPTest />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />

@@ -258,6 +258,8 @@ const Home: React.FC = () => {
             <IonButton expand="block" fill="outline" onClick={() => router.push('/local-storage-test')}>Go to Local Test Component</IonButton>
           </div>
 
+          <IonButton expand="block" color="warning" onClick={() => router.push('/browser-pip-test')}>PiP / browserClosed Test (issue #2554)</IonButton>
+
           <IonInput placeholder="Enter text here..." />
         </div>
       </IonContent>
