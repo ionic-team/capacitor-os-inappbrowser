@@ -18,7 +18,6 @@ let package = Package(
             name: "InAppBrowserPlugin",
             dependencies: [
                 .product(name: "Capacitor", package: "capacitor-swift-pm"),
-                .product(name: "Cordova", package: "capacitor-swift-pm"),
                 .product(name: "OSInAppBrowserLib", package: "OSInAppBrowserLib-iOS")
             ],
             path: "ios/Sources/InAppBrowserPlugin"),
