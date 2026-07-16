@@ -14,15 +14,7 @@ npx cap sync
 - iOS
 - Android
 
-#### Android
-
-The InAppBrowser plugin requires a minimum Android SDK target of 26. This is higher than the default that comes with your Capacitor application. You can update this value in your `android/variables.gradle` file.
-
-```gradle
-ext {
-    minSdkVersion = 26
-}
-```
+### Android
 
 #### LocalStorage Isolation
 The `openInWebView` option provides isolation for `localStorage` and `cookies` to ensure that content loaded in the InAppBrowser does not interfere with the main application's storage.
