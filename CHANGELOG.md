@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.1...v4.0.2) (2026-08-07)
+
+
+### Bug Fixes
+
+* **android:** bump ioninappbrowser-android to 2.0.2 for background close fix ([#118](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/118)) ([09c30f4](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/09c30f4283c39ecdcaa9fd914947fc6ba1b412fa))
+
 ## [4.0.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.0...v4.0.1) (2026-07-08)
 
 
