@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.2...v4.0.3) (2026-08-19)
+
+
+### Bug Fixes
+
+* **android:** only apply kotlin-android plugin if not already applied ([#120](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/120)) ([4af1964](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/4af1964bcf85e1c77331ffc6b313a30ae407394e))
+
 ## [4.0.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.1...v4.0.2) (2026-08-07)
 
 
