@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-/* eslint-disable no-unused-vars */
+ 
 import { WebPlugin } from "@capacitor/core";
 
 import type {
