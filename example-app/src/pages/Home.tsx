@@ -17,7 +17,7 @@ const Home: React.FC = () => {
 
   const invalidScheme = async () => {
     try {
-      const result = await InAppBrowser.openInExternalBrowser({
+      await InAppBrowser.openInExternalBrowser({
         url: "mailto://mail@outsystems.com"
       });
     } catch (error) {
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
     await InAppBrowser.close();
   }
 
-  const close = () => {
+  const _close = () => {
     InAppBrowser.close();
   }
 
