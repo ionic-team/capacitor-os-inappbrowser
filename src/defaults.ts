@@ -1,16 +1,18 @@
+import type {
+  AndroidSystemBrowserOptions,
+  AndroidWebViewOptions,
+  SystemBrowserOptions,
+  WebViewOptions,
+  iOSSystemBrowserOptions,
+  iOSWebViewOptions,
+} from "./definitions";
 import {
   AndroidAnimation,
-  AndroidSystemBrowserOptions,
   AndroidViewStyle,
-  AndroidWebViewOptions,
   DismissStyle,
-  SystemBrowserOptions,
   ToolbarPosition,
-  WebViewOptions,
   iOSAnimation,
-  iOSSystemBrowserOptions,
   iOSViewStyle,
-  iOSWebViewOptions,
 } from "./definitions";
 
 export const DefaultAndroidWebViewOptions: AndroidWebViewOptions = {
