@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
- 
 import { WebPlugin } from "@capacitor/core";
 
 import type {

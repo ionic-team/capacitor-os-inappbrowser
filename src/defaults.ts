@@ -4,14 +4,15 @@ import type {
   SystemBrowserOptions,
   WebViewOptions,
   iOSSystemBrowserOptions,
-  iOSWebViewOptions} from "./definitions";
+  iOSWebViewOptions,
+} from "./definitions";
 import {
   AndroidAnimation,
   AndroidViewStyle,
   DismissStyle,
   ToolbarPosition,
   iOSAnimation,
-  iOSViewStyle
+  iOSViewStyle,
 } from "./definitions";
 
 export const DefaultAndroidWebViewOptions: AndroidWebViewOptions = {

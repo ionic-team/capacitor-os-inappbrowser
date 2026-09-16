@@ -1,19 +1,38 @@
-import { IonButton, IonContent, IonHeader, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { InAppBrowser, DefaultSystemBrowserOptions, DefaultWebViewOptions, DefaultAndroidWebViewOptions, DismissStyle, iOSViewStyle, iOSAnimation, ToolbarPosition, AndroidViewStyle, AndroidAnimation, BrowserPageNavigationCompletedEventData } from '@capacitor/inappbrowser';
-import './Home.css';
+import {
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonInput,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from "@ionic/react";
+import {
+  InAppBrowser,
+  DefaultSystemBrowserOptions,
+  DefaultWebViewOptions,
+  DefaultAndroidWebViewOptions,
+  DismissStyle,
+  iOSViewStyle,
+  iOSAnimation,
+  ToolbarPosition,
+  AndroidViewStyle,
+  AndroidAnimation,
+  BrowserPageNavigationCompletedEventData,
+} from "@capacitor/inappbrowser";
+import "./Home.css";
 
 const Home: React.FC = () => {
-
   const openInExternalBrowser = () => {
     InAppBrowser.openInExternalBrowser({
-      url: "https://www.google.com"
+      url: "https://www.google.com",
     });
-  }
+  };
 
   const invalidScheme = async () => {
     try {
       await InAppBrowser.openInExternalBrowser({
-        url: "mailto://mail@outsystems.com"
+        url: "mailto://mail@outsystems.com",
       });
     } catch (error) {
       if (error instanceof Error) {
@@ -22,15 +41,14 @@ const Home: React.FC = () => {
         alert("Error: Unknown error");
       }
     }
-    
-  }
+  };
 
   const openInSystemBrowserWithDefaults = () => {
     InAppBrowser.openInSystemBrowser({
       url: "https://www.google.com",
-      options: DefaultSystemBrowserOptions
+      options: DefaultSystemBrowserOptions,
     });
-  }
+  };
 
   const openInSystemBrowserWithCustomValues = () => {
     InAppBrowser.openInSystemBrowser({
@@ -44,26 +62,26 @@ const Home: React.FC = () => {
           exitAnimation: AndroidAnimation.FADE_IN,
           bottomSheetOptions: {
             height: 200,
-            isFixed: false
-          }
+            isFixed: false,
+          },
         },
         iOS: {
           closeButtonText: DismissStyle.CANCEL,
           viewStyle: iOSViewStyle.FORM_SHEET,
           animationEffect: iOSAnimation.FLIP_HORIZONTAL,
           enableBarsCollapsing: false,
-          enableReadersMode: true
-        }
-      }
+          enableReadersMode: true,
+        },
+      },
     });
-  }
+  };
 
   const openInWebViewWithDefaults = () => {
     InAppBrowser.openInWebView({
       url: "https://www.google.com",
-      options: DefaultWebViewOptions
+      options: DefaultWebViewOptions,
     });
-  }
+  };
 
   const openInWebViewWithCustomValues = () => {
     InAppBrowser.openInWebView({
@@ -87,15 +105,15 @@ const Home: React.FC = () => {
           surpressIncrementalRendering: true,
           viewStyle: iOSViewStyle.PAGE_SHEET,
           animationEffect: iOSAnimation.CROSS_DISSOLVE,
-          allowsBackForwardNavigationGestures: true
-        }
+          allowsBackForwardNavigationGestures: true,
+        },
       },
       customHeaders: {
         "X-Custom-Header": "CustomValue",
-        "X-Another-Header": "AnotherValue"
-      }
+        "X-Another-Header": "AnotherValue",
+      },
     });
-  }
+  };
 
   const openInWebViewWithMoreCustomValues = () => {
     InAppBrowser.openInWebView({
@@ -113,7 +131,7 @@ const Home: React.FC = () => {
         android: {
           allowZoom: true,
           hardwareBack: true,
-          pauseMedia: true
+          pauseMedia: true,
         },
         iOS: {
           allowOverScroll: false,
@@ -122,46 +140,49 @@ const Home: React.FC = () => {
           surpressIncrementalRendering: true,
           viewStyle: iOSViewStyle.PAGE_SHEET,
           animationEffect: iOSAnimation.CROSS_DISSOLVE,
-          allowsBackForwardNavigationGestures: true
-        }
-      }
+          allowsBackForwardNavigationGestures: true,
+        },
+      },
     });
-  }
+  };
 
   const openInSystemBrowserThenClose = async () => {
     await InAppBrowser.openInSystemBrowser({
       url: "https://www.google.com",
-      options: DefaultSystemBrowserOptions
+      options: DefaultSystemBrowserOptions,
     });
 
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
     InAppBrowser.close();
-  }
+  };
 
   const openInWebViewThenClose = async () => {
     await InAppBrowser.openInWebView({
       url: "https://www.google.com",
-      options: DefaultWebViewOptions
+      options: DefaultWebViewOptions,
     });
 
     await InAppBrowser.close();
-  }
+  };
 
   const close = () => {
     InAppBrowser.close();
-  }
+  };
 
-  InAppBrowser.addListener('browserClosed', () => {
+  InAppBrowser.addListener("browserClosed", () => {
     console.log("browser was closed.");
   });
 
-  InAppBrowser.addListener('browserPageLoaded', () => {
+  InAppBrowser.addListener("browserPageLoaded", () => {
     console.log("browser was loaded.");
   });
 
-  InAppBrowser.addListener('browserPageNavigationCompleted', (data: BrowserPageNavigationCompletedEventData) => {
-    console.log("browser page navigation was completed. " + data.url);
-  });
+  InAppBrowser.addListener(
+    "browserPageNavigationCompleted",
+    (data: BrowserPageNavigationCompletedEventData) => {
+      console.log("browser page navigation was completed. " + data.url);
+    },
+  );
 
   return (
     <IonPage>
@@ -177,14 +198,30 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <div>
-          <IonButton onClick={openInExternalBrowser}>External Browser</IonButton>
-          <IonButton onClick={openInSystemBrowserWithDefaults}>System Browser with Defaults</IonButton>
-          <IonButton onClick={openInSystemBrowserWithCustomValues}>System Browser with Custom Values</IonButton>
-          <IonButton onClick={openInWebViewWithDefaults}>Web View with Defaults</IonButton>
-          <IonButton onClick={openInWebViewWithCustomValues}>Web View with Custom Values</IonButton>
-          <IonButton onClick={openInWebViewWithMoreCustomValues}>Web View with More Custom Values</IonButton>
-          <IonButton onClick={openInSystemBrowserThenClose}>Open System Browser then Close</IonButton>
-          <IonButton onClick={openInWebViewThenClose}>Open Web View then Close</IonButton>
+          <IonButton onClick={openInExternalBrowser}>
+            External Browser
+          </IonButton>
+          <IonButton onClick={openInSystemBrowserWithDefaults}>
+            System Browser with Defaults
+          </IonButton>
+          <IonButton onClick={openInSystemBrowserWithCustomValues}>
+            System Browser with Custom Values
+          </IonButton>
+          <IonButton onClick={openInWebViewWithDefaults}>
+            Web View with Defaults
+          </IonButton>
+          <IonButton onClick={openInWebViewWithCustomValues}>
+            Web View with Custom Values
+          </IonButton>
+          <IonButton onClick={openInWebViewWithMoreCustomValues}>
+            Web View with More Custom Values
+          </IonButton>
+          <IonButton onClick={openInSystemBrowserThenClose}>
+            Open System Browser then Close
+          </IonButton>
+          <IonButton onClick={openInWebViewThenClose}>
+            Open Web View then Close
+          </IonButton>
           <IonButton onClick={close}>Close opened Browser</IonButton>
           <IonButton onClick={invalidScheme}>Invalid URL Scheme</IonButton>
           <IonInput placeholder="Enter text here..." />
