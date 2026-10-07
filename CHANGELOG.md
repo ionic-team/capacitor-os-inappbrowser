@@ -1,3 +1,11 @@
+## [4.0.4](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.3...v4.0.4) (2026-10-07)
+
+
+### Bug Fixes
+
+* **android:** preserve accept MIME types in WebView file chooser ([#122](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/122)) ([d4405fb](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/d4405fbd66cb06e5fd7a936ce21b72366218efe6))
+* **ios:** update native lib to latest version ([#125](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/125)) ([80da37d](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/80da37d3e10554aa0b48c736e2159add8e98a4f1))
+
 ## [4.0.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.2...v4.0.3) (2026-08-19)
 
 
