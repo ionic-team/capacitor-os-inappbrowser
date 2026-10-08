@@ -1,3 +1,25 @@
+## [4.0.4](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.3...v4.0.4) (2026-10-07)
+
+
+### Bug Fixes
+
+* **android:** preserve accept MIME types in WebView file chooser ([#122](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/122)) ([d4405fb](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/d4405fbd66cb06e5fd7a936ce21b72366218efe6))
+* **ios:** update native lib to latest version ([#125](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/125)) ([80da37d](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/80da37d3e10554aa0b48c736e2159add8e98a4f1))
+
+## [4.0.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.2...v4.0.3) (2026-08-19)
+
+
+### Bug Fixes
+
+* **android:** only apply kotlin-android plugin if not already applied ([#120](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/120)) ([4af1964](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/4af1964bcf85e1c77331ffc6b313a30ae407394e))
+
+## [4.0.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.1...v4.0.2) (2026-08-07)
+
+
+### Bug Fixes
+
+* **android:** bump ioninappbrowser-android to 2.0.2 for background close fix ([#118](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/118)) ([09c30f4](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/09c30f4283c39ecdcaa9fd914947fc6ba1b412fa))
+
 ## [4.0.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.0...v4.0.1) (2026-07-08)
 
 
