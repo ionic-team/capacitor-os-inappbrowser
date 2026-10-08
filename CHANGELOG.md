@@ -1,3 +1,15 @@
+# [5.0.0-next.1](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.4...v5.0.0-next.1) (2026-10-08)
+
+
+### Features
+
+* Bump major version to 5 ([8beb4a1](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/8beb4a1e416df533a0f1f81d4223e03af7f6d016))
+
+
+### BREAKING CHANGES
+
+* This version includes support for Capacitor 9, which requires a major version bump.
+
 ## [4.0.4](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.3...v4.0.4) (2026-10-07)
 
 
