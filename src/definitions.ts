@@ -92,6 +92,8 @@ export interface AndroidWebViewOptions {
   pauseMedia: boolean;
   /** Whether to run the InAppBrowser in an isolated process. Android only. Defaults to true. */
   isIsolated?: boolean;
+  /** Patterns checked against each finished page load; matching one closes the Web View natively, independent of whether the host app's JS is able to react. Can be plain text or regex - plain text is matched as a substring anywhere in the URL. Android only. Useful for redirect-based flows with a known "done" URL (e.g. OAuth logins or payment confirmations) where you want the Web View to close reliably as soon as that URL loads. */
+  successUrlPatterns?: string[];
 }
 
 /* eslint-disable no-unused-vars */
