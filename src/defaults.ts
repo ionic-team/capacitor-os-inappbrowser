@@ -18,6 +18,7 @@ export const DefaultAndroidWebViewOptions: AndroidWebViewOptions = {
   hardwareBack: true,
   pauseMedia: true,
   isIsolated: true,
+  successUrlPatterns: [],
 };
 
 export const DefaultiOSWebViewOptions: iOSWebViewOptions = {
