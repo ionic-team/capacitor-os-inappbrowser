@@ -157,6 +157,21 @@ const Home: React.FC = () => {
     });
   };
 
+  const openCapacitorDocsWithAutoClose = () => {
+    // Android only: successUrlPatterns auto-closes the Web View natively as soon as
+    // a finished page load matches one of the patterns, without needing app JS to react.
+    InAppBrowser.openInWebView({
+      url: "https://success.outsystems.com/documentation/outsystems_developer_cloud/building_apps/mobile_apps/use_mobile_plugins/outsystems_supported_mobile_plugins/",
+      options: {
+        ...DefaultWebViewOptions,
+        android: {
+          ...DefaultAndroidWebViewOptions,
+          successUrlPatterns: ["outsystems_supported_mobile_plugins/inappbrowser_plugin"]
+        }
+      }
+    });
+  }
+
   const openInSystemBrowserThenClose = async () => {
     await InAppBrowser.openInSystemBrowser({
       url: "https://www.google.com",
@@ -235,30 +250,15 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <div>
-          <IonButton onClick={openInExternalBrowser}>
-            External Browser
-          </IonButton>
-          <IonButton onClick={openInSystemBrowserWithDefaults}>
-            System Browser with Defaults
-          </IonButton>
-          <IonButton onClick={openInSystemBrowserWithCustomValues}>
-            System Browser with Custom Values
-          </IonButton>
-          <IonButton onClick={openInWebViewWithDefaults}>
-            Web View with Defaults
-          </IonButton>
-          <IonButton onClick={openInWebViewWithCustomValues}>
-            Web View with Custom Values
-          </IonButton>
-          <IonButton onClick={openInWebViewWithMoreCustomValues}>
-            Web View with More Custom Values
-          </IonButton>
-          <IonButton onClick={openInSystemBrowserThenClose}>
-            Open System Browser then Close
-          </IonButton>
-          <IonButton onClick={openInWebViewThenClose}>
-            Open Web View then Close
-          </IonButton>
+          <IonButton onClick={openInExternalBrowser}>External Browser</IonButton>
+          <IonButton onClick={openInSystemBrowserWithDefaults}>System Browser with Defaults</IonButton>
+          <IonButton onClick={openInSystemBrowserWithCustomValues}>System Browser with Custom Values</IonButton>
+          <IonButton onClick={openInWebViewWithDefaults}>Web View with Defaults</IonButton>
+          <IonButton onClick={openInWebViewWithCustomValues}>Web View with Custom Values</IonButton>
+          <IonButton onClick={openInWebViewWithMoreCustomValues}>Web View with More Custom Values</IonButton>
+          <IonButton onClick={openCapacitorDocsWithAutoClose}>Web View with successUrlPatterns (auto-close on InAppBrowser docs page)</IonButton>
+          <IonButton onClick={openInSystemBrowserThenClose}>Open System Browser then Close</IonButton>
+          <IonButton onClick={openInWebViewThenClose}>Open Web View then Close</IonButton>
           <IonButton onClick={invalidScheme}>Invalid URL Scheme</IonButton>
 
           <div
