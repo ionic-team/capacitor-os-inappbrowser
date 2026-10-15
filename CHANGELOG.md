@@ -1,3 +1,16 @@
+# [4.1.0](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.4...v4.1.0) (2026-10-15)
+
+
+### Bug Fixes
+
+* **android:** bugfixes from native library update ([#127](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/127)) ([212a54d](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/212a54dfce0f36f50ca07dd23796f1b2b5e1f4ab))
+
+
+### Features
+
+* **android:** Provide successUrlPatterns to auto-close webview  ([#128](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/128)) ([029eab6](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/029eab6cc4449e799b0f211e339a3df16cd6e76f))
+* **android:** Provide successUrlPatterns to auto-close webview  ([#128](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/128)) ([e559fe2](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/e559fe2abc4c5962277b06017b362857c43d8cda))
+
 ## [4.0.4](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v4.0.3...v4.0.4) (2026-10-07)
 
 
