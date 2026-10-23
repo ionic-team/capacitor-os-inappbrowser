@@ -1,3 +1,10 @@
+# [5.0.0-next.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v5.0.0-next.2...v5.0.0-next.3) (2026-10-23)
+
+
+### Bug Fixes
+
+* remove "prepare" for NPM 12 ([#129](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/129)) ([da4d9ff](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/da4d9ff5f681511febff21c49c4ffa5f0a46a4d0))
+
 # [5.0.0-next.2](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v5.0.0-next.1...v5.0.0-next.2) (2026-10-15)
 
 
