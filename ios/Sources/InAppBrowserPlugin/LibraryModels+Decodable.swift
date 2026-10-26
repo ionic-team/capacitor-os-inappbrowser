@@ -1,6 +1,6 @@
 import OSInAppBrowserLib
 
-extension OSIABDismissStyle: Decodable {
+extension OSIABDismissStyle: @retroactive Decodable {
     init(_ value: Int) {
         switch value {
         case 0: self = .close
@@ -11,7 +11,7 @@ extension OSIABDismissStyle: Decodable {
     }
 }
 
-extension OSIABViewStyle: Decodable {
+extension OSIABViewStyle: @retroactive Decodable {
     init(_ value: Int) {
         switch value {
         case 0: self = .pageSheet
@@ -22,7 +22,7 @@ extension OSIABViewStyle: Decodable {
     }
 }
 
-extension OSIABAnimationEffect: Decodable {
+extension OSIABAnimationEffect: @retroactive Decodable {
     init(_ value: Int) {
         switch value {
         case 0: self = .flipHorizontal
@@ -33,7 +33,7 @@ extension OSIABAnimationEffect: Decodable {
     }
 }
 
-extension OSIABToolbarPosition: Decodable {
+extension OSIABToolbarPosition: @retroactive Decodable {
     init(_ value: Int) {
         switch value {
         case 0: self = .top
