@@ -1,3 +1,15 @@
+# [5.0.0-next.4](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v5.0.0-next.3...v5.0.0-next.4) (2026-11-11)
+
+
+### Bug Fixes
+
+* **android:** remove location permissions from plugin  ([#133](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/133)) ([c0835b6](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/c0835b6250ee03162fb0acd0b85370eb9e3321e7))
+
+
+### BREAKING CHANGES
+
+* **android:** **(Android only)** Plugin version 5 no longer declares `ACCESS_COARSE_LOCATION` nor  `ACCESS_FINE_LOCATION`. If you require location access in webpages opened in the InAppBrowser's WebView, you may need to add those permissions to your app's `AndroidManifest.xml`.
+
 # [5.0.0-next.3](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v5.0.0-next.2...v5.0.0-next.3) (2026-10-23)
 
 
