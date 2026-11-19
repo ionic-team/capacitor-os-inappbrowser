@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: capacitor-os-inappbrowser
+  title: '@capacitor/inappbrowser'
+  description: Enhanced in-app browser with web events.
+  annotations:
+    github.com/project-slug: ionic-team/capacitor-os-inappbrowser
+  tags: [typescript, swift, java, npm-package, capacitor-plugin]
+spec:
+  type: library
+  lifecycle: production
+  owner: group:default/mobile-ecosystem
+  system: capacitor
+  dependsOn: [component:default/capacitor-core]
