@@ -1,3 +1,10 @@
+# [5.0.0-next.5](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v5.0.0-next.4...v5.0.0-next.5) (2026-11-20)
+
+
+### Bug Fixes
+
+* **android:** avoid implicit parent project property lookup deprecated in Gradle 9 ([#136](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/136)) ([4478a25](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/4478a25e5d6938e816eab24d41e3825edd06b960))
+
 # [5.0.0-next.4](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v5.0.0-next.3...v5.0.0-next.4) (2026-11-11)
 
 
