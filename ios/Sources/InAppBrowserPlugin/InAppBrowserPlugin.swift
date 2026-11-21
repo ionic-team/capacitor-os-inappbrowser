@@ -39,7 +39,7 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
             guard let options: OSInAppBrowserSystemBrowserModel = self.createModel(for: call.getObject("options")) else {
                 return self.error(call, type: .inputArgumentsIssue(target: .systemBrowser))
             }
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 engine.openSystemBrowser(url, options.toSystemBrowserOptions(), { [weak self] event, viewControllerToOpen in
                     self?.handleResult(event, for: call, checking: viewControllerToOpen, data: nil, error: .failedToOpen(url: url.absoluteString, onTarget: .systemBrowser))
                 })
@@ -56,7 +56,7 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
             let customHeaders = call.getObject("customHeaders")?.compactMapValues {
                 ($0 as? String) ?? ($0 as? NSNumber)?.stringValue
             }
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
                 engine.openWebView(
                     url: url,
                     options: options.toWebViewOptions(),
@@ -83,7 +83,7 @@ public class InAppBrowserPlugin: CAPPlugin, CAPBridgedPlugin {
             error(call, type: .noBrowserToClose)
             return
         }
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             openedViewController.dismiss(animated: true) { [weak self] in
                 self?.success(call)
             }
@@ -113,7 +113,7 @@ private extension InAppBrowserPlugin {
     }
 
     func delegateExternalBrowser(_ engine: OSInAppBrowserEngine, _ url: URL, _ call: CAPPluginCall) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
             engine.openExternalBrowser(url) { [weak self] success in
                 guard let self else { return }
                 if success {
