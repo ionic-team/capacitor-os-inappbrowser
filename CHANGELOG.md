@@ -1,3 +1,10 @@
+# [5.0.0-next.6](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v5.0.0-next.5...v5.0.0-next.6) (2026-11-27)
+
+
+### Bug Fixes
+
+* **android:** bump ioninappbrowser-android to 2.1.1 ([#137](https://github.com/ionic-team/capacitor-os-inappbrowser/issues/137)) ([fbff1fd](https://github.com/ionic-team/capacitor-os-inappbrowser/commit/fbff1fd70d04ecf670ed066d57c2d2604d54b995))
+
 # [5.0.0-next.5](https://github.com/ionic-team/capacitor-os-inappbrowser/compare/v5.0.0-next.4...v5.0.0-next.5) (2026-11-20)
 
 
